@@ -25,7 +25,6 @@ armored_BYZ = {
 			factor = 2
 			OR = {
 				has_tech = main_battle_tank
-				has_tech = main_battle_tank_chassis
 			}
 		}
 	}
@@ -93,7 +92,8 @@ armored_BYZ = {
 			}
 			
 			regiments = {
-				light_armor = 8
+				light_armor = 6
+				motorized = 2
 			}
 		}
 		
@@ -178,7 +178,7 @@ armored_BYZ = {
 			
 			regiments = {
 				heavy_armor = 6
-				infantry = 2
+				motorized = 2
 			}
 		}
 		
@@ -228,7 +228,6 @@ armored_BYZ = {
 				NOT = {
 					has_tech = main_battle_tank
 				}
-				NOT = {	has_tech = main_battle_tank_chassis }
 			}
 		}
 		
@@ -291,7 +290,8 @@ armored_BYZ = {
 			}
 			
 			regiments = {
-				medium_armor = 6
+				medium_armor = 4
+				motorized = 2
 			}
 		}
 
@@ -339,7 +339,6 @@ armored_BYZ = {
 				NOT = {
 					has_tech = main_battle_tank
 				}
-				NOT = { has_tech = main_battle_tank_chassis }
 				#has_equipment = { light_tank_chassis < 50 }
 				#has_equipment = { medium_tank_chassis > 25 }
 			}
@@ -445,9 +444,6 @@ armored_BYZ = {
 				NOT = {
 					has_tech = main_battle_tank
 				}
-				NOT = {
-					has_tech = main_battle_tank_chassis
-				}
 				#has_equipment = { armored_car_equipment > 25 }
 			}
 		}
@@ -501,14 +497,15 @@ armored_BYZ = {
 			
 			support = {
 				engineer = 1
-				armored_car_recon = 1
+				light_tank_recon = 1
 				artillery = 1
 				maintenance_company = 1
 				logistics_company = 1
 			}
 			
 			regiments = {
-				medium_armor = 10 #remove sp
+				medium_armor = 9
+				mechanized = 6
 			}
 		}
 
@@ -546,7 +543,6 @@ armored_BYZ = {
 				factor = 100
 				OR = {
 					has_tech = main_battle_tank
-					has_tech = main_battle_tank_chassis
 				}
 			}
 		}
@@ -599,15 +595,15 @@ armored_BYZ = {
 			
 			support = {
 				engineer = 1
-				mot_recon = 1
+				light_tank_recon = 1
+				artillery = 1
 				maintenance_company = 1
 				logistics_company = 1
-				artillery = 1
 			}
 			
 			regiments = {
-				modern_armor = 8
-				mechanized = 4
+				modern_armor = 9
+				mechanized = 6
 			}
 		}
 
@@ -731,7 +727,7 @@ garrison_BYZ = {
 			}
 			
 			regiments = {
-				infantry = 7
+				infantry = 9
 			}
 		}
 		
@@ -904,13 +900,14 @@ infantry_BYZ = {
 			
 			support = {
 				engineer = 1
+				anti_air = 1
 				artillery = 1
 				recon = 1
 				logistics_company = 1
 			}
 			
 			regiments = {
-				infantry = 8
+				infantry = 9
 				artillery_brigade = 2
 			}
 		}
@@ -919,6 +916,7 @@ infantry_BYZ = {
 			infantry		
 			engineer
 			recon
+			anti_air
 			artillery
 			artillery_brigade
 			logistics_company
@@ -988,15 +986,15 @@ infantry_BYZ = {
 			
 			support = {
 				engineer = 1
+				anti_air = 1
+				artillery = 1
 				recon = 1
 				logistics_company = 1
-				anti_air = 1
-				field_hospital = 1
 			}
 			
 			regiments = {
-				infantry = 10
-				artillery_brigade = 3
+				infantry = 9
+				artillery_brigade = 4
 			}
 		}
 		
@@ -1004,10 +1002,9 @@ infantry_BYZ = {
 			infantry		
 			engineer
 			recon
-			field_hospital
+			anti_air
 			artillery
 			artillery_brigade
-			anti_air
 			logistics_company
 		}
 	}
@@ -1078,7 +1075,7 @@ motorized_BYZ = {
 		}
 		
 		target_template = {
-			weight = 0.9
+			weight = 0.6
 			match_value = 1000.0
 			
 			support = {
@@ -1086,18 +1083,19 @@ motorized_BYZ = {
 			}
 			
 			regiments = {
-				cavalry = 6
+				motorized = 6
 			}
 		}
 		
 		allowed_types = {
 			cavalry		
 			recon
+			motorized
 		}
 		
-		replace_at_match = 0.95
+		replace_at_match = 0.3
 		replace_with = motorized_BYZ_2
-		target_min_match = 0.5
+		target_min_match = 0.1
 	}	
 	
 	motorized_BYZ_2 = {
@@ -1164,7 +1162,8 @@ motorized_BYZ = {
 			}
 			
 			regiments = {
-				motorized = 6
+				motorized = 8
+				mechanized = 4
 			}
 		}
 		
@@ -1181,7 +1180,7 @@ motorized_BYZ = {
 		target_min_match = 0.5
 	}	
 	
-	motorized_BYZ_2 = {
+	motorized_BYZ_3 = {
 	
 		upgrade_prio = {
 			factor = 5
@@ -1246,8 +1245,8 @@ motorized_BYZ = {
 			}
 			
 			regiments = {
-				mechanized = 6
-				motorized = 4
+				mechanized = 9
+				motorized = 6
 			}
 		}
 		
@@ -1466,114 +1465,6 @@ marines_BYZ = {
 			marine
 			engineer
 			logistics_company
-		}
-	}
-}
-
-
-paratroopers_BYZ = {
-
-	available_for = {
-		BYZ
-	}
-	
-	roles = {
-		paratrooper
-	}
-	
-	upgrade_prio = {
-		factor = 2
-
-		modifier = {
-			factor = 0
-			NOT = {
-				has_tech = paratroopers
-			}
-		}
-	}
-	
-	match_to_count = 0.45
-
-	paratrooper_default_BYZ = {
-	
-		upgrade_prio = {
-			factor = 2
-
-			modifier = {
-				factor = 1
-			}
-		}
-		
-		target_width = 18.0
-		width_weight = 3.0
-		column_swap_factor = 0.5
-		
-		stat_weights = {
-			0.20 #-- default_morale
-			1.00 #-- defense
-			0.20 #-- breakthrough
-			0.00 #-- hardness
-			2.00 #-- soft_attack
-			0.10 #-- hard_attack
-			0.05 #-- recon
-			0.20 #-- entrenchment
-			0.20 #-- initiative
-			0.05 #-- casualty_trickleback
-			-1.0 #-- supply_consumption_factor
-			-1.0 #-- supply_consumption
-			0.01 #-- suppression
-			0.01 #-- suppression_factor
-			0.05 #-- experience_loss_factor
-			0.00 #-- equipment_capture_factor
-			0.00 #-- fuel_capacity
-			#-- Air Values
-			0.01 #-- air_attack
-			#-- Common Values
-			0.6 #-- max_organisation
-			0.4 #-- max_strength
-			0.00 #-- maximum_speed
-			0.00 #-- armor_value
-			0.20 #-- ap_attack
-			0.00 #-- reliability
-			0.00 #-- reliability_factor
-			-1.0 #-- weight
-			0.00 #-- fuel_consumption
-			0.00 #-- fuel_consumption_factor
-			0.00 #-- strat_attack
-			0.00 #-- carrier_size
-			0.00 #-- acc_hot_gain
-			0.00 #-- acc_cold_gain
-			-0.1 #-- build_cost_ic
-		}
-
-		target_template = {
-			weight = 0.9
-			match_value = 2000.0
-			
-			support = {
-				engineer = 1
-				artillery = 1
-				anti_tank = 1
-				logistics_company = 1
-			}
-			
-			regiments = {
-				paratrooper= 9 
-			}
-		}
-		
-		allowed_types = {
-			paratrooper
-			engineer
-			recon
-			signal_company
-			field_hospital
-			logistics_company
-			anti_tank
-			military_police
-			artillery
-			anti_air
-			rocket_artillery
 		}
 	}
 }

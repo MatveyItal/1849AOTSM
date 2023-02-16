@@ -15,18 +15,17 @@ set_research_slots = 4
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	support_weapons = 1
+	uniform_equipment = 1
+	uniform_equipment1 = 1
+	light_equipment1 = 1
 	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
 	motorised_infantry = 1
+	motorised_infantry2 = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	early_fighter = 1
-	cv_early_fighter = 1
-	cv_naval_bomber1 = 1
-	naval_bomber1 = 1
-	early_bomber = 1
-	CAS1 = 1
 	basic_train = 1
 	mobile_warfare = 1
 	fleet_in_being = 1
@@ -35,6 +34,8 @@ set_technology = {
 	radio_detection = 1
 	fuel_silos = 1
 	fuel_refining = 1
+	rubber_processing_experiments = 1
+	
 }
 
 if = {
@@ -59,8 +60,8 @@ if = {
 		early_ship_hull_cruiser = 1
 		basic_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
-		early_ship_hull_carrier = 1
-		basic_ship_hull_carrier = 1
+		 
+		 
 		basic_battery = 1
 		basic_light_battery = 1
 		basic_medium_battery = 1
@@ -69,12 +70,13 @@ if = {
 		sonar = 1
 		smoke_generator = 1
 		basic_depth_charges = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_heavy_armor_scheme = 1
 		mtg_transport = 1
-		improved_secondary_battery = 1
+		
 		basic_fire_control_system = 1
+		
 	}
 }
 
@@ -651,68 +653,24 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Aetos Class"
-		type = ship_hull_carrier_conversion_bb
-		name_group = BYZ_CV_HISTORICAL
-		parent_version = 0
+		name = "Roman Class"
+		type = ship_hull_heavy_1
+		name_group = BYZ_BB_HISTORICAL
+		parent_version = 1
 		modules = {
-			fixed_ship_deck_slot_1 = ship_deck_space
-			fixed_ship_deck_slot_2 = ship_deck_space
-			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			mid_1_custom_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_2
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bb_2
+			front_1_custom_slot = ship_heavy_battery_2
+			mid_1_custom_slot = ship_anti_air_2
+			mid_2_custom_slot = ship_anti_air_2
+			rear_1_custom_slot = ship_heavy_battery_2
 		}
-		obsolete = yes
 	}
-	
-	create_equipment_variant = {
-		name = "Romia Class"
-		type = ship_hull_carrier_conversion_ca
-		name_group = BYZ_CVL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_deck_slot_1 = ship_deck_space
-			fixed_ship_deck_slot_2 = empty
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Constantinople Class"
-		type = ship_hull_carrier_conversion_bb
-		name_group = BYZ_CV_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_deck_slot_1 = ship_deck_space
-			fixed_ship_deck_slot_2 = ship_deck_space
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			mid_1_custom_slot = ship_deck_space
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-			name = "Roman Class"
-			type = ship_hull_carrier_1
-			name_group = BYZ_CV_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_deck_slot_1 = ship_deck_space
-				fixed_ship_deck_slot_2 = ship_deck_space
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = carrier_ship_engine_2
-				fixed_ship_secondaries_slot = ship_secondaries_2
-				front_1_custom_slot = ship_deck_space
-			}
-		}
 }
 
 #Децентрализация Империи
@@ -808,6 +766,9 @@ RIT = {
 }
 
 recruit_character = BYZ_Mihael_IV_Zachareas
+recruit_character = BYZ_Mihael_IV_Zachareas_decentalisation
+recruit_character = BYZ_Mihael_IV_Zachareas_roman
+recruit_character = BYZ_Mihael_IV_Zachareas_marshal
 recruit_character = BYZ_Alexandros_Mavrocorddatos
 recruit_character = BYZ_Ioann_Kapodistria
 recruit_character = BYZ_Alex_Ipsilanty
@@ -823,7 +784,6 @@ recruit_character = BYZ_Manousos_Rondea
 recruit_character = BYZ_Vaso_Kostas
 recruit_character = BYZ_Vlasis_Strakelli
 recruit_character = BYZ_Aristidis_Vlahas
-recruit_character = BYZ_Ermis_Michaela
 recruit_character = BYZ_Haris_Vassalla
 recruit_character = BYZ_Yanni_Spiterouli
 recruit_character = BYZ_Nikolaos_Mella
@@ -846,6 +806,25 @@ recruit_character = BYZ_Alekos_Miriade
 recruit_character = BYZ_Anthimos_Balotis
 recruit_character = BYZ_Stavros_Gareas
 recruit_character = BYZ_Manos_Lillatos
+recruit_character = BYZ_Thalis_Xenili
+recruit_character = BYZ_Zacharias_Rodiniadi
+recruit_character = BYZ_Filippos_Politeli
+recruit_character = BYZ_Titos_Trainea
+recruit_character = BYZ_Dimitris_Metridis
+recruit_character = BYZ_Iason_Galanides
+recruit_character = BYZ_Nicolaos_Pepallis
+recruit_character = BYZ_Stefanos_Tocceli
+recruit_character = BYZ_Konstantin_Tyutchev
+recruit_character = BYZ_Romanos_Barou
+recruit_character = BYZ_Nestoras_Constantinas
+recruit_character = BYZ_Alexis_Manide
+recruit_character = BYZ_Apollon_Paliadis
+recruit_character = BYZ_Dionissis_Economiadis
+recruit_character = BYZ_Filippos_Remiade
+recruit_character = BYZ_Georgios_Antonides
+recruit_character = BYZ_Andreas_Baridis
+recruit_character = BYZ_Nikolas_Maliadis
+recruit_character = BYZ_Ignatios_Ganiadis
 
 set_variable = { byz_imperial_faction_support = 75 }
 set_variable = { byz_generals_faction_support = 25 }
@@ -864,19 +843,6 @@ set_variable = { byz_democratic_power_var = 0 }
 
 BYZ = { senat_gui_initial = yes }
 
-797 = {
-	add_state_modifier = {
-		modifier = {
-			recruitable_population_factor = -1.00
-		}
-	}	
-	add_state_modifier = {
-		modifier = {
-			state_production_speed_buildings_factor = 0.50
-		}
-	}
-}
-
 add_opinion_modifier = {
     target = PRU
     modifier = history_friend
@@ -892,3 +858,103 @@ add_opinion_modifier = {
     modifier = history_enemy
 }
 
+diplomatic_relation = {
+    country = BUL
+    relation = non_aggression_pact
+    active = yes
+}
+
+add_opinion_modifier = {
+    target = BUL
+    modifier = saint_pact
+}
+
+add_opinion_modifier = {
+    target = BUL
+    modifier = byzantium_balkan_strateg
+}
+
+diplomatic_relation = {
+    country = SER
+    relation = non_aggression_pact
+    active = yes
+}
+
+add_opinion_modifier = {
+    target = SER
+    modifier = saint_pact
+}
+
+add_opinion_modifier = {
+    target = SER
+    modifier = byzantium_balkan_strateg
+}
+
+diplomatic_relation = {
+    country = ALB
+    relation = non_aggression_pact
+    active = yes
+}
+
+add_opinion_modifier = {
+    target = ALB
+    modifier = saint_pact
+}
+
+add_opinion_modifier = {
+    target = ALB
+    modifier = byzantium_balkan_strateg
+}
+
+diplomatic_relation = {
+    country = BOS
+    relation = non_aggression_pact
+    active = yes
+}
+
+add_opinion_modifier = {
+    target = BOS
+    modifier = saint_pact
+}
+
+add_opinion_modifier = {
+    target = BOS
+    modifier = byzantium_balkan_strateg
+}
+
+diplomatic_relation = {
+    country = CRO
+    relation = non_aggression_pact
+    active = yes
+}
+
+add_opinion_modifier = {
+    target = CRO
+    modifier = saint_pact
+}
+
+add_opinion_modifier = {
+    target = CRO
+    modifier = byzantium_balkan_strateg
+}
+
+diplomatic_relation = {
+    country = SLO
+    relation = non_aggression_pact
+    active = yes
+}
+
+add_opinion_modifier = {
+    target = SLO
+    modifier = saint_pact
+}
+
+add_opinion_modifier = {
+    target = SLO
+    modifier = byzantium_balkan_strateg
+}
+
+create_intelligence_agency = {
+    name = "SSPI"
+    icon = GFX_intelligence_agency_logo_byz
+}

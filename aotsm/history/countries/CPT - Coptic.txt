@@ -11,7 +11,7 @@ set_technology = {
 	early_fighter = 1
 	early_bomber = 1
 	fuel_silos = 1
-	synth_oil_experiments = 1
+	 rubber_processing_experiments = 1
 	basic_train = 1
 }
 
@@ -37,8 +37,8 @@ if = {
 		early_ship_hull_cruiser = 1
 		basic_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
-		early_ship_hull_carrier = 1
-		basic_ship_hull_carrier = 1
+		 
+		 
 		basic_battery = 1
 		basic_light_battery = 1
 		basic_medium_battery = 1
@@ -47,11 +47,11 @@ if = {
 		sonar = 1
 		smoke_generator = 1
 		basic_depth_charges = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_heavy_armor_scheme = 1
 		mtg_transport = 1
-		improved_secondary_battery = 1
+		
 		basic_fire_control_system = 1
 	}
 }
@@ -99,6 +99,11 @@ add_ideas = {
 	regional_corruption
 	medium_developed_industry
 	low_investment_level
+	
+	cpt_army_command
+	cpt_syez_profit
+	cpt_time_of_changes
+	bm_anti_islam_vision
 }
 
 if = {

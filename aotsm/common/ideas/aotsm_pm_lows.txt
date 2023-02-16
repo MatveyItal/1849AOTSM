@@ -35,8 +35,7 @@ ideas = {
 		orthodox_christian = {
 
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -58,8 +57,7 @@ ideas = {
 		byz_christian = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -81,8 +79,7 @@ ideas = {
 		copt_christian = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -103,8 +100,7 @@ ideas = {
 		catolicysm = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 			
 			cost = 150
@@ -125,8 +121,7 @@ ideas = {
 		protestantism = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -148,8 +143,7 @@ ideas = {
 		islamism = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -212,8 +206,7 @@ ideas = {
 		buddism = {
 		
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -234,8 +227,7 @@ ideas = {
 		induism = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -273,8 +265,7 @@ ideas = {
 		judaism = {
 		
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -294,8 +285,7 @@ ideas = {
 		konfucianstvo = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -316,8 +306,7 @@ ideas = {
 		sintoism = {
 		
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -337,8 +326,7 @@ ideas = {
 		paganism = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -359,8 +347,7 @@ ideas = {
 		atheism = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -385,8 +372,7 @@ ideas = {
 		state_corruption = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -409,8 +395,7 @@ ideas = {
 		regional_corruption = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -433,8 +418,7 @@ ideas = {
 		local_corruption = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -456,8 +440,7 @@ ideas = {
 		no_corruption = {
 		
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -478,6 +461,30 @@ ideas = {
 	mobilization = { 
 		law = yes
 		use_list_view = yes
+		
+		disarmed_nation_fra = {
+						
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.005
+				monthly_population = 0.25
+			}
+			allowed_to_remove = {
+				NOT = {
+					is_in_faction_with = PRU
+				}
+			}
+			
+			picture = disarmed_nation
+			
+			cancel_if_invalid = no
+			
+		}
 		
 		disarmed_nation = {
 			
@@ -568,14 +575,17 @@ ideas = {
 		extensive_conscription = {
 		
 			available = {
-				has_war_support > 0.6
+				OR = {
+					has_war_support > 0.6
+					has_war = yes
+				}
 			}
 			
 			ai_will_do = {
    				factor = 1
 				modifier = {
 					#Prio if low on manpower
-					factor = 20
+					factor = 30
 					manpower_per_military_factory <  800
 				}
 			}
@@ -598,8 +608,8 @@ ideas = {
 		service_by_requirement = {
 			
 			available = {
-					has_war = yes
-					has_war_support > 0.7
+				has_war = yes
+				has_war_support > 0.7
 			}
 			
 			ai_will_do = {
@@ -739,7 +749,7 @@ ideas = {
 				min_export = 0.8
 				industrial_capacity_factory = 0.15
 				industrial_capacity_dockyard = 0.15
-				production_speed_buildings_factor = 0.15
+				#production_speed_buildings_factor = 0.15
 				research_speed_factor = 0.10
 				civilian_intel_to_others = 40.0
 				navy_intel_to_others = 20.0
@@ -771,7 +781,7 @@ ideas = {
 				min_export = 0.5
 				industrial_capacity_factory = 0.1
 				industrial_capacity_dockyard = 0.1
-				production_speed_buildings_factor = 0.1
+				#production_speed_buildings_factor = 0.1
 				research_speed_factor = 0.05
 				civilian_intel_to_others = 20.0
 				navy_intel_to_others = 10.0
@@ -919,8 +929,7 @@ ideas = {
 		low_taxation = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 			
 			ai_will_do = {
@@ -943,8 +952,7 @@ ideas = {
 		medium_taxation = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 			
 			ai_will_do = {
@@ -969,8 +977,7 @@ ideas = {
 		hight_taxation = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 			
 			ai_will_do = {
@@ -1007,18 +1014,13 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.4
-				production_speed_industrial_complex_factor = -0.4
-				production_speed_arms_factory_factor = -0.4
-				production_speed_dockyard_factor = -0.4
-				conversion_cost_civ_to_mil_factor= 0.4
-				conversion_cost_mil_to_civ_factor = 0.4
-				generate_wargoal_tension = 1.00
-				join_faction_tension = 0.20
-				send_volunteers_tension = 0.20
-				guarantee_tension = 0.5
-				max_fuel_factor = -0.35
-				fuel_gain_factor = -0.5
-				agency_upgrade_time = 0.8
+				production_speed_industrial_complex_factor = 0.25
+				production_speed_arms_factory_factor = -0.50
+				conversion_cost_civ_to_mil_factor = 0.50
+				conversion_cost_mil_to_civ_factor = -0.25
+				production_factory_efficiency_gain_factor = -0.15
+				production_factory_max_efficiency_factor = -0.15
+				production_factory_start_efficiency_factor = -0.15
 			}
 			allowed_to_remove = {
 				OR = {
@@ -1240,8 +1242,7 @@ ideas = {
 		slavery_allowed = {
 		
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -1251,6 +1252,8 @@ ideas = {
 				stability_factor = -0.30
 				local_resources_factor = 0.15
 				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.03
 			}
 			
 			default = yes
@@ -1263,8 +1266,7 @@ ideas = {
 		limited_slavery = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -1274,6 +1276,8 @@ ideas = {
 				stability_factor = -0.15
 				local_resources_factor = 0.075
 				production_speed_buildings_factor = 0.075
+				production_factory_efficiency_gain_factor = 0.03
+				production_factory_max_efficiency_factor = 0.01
 			}
 			
 			default = yes
@@ -1286,15 +1290,14 @@ ideas = {
 		slavery_forbidden = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-			
+				stability_factor = 0.05
 			}
 			
 			default = yes

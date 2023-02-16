@@ -1,23 +1,58 @@
-state= { 
+
+state={
 	id=163
 	name="STATE_163"
-	manpower = 18000
-	
-	state_category = enclave
-	
+
 	history={
+		set_variable = {
+			AUS_state_recruitable_population = -1.0
+
+		}
+		set_variable = {
+			AUS_state_state_production_speed_buildings_factor = -0.50
+
+		}
+		set_variable = {
+			AUS_state_local_building_slots_factor = -0.25
+
+		}
+		add_dynamic_modifier = {
+			modifier = AUS_state_slavic_probleb_dynamic_modifier
+		}
 		buildings = {
 			infrastructure = 4
+			dockyard = 1
+			
+			3924 = {
+				naval_base = 3
+			}
+			
 			3943 = {
+				naval_base = 1
+			}
+			
+			6889 = {
 				naval_base = 1
 			}
 		}
 		
+		victory_points = {
+			3868 3 
+		}
+		victory_points = {
+			3924 5
+		}
+		
 		owner = AUS
 		add_core_of = AUS
-	} 
-	
-	provinces={	
-		3943 
+		add_core_of = CRO
 	}
+
+	provinces={
+		3868 3924 3943 3974 6889 11816 
+	}
+	manpower=738233
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

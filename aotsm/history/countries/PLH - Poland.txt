@@ -1,4 +1,5 @@
 capital = 853
+
 set_technology = {
 	infantry_weapons = 1
 	tech_mountaineers = 1
@@ -6,12 +7,9 @@ set_technology = {
 	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	early_fighter = 1
-	early_bomber = 1
-	fuel_silos = 1
-	synth_oil_experiments = 1
+	basic_train = 1
 }
+
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
@@ -23,6 +21,7 @@ if = {
 		transport = 1
 	}
 }
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
@@ -35,7 +34,7 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		coastal_defense_ships = 1
@@ -43,10 +42,19 @@ if = {
 		mtg_transport = 1
 	}
 }
+
 set_convoys = 150
 set_research_slots = 3
 set_stability = 0.6
 set_war_support = 0.5
+
+recruit_character = PLH_Karl_Ferdinand_Austrian
+recruit_character = PLH_Leshek_Dunin_Barkovskiy
+recruit_character = PLH_Usef_Dzejkovskiy
+recruit_character = PLH_Matsey_Rybinskiy
+recruit_character = PLH_Yan_Nepomuk_Fomilskiy
+recruit_character = PLH_Yan_Skrjinetsky
+recruit_character = PLH_Ernst_von_Pfuel
 
 set_politics = {
 	ruling_party = Democratic

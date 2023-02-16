@@ -10,7 +10,7 @@ characters = {
 			desc = "POLITICS_WILGELM_IV_DESC"
 			ideology = monarchist
 			traits = {  }
-			expire = "1900.1.1.1"
+			expire = "1900.1.1"
 			id = -1
 		}
 	}
@@ -21,34 +21,74 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/PRU/Portrait_Iosef_Maria_fon_Radovic.dds"
 			}
-			#army = {
-			#	large = "gfx/leaders/SOV/Portrait_.dds"
-			#	small = "gfx/interface/ideas/idea_.dds"
-			#}
 		}
 		country_leader = {
 			desc = "POLITICS_IOSEF_MARIA_FON_RADOVIC_DESC"
 			ideology = conservatism
-			traits = {  }
-			expire = "1900.1.1.1"
+			traits = { chancellor_of_pru }
+			expire = "1900.1.1"
 			id = -1
 		}
 	}
 	
-	PRU_Karl = {
-		name = PRU_Karl
+	PRU_Karl_Anton_Gogentsollern_Zigmaringen = {
+		name = PRU_Karl_Anton_Gogentsollern_Zigmaringen
 		portraits = {
-			#civilian = {
-			#	large = "gfx/leaders/PRU/Portrait_Konstantin_Nikolaevich_Romanovh.dds"
-			#}
-			#army = {
-			#	large = "gfx/leaders/SOV/Portrait_.dds"
-			#	small = "gfx/interface/ideas/idea_.dds"
-			#}
+			civilian = {
+				large = "gfx/leaders/PRU/Portrait_Karl_Anton_Gogentsollern_Zigmaringen.dds"
+			}
 		}
 		country_leader = {
 			desc = "POLITICS_Karl_DESC"
 			ideology = paternalism
+			traits = {  }
+			expire = "1900.1.1"
+			id = -1
+		}
+	}
+	
+	PRU_Fridrich_III = {
+		name = PRU_Fridrich_III
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRU/Portrait_Fridrich_III.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_FRIDRICH_III_DESC"
+			ideology = monarchist
+			traits = {  }
+			expire = "1900.1.1"
+			id = -1
+		}
+	}
+	
+	PRU_Fridrich_III_soc = {
+		name = PRU_Fridrich_III
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRU/Portrait_Fridrich_III.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_FRIDRICH_III_DESC"
+			ideology = social_monarchism
+			traits = { red_kaiser }
+			expire = "1900.1.1"
+			id = -1
+		}
+	}
+	
+	PRR_Fridrich_III = {
+		name = PRR_Fridrich_III
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRU/Portrait_Fridrich_III.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_FRIDRICH_III_DESC"
+			ideology = monarchist
 			traits = {  }
 			expire = "1900.1.1.1"
 			id = -1
@@ -58,20 +98,31 @@ characters = {
 	PRU_Hans_fon_Bulov = {
 		name = PRU_Hans_fon_Bulov
 		portraits = {
-			#civilian = {
-			#	large = "gfx/leaders/PRU/Portrait_Hans_fon_Bulov.dds"
-			#}
-			#army = {
-			#	large = "gfx/leaders/SOV/Portrait_.dds"
-			#	small = "gfx/interface/ideas/idea_.dds"
-			#}
+			civilian = {
+				large = "gfx/leaders/PRU/Portrait_Hans_von_Bulov.dds"
+			}
 		}
 		country_leader = {
 			desc = "POLITICS_HANS_FON_BULOV_DESC"
 			ideology = social_democracy
 			traits = {  }
-			expire = "1900.1.1.1"
+			expire = "1900.1.1"
 			id = -1
+		}
+	}
+	
+	PRU_Otton_Bismark = {
+		name = "PRU_Otton_Bismark"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRU/Portrait_Bismark.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_OTTON_FON_BISMARK_DESC"
+			expire = "1898.7.30"
+			ideology = conservatism
+			traits = { iron_chancellor }
 		}
 	}
 	
@@ -82,7 +133,7 @@ characters = {
 				small = GFX_idea_bismark
 			}
 			army={
-				large = "gfx/leaders/PRU/Portrait_Bismark_land.dds"
+				large = "gfx/leaders/PRU/Portrait_Bismark_Leader.dds"
 				small = GFX_idea_bismark_land
 			}
 		}
@@ -95,8 +146,7 @@ characters = {
 				original_tag = PRU
 			}
 			traits = {
-				army_chief_maneuver_3
-				army_chief_organizational_3
+				army_bismark_trait
 			}
 			cost = 100
 			ai_will_do = {
@@ -110,9 +160,16 @@ characters = {
 			allowed = {
 				original_tag = PRU
 			}
+			available = {
+				NOT = {
+					has_country_leader = {
+						character = PRU_Otton_Bismark
+						ruling_only = yes
+					}
+				}
+			}
 			traits = {
-				staunch_constitutionalist 
-				political_dancer
+				politic_bismark_trait
 			}
 			ai_will_do = {
 				factor = 100
@@ -120,7 +177,7 @@ characters = {
 		}
 		
 		field_marshal={
-			traits={ brilliant_strategist media_personality panzer_leader panzer_expert offensive_doctrine aggressive_assaulter }
+			traits={ brilliant_strategist media_personality panzer_leader panzer_expert offensive_doctrine aggressive_assaulter junker_general }
 			skill=3
 			attack_skill=3
 			defense_skill=2
@@ -136,7 +193,7 @@ characters = {
 		portraits={
 			army={
 				large = "gfx/leaders/PRU/Portrait_Karl_Bernkhard_fon_Moltke.dds"
-				small = "gfx/interface/ideas/characters/idea_Karl_fon_Moltke.dds"
+				small = GFX_idea_karl_fon_moltke
 			}
 		}
 		
@@ -157,7 +214,7 @@ characters = {
 		}
 		
 		corps_commander={
-			traits={ career_officer infantry_officer }
+			traits={ career_officer infantry_officer junker_general }
 			skill=3
 			attack_skill=4
 			defense_skill=3
@@ -171,8 +228,8 @@ characters = {
 		name = PRU_Friedrich_Karl_von_Preuben
 		portraits={
 			army={
-				#large = "gfx/leaders/PRU/Portrait_Bismark_land.dds"
-				#small = "GFX_idea_bismark_ac"
+				large = "gfx/leaders/PRU/Portrait_Fridrich_Karl_Alex_Prussian.dds"
+				small = GFX_idea_Fridrich_Karl_Alex_Prussian
 			}
 		}
 		
@@ -193,7 +250,7 @@ characters = {
 		}
 		
 		corps_commander={
-			traits={ old_guard urban_assault_specialist }
+			traits={ old_guard urban_assault_specialist kaiserreich_general }
 			skill=3
 			attack_skill=4
 			defense_skill=3
@@ -208,7 +265,7 @@ characters = {
 		portraits={
 			army={
 				large = "gfx/leaders/PRU/Portrait_Karl_Fridrikh_fon_Shteynmets.dds"
-				small = "gfx/interface/ideas/characters/idea_Karl_fon_Shteynmets.dds"
+				small = GFX_idea_karl_fon_shteynmets
 			}
 		}
 		
@@ -229,7 +286,7 @@ characters = {
 		}
 		
 		corps_commander={
-			traits = { infantry_officer }
+			traits = { infantry_officer kaiserreich_general }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -243,7 +300,7 @@ characters = {
 		name=PRU_viktor_schutze
 		portraits={
 			army={
-				#small="GFX_idea_viktor_schutze"
+				small="GFX_idea_Shteynmetz"
 			}
 		}
 		advisor={
@@ -267,7 +324,7 @@ characters = {
 		name=PRU_erich_bey
 		portraits={
 			army={
-				#small="GFX_idea_erich_bey"
+				small="GFX_idea_Shteynmetz"
 			}
 		}
 		advisor={
@@ -291,7 +348,7 @@ characters = {
 		name=PRU_erhard_milch
 		portraits={
 			army={
-				#small="GFX_idea_erhard_milch"
+				small="GFX_idea_Shteynmetz"
 			}
 		}
 		advisor={
@@ -315,7 +372,7 @@ characters = {
 		name=PRU_hugo_sperrle
 		portraits={
 			army={
-				#small="GFX_idea_hugo_sperrle"
+				small="GFX_idea_Shteynmetz"
 			}
 		}
 		advisor={
@@ -339,13 +396,13 @@ characters = {
 		name = PRU_Karl_Friedrich_Wilhelm_Leopold_August_Graf_von_Werder
 		portraits={
 			army={
-				#large = "gfx/leaders/PRU/Portrait_Bismark_land.dds"
-				#small = "GFX_idea_gerd_von_rundstedt"
+				large = "gfx/leaders/PRU/Portrait_Avgust_fon-Verder.dds"
+				small = GFX_idea_avgust_fon_verder
 			}
 		}
 		
 		corps_commander={
-			traits={ trait_cautious armor_officer }
+			traits={ trait_cautious armor_officer kaiserreich_general }
 			skill=1
 			attack_skill=1
 			defense_skill=1
@@ -360,7 +417,7 @@ characters = {
 		portraits={
 			army={
 				large = "gfx/leaders/PRU/Portrai_Gyoben.dds"
-				small = "gfx/interface/ideas/characters/idea_Gyoben.dds"
+				small = "GFX_idea_gyoben"
 			}
 		}
 		
@@ -378,7 +435,7 @@ characters = {
 		}
 		
 		corps_commander={
-			traits={ brilliant_strategist armor_officer trickster trait_engineer }
+			traits={ brilliant_strategist armor_officer trickster trait_engineer junker_general }
 			skill=4
 			attack_skill=2
 			defense_skill=4
@@ -392,8 +449,8 @@ characters = {
 		name = PRU_Karl_Rochus_Edwin_Freiherr_von_Manteuffel
 		portraits={
 			army={
-				#large=GFX_portrait_GER_heinz_guderian
-				#small="GFX_idea_heinz_guderian"
+				large = "gfx/leaders/PRU/Portrait_Karl_Edwin_von_Manteuffel.dds"
+				small = GFX_idea_Shteynmetz
 			}
 		}
 		advisor={
@@ -410,7 +467,7 @@ characters = {
 		}
 		
 		corps_commander={
-			traits={ brilliant_strategist career_officer armor_officer trickster panzer_leader }
+			traits={ brilliant_strategist career_officer armor_officer trickster panzer_leader kaiserreich_general }
 			skill=4
 			attack_skill=2
 			defense_skill=4
@@ -425,11 +482,11 @@ characters = {
 		portraits={
 			army={
 				large = "gfx/leaders/PRU/Portrait_Fridrich_III.dds"
-				#small=GFX_portrait_GER_walter_model_small
+				#small = GFX_idea_Shteynmetz
 			}
 		}
 		field_marshal={
-			traits={ brilliant_strategist media_personality politically_connected offensive_doctrine armor_officer panzer_leader panzer_expert }
+			traits={ brilliant_strategist media_personality politically_connected offensive_doctrine armor_officer panzer_leader panzer_expert kaiserreich_general }
 			skill=2
 			attack_skill=3
 			defense_skill=1
@@ -444,7 +501,7 @@ characters = {
 		portraits={
 			army={
 				#large=GFX_portrait_GER_karl_donitz
-				#small=GFX_portrait_GER_karl_donitz_small
+				small=GFX_idea_Shteynmetz
 			}
 			army={
 				#small="GFX_idea_donitz"
@@ -481,7 +538,7 @@ characters = {
 		portraits={
 			army={
 				#large=GFX_portrait_GER_erich_raeder
-				#small=GFX_portrait_GER_erich_raeder_small
+				small=GFX_idea_Shteynmetz
 			}
 			army={
 				#small="GFX_idea_raeder"
@@ -513,11 +570,151 @@ characters = {
 		}
 	}
 	
+	PRU_Fridrich_Ernst_von_Wrangel = {
+		name = PRU_Fridrich_Ernst_von_Wrangel
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_Fridrich_Ernst_von_Wrangel.dds"
+				small = GFX_idea_Fridrich_Ernst_von_Wrangel
+			}
+		}
+		
+		field_marshal={
+			traits={ brilliant_strategist trait_reckless infantry_officer aggressive_assaulter organizer junker_general }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=31
+		}
+	}
+	
+	PRU_Prinz_Friedrich_Carl = {
+		name = PRU_Prinz_Friedrich_Carl
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_Prinz_Friedrich_Carl.dds"
+				small = GFX_idea_prinz_friedrich_carl
+			}
+		}
+		
+		field_marshal={
+			traits={ inflexible_strategist infantry_officer logistics_wizard organizer kaiserreich_general }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=32
+		}
+	}
+	
+	PRU_August_von_Wurtemberg = {
+		name = PRU_August_von_Wurtemberg
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_August_von_Wurtemberg.dds"
+				small = GFX_idea_August_von_Wurtemberg
+			}
+		}
+		
+		corps_commander={
+			traits={ infantry_officer infantry_leader junker_general }
+			skill=3
+			attack_skill=4
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=33
+		}
+	}
+	
+	PRU_Eduard_Fridrich_von_Falkenstein = {
+		name = PRU_Eduard_Fridrich_von_Falkenstein
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_Eduard_Fridrich_von_Falkenstein.dds"
+				small = GFX_idea_Eduard_Fridrich_von_Falkenstein
+			}
+		}
+		
+		corps_commander={
+			traits={ infantry_officer naval_invader junker_general }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=34
+		}
+	}
+	
+	PRU_Eduard_von_Yahman = {
+		name = PRU_Eduard_von_Yahman
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_Eduard_von_Yahman.dds"
+				small = GFX_idea_Eduard_von_Yahman
+			}
+		}
+		
+		corps_commander={
+			traits={ cavalry_officer cavalry_leader trickster junker_general }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=35
+		}
+	}
+	
+	PRU_Eduard_von_Bonin = {
+		name = PRU_Eduard_von_Bonin
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_Eduard_von_Bonin.dds"
+				small = GFX_idea_Eduard_von_Bonin
+			}
+		}
+		
+		corps_commander={
+			traits={ engineer_officer trait_engineer urban_assault_specialist junker_general }
+			skill=4
+			attack_skill=1
+			defense_skill=5
+			planning_skill=1
+			logistics_skill=4
+			legacy_id=36
+		}
+	}
+	
+	PRU_Alberht_Prussian = {
+		name = PRU_Alberht_Prussian
+		portraits={
+			army={
+				large = "gfx/leaders/PRU/Portrait_Alberht_Prussian.dds"
+				small = GFX_idea_Alberht_Prussian
+			}
+		}
+		
+		corps_commander={
+			traits={ brilliant_strategist politically_connected media_personality infantry_officer infantry_leader kaiserreich_general }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=37
+		}
+	}
+	
 	PRU_albert_kesselring={
 		name=PRU_albert_kesselring
 		portraits={
 			army={
-				#small="GFX_idea_albert_kesselring"
+				small="GFX_idea_Shteynmetz"
 			}
 			army={
 				#large=GFX_portrait_GER_albert_kesselring
@@ -543,7 +740,7 @@ characters = {
 		name=PRU_hermann_goring
 		portraits={
 			army={
-				#small="GFX_idea_goering"
+				small="GFX_idea_Shteynmetz"
 			}
 			civilian={
 				#large=GFX_portrait_GER_hermann_goring
@@ -569,7 +766,7 @@ characters = {
 		name=PRU_ritter_von_greim
 		portraits={
 			army={
-				#small="GFX_idea_ritter_von_greim"
+				small="GFX_idea_Shteynmetz"
 			}
 		}
 		advisor={
@@ -661,7 +858,7 @@ characters = {
 		name=PRU_albert_spedel
 		portraits={
 			army={
-				#small="GFX_idea_speer"
+				small=GFX_idea_Shteynmetz
 			}
 		}
 		advisor={
@@ -680,7 +877,7 @@ characters = {
 		name=PRU_hjalmar_schacht
 		portraits={
 			army={
-				#small="GFX_idea_hjalmar_schacht"
+				small=GFX_idea_Shtrasser
 			}
 		}
 		advisor={
@@ -703,7 +900,7 @@ characters = {
 		name=PRU_walther_funk
 		portraits={
 			army={
-				#small="GFX_idea_walther_funk"
+				small=GFX_idea_Spedel
 			}
 		}
 		advisor={
@@ -725,7 +922,7 @@ characters = {
 		name=PRU_martin_bormann
 		portraits={
 			army={
-				#small="GFX_idea_martin_bormann"
+				small=GFX_idea_Shteynmetz
 			}
 		}
 		advisor={
@@ -747,7 +944,7 @@ characters = {
 		name=PRU_konstantin_von_neurath
 		portraits={
 			army={
-				#small="GFX_idea_konstantin_von_neurath"
+				small=GFX_idea_Neuraz
 			}
 		}
 		advisor={
@@ -766,7 +963,7 @@ characters = {
 		name=PRU_carl_friedrich_goerdeler
 		portraits={
 			army={
-				#small="GFX_idea_GER_carl_friedrich_goerdeler"
+				small=GFX_idea_Goerdler
 			}
 		}
 		advisor={
@@ -788,7 +985,7 @@ characters = {
 		name=PRU_julius_leber
 		portraits={
 			army={
-				#small="GFX_idea_GER_julius_leber"
+				small=GFX_idea_Leber
 			}
 		}
 		advisor={
@@ -810,7 +1007,7 @@ characters = {
 		name=PRU_otto_ciliax
 		portraits={
 			army={
-				#small="GFX_idea_otto_ciliax"
+				small=GFX_idea_Goerdler
 			}
 		}
 		advisor={
@@ -829,7 +1026,7 @@ characters = {
 		name=PRU_wolfram_von_richthofen
 		portraits={
 			army={
-				#small="GFX_idea_wolfram_von_richthofen"
+				small= GFX_idea_Goerdler
 			}
 		}
 		advisor={

@@ -1,10 +1,5 @@
 spriteTypes = {
 	SpriteType = {
-		name = "GFX_idea_traits_strip"
-		texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
-		noOfFrames = 17		
-	}
-	SpriteType = {
 		name = "GFX_idea_cbi_science_manufactirer"
 		texturefile = "gfx/interface/ideas/science_manufacturer/idea_cbi_science_manufactirer.dds"
 			
@@ -32,6 +27,11 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_idea_rus_science_manufactirer"
 		texturefile = "gfx/interface/ideas/science_manufacturer/idea_rus_science_manufactirer.dds"
+			
+	}
+	SpriteType = {
+		name = "GFX_idea_chinesse_science_manufacturer"
+		texturefile = "gfx/interface/ideas/science_manufacturer/idea_chinesse_science_manufacturer.dds"
 			
 	}
 	SpriteType = {
@@ -415,6 +415,73 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_Maria_Portuguesse"
 		texturefile = "gfx/interface/ideas/idea_Maria_Portuguesse.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_european_influence"
+		texturefile = "gfx/interface/ideas/idea_european_influence.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_prt_army_troubles"
+		texturefile = "gfx/interface/ideas/PRT/idea_PRT_army_troubles.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_sca_northern_unity"
+		texturefile = "gfx/interface/ideas/SCA/idea_SCA_northern_unity.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_Bruay"
+		texturefile = "gfx/interface/ideas/FRR/idea_Bruay.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_Darracq"
+		texturefile = "gfx/interface/ideas/FRR/idea_Darracq.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_Dasso"
+		texturefile = "gfx/interface/ideas/FRR/idea_Dasso.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_Guen"
+		texturefile = "gfx/interface/ideas/FRR/idea_Guen.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_Normand"
+		texturefile = "gfx/interface/ideas/FRR/idea_Normand.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_Schnaider_electric"
+		texturefile = "gfx/interface/ideas/FRR/idea_Schnaider_electric.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRR_low_export_duties"
+		texturefile = "gfx/interface/ideas/FRR/idea_FRR_low_export_duties.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRR_separate_army_from_goverment_1"
+		texturefile = "gfx/interface/ideas/FRR/idea_FRR_separate_army_from_goverment_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRR_separate_army_from_goverment_2"
+		texturefile = "gfx/interface/ideas/FRR/idea_FRR_separate_army_from_goverment_2.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRR_separate_army_from_goverment_3"
+		texturefile = "gfx/interface/ideas/FRR/idea_FRR_separate_army_from_goverment_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_petrashevsliy_plan"
+		texturefile = "gfx/interface/ideas/FRR/idea_petrashevsliy_plan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_lavrov_plan"
+		texturefile = "gfx/interface/ideas/FRR/idea_lavrov_plan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_kireevsky_plan"
+		texturefile = "gfx/interface/ideas/RUS/idea_kireevsky_plan.dds"
 	}
 
 }

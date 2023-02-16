@@ -1,16 +1,29 @@
 capital = 54
+
 set_technology = {
 	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	basic_train = 1
 }
 
 recruit_character = BAV_Maksimillian_II
+recruit_character = BAV_Karl_Bavarian
+recruit_character = BAV_Luitpold_Karl_Iosif
 
 set_convoys = 150
-add_political_power = 150
 set_research_slots = 2
+
 set_stability = 0.6
 set_war_support = 0.5
+
 set_oob = "BAV_1849"
+
 set_politics = {
 	ruling_party = authoritarian
 	last_election = "1849.1.1"
@@ -18,18 +31,23 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 35
-	socialism = 0
-	democratic  = 0
-	authoritarian = 65
+	reactionist = 14
+	socialism = 6
+	democratic = 18
+	authoritarian = 62
 }
 add_ideas = {
-	constitutional_monarchy
-	potential_world_power
+	monarchy
+	medium_country
 	catolicysm
 	
 	regional_corruption
 	medium_developed_industry
 	low_investment_level
+	
+	saint_allience_idea
 }
 
+set_country_flag = german_union_for_austrian
+
+set_country_flag = railways_member_flag

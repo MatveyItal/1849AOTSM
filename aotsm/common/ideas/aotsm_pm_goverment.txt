@@ -36,8 +36,7 @@ ideas = {
 		monarchy = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -58,8 +57,7 @@ ideas = {
 		parliament_monarchy = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -76,11 +74,10 @@ ideas = {
 			cancel_if_invalid = no
 		}
 		
-		constitutional_monarchy = {
+		constitutional_monarchy_fg = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -116,8 +113,7 @@ ideas = {
 		teochraty = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -134,11 +130,10 @@ ideas = {
 			cancel_if_invalid = no
 		}
 		
-		dictature = {
+		dictature_fg = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -160,8 +155,7 @@ ideas = {
 		oligarhy = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -182,8 +176,7 @@ ideas = {
 		republic = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -248,8 +241,7 @@ ideas = {
 				ROOT = {
 					is_puppet = yes
 				}
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 			
 		
@@ -259,6 +251,7 @@ ideas = {
 			
 			modifier = {
 				trade_opinion_factor = -0.1
+				custom_modifier_tooltip = limit_of_divisian_10_tt
 			}
 			
 			default = yes
@@ -271,8 +264,7 @@ ideas = {
 		little_country = {
 				
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -281,6 +273,7 @@ ideas = {
 			
 			modifier = {
 				trade_opinion_factor = -0.1
+				custom_modifier_tooltip = limit_of_divisian_20_tt
 			}
 			
 			default = yes
@@ -293,8 +286,7 @@ ideas = {
 		medium_country = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -303,6 +295,7 @@ ideas = {
 			
 			modifier = {
 				trade_opinion_factor = -0.05
+				custom_modifier_tooltip = limit_of_divisian_30_tt
 			}
 			
 			default = yes
@@ -315,8 +308,7 @@ ideas = {
 		large_country = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -325,6 +317,7 @@ ideas = {
 			
 			modifier = {
 				trade_opinion_factor = 0.01
+				custom_modifier_tooltip = limit_of_divisian_50_tt
 			}
 			
 			default = yes
@@ -337,8 +330,7 @@ ideas = {
 		potential_world_power = {
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -347,6 +339,7 @@ ideas = {
 			
 			modifier = {
 				trade_opinion_factor = 0.05
+				custom_modifier_tooltip = limit_of_divisian_100_tt
 			}
 			
 			default = yes
@@ -359,8 +352,7 @@ ideas = {
 		world_power = { #мировая держава
 			
 			available = {
-				custom_trigger_tooltip = { tooltip = aotsm_only_by_event }
-				always = no
+				aotsm_changing_only_by_event_or_solution = yes
 			}
 		
 			cost = 150
@@ -369,6 +361,7 @@ ideas = {
 			
 			modifier = {
 				trade_opinion_factor = 0.1
+				custom_modifier_tooltip = limit_of_divisian_150_tt
 			}
 			
 			default = yes

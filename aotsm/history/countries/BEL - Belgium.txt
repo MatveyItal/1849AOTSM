@@ -6,11 +6,7 @@ set_technology = {
 	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	early_fighter = 1
-	early_bomber = 1
-	fuel_silos = 1
-	synth_oil_experiments = 1
+	basic_train = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -35,7 +31,7 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		coastal_defense_ships = 1
@@ -45,6 +41,7 @@ if = {
 }
 
 recruit_character = BEL_Leopold_I
+recruit_character = BEL_Edwin_von_Manteuffel
 
 set_convoys = 150
 add_political_power = 0
@@ -59,17 +56,24 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 0
-	socialism = 0
-	reactionist = 0
-	authoritarian = 100
+	democratic = 20
+	socialism = 5
+	reactionist = 24
+	authoritarian = 51
 }
 add_ideas = {
-	constitutional_monarchy
-	potential_world_power
-	islamism
+	constitutional_monarchy_fg
+	medium_country
+	catolicysm
 	
 	regional_corruption
 	medium_developed_industry
 	low_investment_level
 }
+
+set_autonomy = {
+	target = LUX
+	autonomous_state = autonomy_aotsm_personal_union
+}
+
+set_country_flag = railways_member_flag

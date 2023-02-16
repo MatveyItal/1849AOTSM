@@ -4,14 +4,15 @@ state={
 	name="STATE_742"
 
 	history={
-		add_core_of = KOK
-		owner = KOK
+		add_core_of = BUK
+		owner = BUK
 		victory_points = {
-			1384 1 
+			1384 3 
 		}
 		buildings = {
 			infrastructure = 3
-
+			industrial_complex = 2
+			arms_factory = 1
 		}
 
 	}
@@ -21,6 +22,6 @@ state={
 	}
 	manpower=334712
 	buildings_max_level_factor=1.000
-	state_category=wasteland
+	state_category=town
 	local_supplies=0.000
 }

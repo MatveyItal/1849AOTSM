@@ -5,12 +5,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_recon = 1
-	gw_artillery = 1
-	trench_warfare = 1
-	early_fighter = 1
-	early_bomber = 1
-	fuel_silos = 1
-	synth_oil_experiments = 1
+	basic_train = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -35,7 +30,7 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		coastal_defense_ships = 1
@@ -73,4 +68,4 @@ add_ideas = {
 	no_investment
 }
 
-set_cosmetic_tag = QIN_PUPPET
+set_cosmetic_tag = SDZ_QIN_PUPPET

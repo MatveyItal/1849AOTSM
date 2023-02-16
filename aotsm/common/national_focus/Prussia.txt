@@ -15,18 +15,20 @@ focus_tree = {
 	default = no
 	reset_on_civilwar = no
 	
+	continuous_focus_position = { x = 1050 y = 1150 }
+	
 	initial_show_position = {
 		focus = PRU_preparation_economic
 	}
 
 	focus = {
-		id = PRU_preparation_economic
-		icon = GFX_goal_generic_air_production
+		id = PRU_preparation_economic 
+		icon = GFX_focus_pru_prepare_economic
 		x = 0
 		y = 0
 		cost = 7
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -47,12 +49,12 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_preparation_army
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_focus_pru_prepare_army
 		x = -2
 		y = 0
 		cost = 7
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -72,12 +74,12 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_preparation_country
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_pru_prepare_goverment
 		x = 2
 		y = 0
 		cost =7
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -95,7 +97,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_Austria_must_fall
-		icon = GFX_aus_must_fall
+		icon = GFX_focus_pru_aus_must_fall
 		x = 0
 		y = 1
 		cost =7
@@ -103,7 +105,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_preparation_economic }
 		prerequisite = { focus = PRU_preparation_country }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -115,59 +117,21 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
-			hidden_effect = {
-				set_technology = { 
-					interwar_antitank = 1 
-					antitank1 = 1
-					antitank2 = 1
-					antitank3 = 1
-					basic_medium_tank_chassis = 1
-					improved_medium_tank_chassis = 1
-					advanced_medium_tank_chassis = 1
-					armor_tech_2 = 1
-					armor_tech_3 = 1
-					engine_tech_2 = 1
-					engine_tech_3 = 1
-					radio_detection = 1
-					decimetric_radar = 1
-					improved_decimetric_radar = 1
-					centimetric_radar = 1
-				}
-				create_equipment_variant = {
-					name = "Kingkaizer"
-					type = medium_tank_chassis_3
-					parent_version = 0
-					modules = {
-						main_armament_slot = tank_medium_cannon_2
-						turret_type_slot = tank_medium_three_man_tank_turret
-						suspension_type_slot = tank_christie_suspension
-						armor_type_slot = tank_welded_armor
-						engine_type_slot = tank_petrol_electric_engine
-						special_type_slot_1 = tank_radio_3
-					}
-					upgrades = {
-						tank_nsb_engine_upgrade = 0
-						tank_nsb_armor_upgrade = 0
-					}
-					icon = "GFX_GER_improved_medium_tank_medium"
-				}
-			set_country_flag = PRU_vs_AUS_1
-			load_oob = PRU_ELITE	
-			}
+			custom_effect_tooltip = pru_army_hiring
 			news_event = { hours = 24 id = news.1 }
 		}
 	}
 	
 	focus = {
 		id = PRU_aus_ultimatum
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_focus_pru_send_requirements
 		x = -1
 		y = 2
 		cost =7
 		prerequisite = { focus = PRU_Austria_must_fall }
 		mutually_exclusive = { focus = PRU_aus_war }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -185,14 +149,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_aus_war
-		icon = GFX_war_with_aus_1
+		icon = GFX_focus_pru_send_the_army
 		x = 1
 		y = 2
 		cost =7
 		prerequisite = { focus = PRU_Austria_must_fall }
 		mutually_exclusive = { focus = PRU_aus_ultimatum }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -206,17 +170,30 @@ focus_tree = {
 		completion_reward = {
 			hidden_effect = {
 				PRU = { create_faction = "Prussian_sphere" }
-				PRU = { add_to_faction = SAK }
-				PRU = { add_to_faction = TUR }
-				PRU = { add_to_faction = HAN }
-				PRU = { add_to_faction = MCL }
-				PRU = { add_to_faction = SLG }
-				PRU = { add_to_faction = VES }
-				PRU = { add_to_faction = FRN }
-				AUS = { create_faction = "Austrian_sphere" }
-				AUS = { add_to_faction = BAD }
-				AUS = { add_to_faction = VUR }
-				AUS = { add_to_faction = BAV }
+				every_other_country = {
+					limit = {
+						has_country_flag = german_union_for_prussian
+					}
+					PRU = { add_to_faction = PREV }
+				}
+				AUS = {
+					create_faction = "Austrian_sphere"
+				}
+				every_other_country = {
+					limit = {
+						has_country_flag = german_union_for_austrian
+					}
+					AUS = { add_to_faction = PREV }
+				}
+				PRU = {
+					country_event = {
+						id = ger.16
+						days = 1
+					}
+				}
+				AUS = {
+					mark_focus_tree_layout_dirty = yes
+				}
 			}
 			PRU = {
 				declare_war_on = {
@@ -224,20 +201,22 @@ focus_tree = {
 					type = annex_everything
 				}
 			}
-			PRU = { add_ideas = pru_blitzkrieg }
-			AUS = { add_ideas = fear_of_revolution }
+			set_global_flag = war_in_german_region
+			PRU = {
+				set_country_flag = PRU_vs_AUS_1
+			}
 		}
 	}
 	
 	focus = {
 		id = PRU_aus_win
-		icon = GFX_pru_north_german_union
+		icon = GFX_focus_pru_the_great_victory
 		x = 0
 		y = 3
 		cost =7
 		prerequisite = { focus = PRU_aus_ultimatum focus = PRU_aus_war }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -252,7 +231,20 @@ focus_tree = {
 			custom_effect_tooltip = PRU_faction_and_trade_union 
 			hidden_effect = {
 				PRU = { create_faction = "PRU_Kontinentaleuropa_pakt" }
+				PRU = {
+					remove_trait = {
+						character = PRU_Iosef_Maria_fon_Radovic
+						ideology = conservatism
+						trait = chancellor_of_pru
+					}
+					add_trait = {
+						character = PRU_Iosef_Maria_fon_Radovic
+						ideology = conservatism
+						trait = chancellor_of_sgu
+					}
+				}
 			}
+			add_stability = 0.10
 			swap_ideas = {
 				remove_idea = large_country
 				add_idea = potential_world_power
@@ -262,13 +254,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_integration
-		icon = GFX_pru_integration_of_north
+		icon = GFX_focus_pru_integrate_north
 		x = -4
 		y = 4
 		cost =7
 		prerequisite = { focus = PRU_aus_win }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -280,34 +272,20 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
-			add_political_power = -250
-			PRU = {
-				add_state_core = 62
-				add_state_core = 61
-				add_state_core = 58
-				add_state_core = 829
-				add_state_core = 59
-				add_state_core = 60
-				add_state_core = 65
-				add_state_core = 56
-				add_state_core = 57
-				add_state_core = 55
-				add_state_core = 51
-				add_state_core = 42
-				add_state_core = 28
-			}
+			add_political_power = -150
+			custom_effect_tooltip = pru_open_decision_to_integrat_north
 		}
 	}
 	
 	focus = {
 		id = PRU_army_domination_focus
-		icon = GFX_focus_chi_army_reform
+		icon = GFX_focus_prucreate_unkers_party
 		x = 0
 		y = 4
 		cost =7
 		prerequisite = { focus = PRU_aus_win }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -320,18 +298,30 @@ focus_tree = {
 		
 		completion_reward = {
 			add_ideas = PRU_army_domination_1
+			set_party_name = {
+				ideology = reactionist
+				long_name = PRU_junker_party
+				name = PRU_junker_party
+			}
+			hidden_effect = {
+			set_party_name = {
+				ideology = reactionist
+				long_name = PRU_junker_party_long
+				name = PRU_junker_party
+			}
+			}
 		}
 	}
 	
 	focus = {
 		id = PRU_belgium_ultimatum
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_pru_luxemburg_or_war
 		x = -2
 		y = 4
 		cost =7
 		prerequisite = { focus = PRU_aus_win }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -355,13 +345,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_netherland_ultimatum
-		icon = GFX_pru_union_with_hol
+		icon = GFX_focus_pru_dachlend_and_deuchland
 		x = 2
 		y = 4
 		cost =7
 		prerequisite = { focus = PRU_aus_win }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -379,13 +369,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_new_german_way
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_focus_pru_organise_north_german_goverment
 		x = 4
 		y = 4
 		cost =7
 		prerequisite = { focus = PRU_aus_win }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -403,7 +393,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_aus_ulimatum_2
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_pru_south_or_war
 		x = -1
 		y = 5
 		cost =7
@@ -414,7 +404,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_new_german_way }
 		mutually_exclusive = { focus = PRU_aus_war_2 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -427,13 +417,12 @@ focus_tree = {
 		
 		completion_reward = {
 			AUS = { country_event = gerultimate.4 }
-			PRU = { set_country_flag = PRU_vs_AUS_2 }
 		}
 	}
 	
 	focus = {
 		id = PRU_aus_war_2
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_pru_war_behind_south
 		x = 1
 		y = 5
 		cost =7
@@ -444,7 +433,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_new_german_way }
 		mutually_exclusive = { focus = PRU_aus_ulimatum_2 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -457,12 +446,40 @@ focus_tree = {
 		
 		completion_reward = {
 			hidden_effect = {
+				every_other_country = {
+					limit = {
+						has_country_flag = german_union_for_prussian
+						NOT = {
+							tag = PRU
+						}
+					}
+					PRU = { add_to_faction = PREV }
+					PREV = {
+						set_country_flag = time_member_of_allience
+					}
+				}
 				AUS = {
 					create_faction = "Austrian_sphere"
 				}
-				AUS = { add_to_faction = BAD }
-				AUS = { add_to_faction = VUR }
-				AUS = { add_to_faction = BAV }
+				every_other_country = {
+					limit = {
+						has_country_flag = german_union_for_austrian
+					}
+					AUS = { add_to_faction = PREV }
+					if = {
+						limit = {
+							AUS = {
+								has_completed_focus = AUS_create_OEA
+							}
+						}
+						PREV.PREV = {
+							set_country_flag = time_member_of_allience_aus
+						}
+					}
+				}
+				AUS = {
+					mark_focus_tree_layout_dirty = yes
+				}
 			}
 			PRU = {
 				declare_war_on = {
@@ -476,13 +493,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_aus_win_2
-		icon = GFX_focus_ger_revive_kaiserreich
+		icon = GFX_focus_pru_organise_german_empire
 		x = 0
 		y = 6
 		cost =7
 		prerequisite = { focus = PRU_aus_ulimatum_2 focus = PRU_aus_war_2 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -495,26 +512,49 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = PRU_second_reich
+			news_event = { hours = 24 id = news.5 }
 			swap_ideas = {
 				remove_idea = crow_without_country
 				add_idea = german_kaiser
 			}
-			news_event = { hours = 24 id = news.5 }
 			hidden_effect = {
+				PRU = {
+					set_character_name = {
+						character = PRU_Fridrih_Wilgelm_IV
+						name = PRU_Fridrih_Wilgelm_IV_ger
+					}
+				}
+				PRU = {
+					remove_trait = {
+						character = PRU_Iosef_Maria_fon_Radovic
+						ideology = conservatism
+						trait = chancellor_of_sgu
+					}
+					add_trait = {
+						character = PRU_Iosef_Maria_fon_Radovic
+						ideology = conservatism
+						trait = chancellor_of_germany
+					}
+				}
 				PRU = { set_cosmetic_tag = PRUGER }
+				news_event = {
+					id = news.132
+					days = 187
+				}
+				set_global_flag = german_empire_exist
 			}
 		}
 	}
 	
 	focus = {
 		id = PRU_army_domination_focus_2
-		icon = GFX_pru_unkers_party
+		icon = GFX_focus_pru_unkers_in_goverment
 		x = 0
 		y = 7
 		cost =7
 		prerequisite = { focus = PRU_aus_win_2 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -535,13 +575,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_integration_2
-		icon = GFX_pru_integration_of_south
+		icon = GFX_focus_pru_integrate_south
 		x = -2
 		y = 7
 		cost =7
 		prerequisite = { focus = PRU_aus_win_2 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -553,27 +593,20 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
-			add_political_power = -250
-			PRU = {
-				add_state_core = 828
-				add_state_core = 50
-				add_state_core = 808
-				add_state_core = 54
-				add_state_core = 52
-				add_state_core = 53
-			}
+			add_political_power = -300
+			custom_effect_tooltip = pru_open_decision_to_integrat_south
 		}
 	}
 	
 	focus = {
 		id = PRU_new_german_empire
-		icon = GFX_goal_generic_alliance
+		icon = GFX_focus_pru_form_imperial_goverment
 		x = 2
 		y = 7
 		cost =7
 		prerequisite = { focus = PRU_aus_win_2 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -585,13 +618,21 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
-			add_political_power = 250
+			country_event = ger.15
+			hidden_effect = {
+				PRU = {
+					country_event = {
+						id = ger_bismark.1
+						days = 15
+					}
+				}
+			}
 		}
 	}
 	
 	focus = {
 		id = PRU_invati_country_of_greates_city
-		icon = GFX_byz_as_the_key_from_asia
+		icon = GFX_focus_pru_byz_as_key_of_the_asia
 		x = 0
 		y = 8
 		cost =7
@@ -599,7 +640,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_army_domination_focus_2 }
 		prerequisite = { focus = PRU_new_german_empire }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -617,13 +658,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_end_of_german_war
-		icon = GFX_war_with_aus_2
+		icon = GFX_focus_pru_the_last_fratricide_war
 		x = 0
 		y = 9
 		cost =7
 		prerequisite = { focus = PRU_invati_country_of_greates_city }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -637,18 +678,26 @@ focus_tree = {
 		completion_reward = {
 			country_event = gerultimate.5
 			PRU = { set_country_flag = PRU_vs_AUS_3 }
+			hidden_effect = {
+				AUS = {
+					country_event = {
+						id = end_of_austrian.1
+						days = 2
+					}
+				}
+			}
 		}
 	}
 	
 	focus = {
 		id = PRU_aus_win_3
-		icon = GFX_pru_german_empire
+		icon = GFX_focus_pru_german_empire
 		x = 0
 		y = 10
 		cost =7
 		prerequisite = { focus = PRU_end_of_german_war }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -660,6 +709,7 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
+			add_stability = 0.10
 			swap_ideas = {
 				remove_idea = potential_world_power
 				add_idea = world_power
@@ -673,13 +723,13 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_shot_focus
-		icon = GFX_goal_generic_attack_allies
+		icon = GFX_focus_pru_crisis_in_goverment
 		x = 0
 		y = 11
 		cost =7
 		prerequisite = { focus = PRU_aus_win_3 }
 		ai_will_do = {
-			factor = 10000
+			factor = 5000
 		}
 		
 		#cancel = { }
@@ -701,14 +751,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_bismark_first_kanzler
-		icon = GFX_goal_tfv_sever_ties_with_uk
+		icon = GFX_focus_pru_first_kansler_of_germany
 		x = -9
 		y = 12
 		cost = 7
 		prerequisite = { focus = PRU_shot_focus }
 		mutually_exclusive = { focus = PRU_emperor_domestic }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -726,21 +776,25 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_italia_question
-		icon = GFX_focus_befriend_italy
+		icon = GFX_focus_pru_union_with_italy
 		x = -13
 		y = 13
 		cost = 7
 		prerequisite = { focus = PRU_bismark_first_kanzler }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
 		
 		#available = { }
 		
-		#bypass = { }
+		bypass = {
+			BYZ = {
+				has_completed_focus = BYZ_italia
+			}
+		}
 		
 		#search_filters = {  }
 		
@@ -764,39 +818,51 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_france_question
-		icon = GFX_union_with_france
+		icon = GFX_focus_pru_union_with_france
 		x = -13
 		y = 14
 		cost = 7
 		prerequisite = { focus = PRU_italia_question }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
 		
 		#available = { }
 		
-		#bypass = { }
+		bypass = {
+			FRR = {
+				OR = {
+					is_in_faction = yes
+					has_country_flag = FRR_cbi_choosen
+				}
+			}
+		}
 		
 		#search_filters = {  }
 		
 		completion_reward = {
 			FRR = { country_event = { id = ger.5 hours = 12 } }
+			hidden_effect = {
+				FRR = {
+					unlock_national_focus = FRA_support_pru
+				}
+			}
 		}
 	}
 	
 	focus = {
 		id = PRU_financy_reform
-		icon = GFX_focus_mex_privatisation
+		icon = GFX_focus_pru_finance_reform
 		x = -10
 		y = 13
 		cost = 7
 		prerequisite = { focus = PRU_bismark_first_kanzler }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -817,14 +883,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_creating_of_byzantian_german_trade_company
-		icon = GFX_pru_byz_trade_comp
+		icon = GFX_focus_pru_ask_acces_to_asia_market
 		x = -10
 		y = 14
 		cost = 7
 		prerequisite = { focus = PRU_financy_reform }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -842,14 +908,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_reform_packt
-		icon = GFX_focus_generic_treaty
+		icon = GFX_focus_pru_the_alliance_reform
 		x = -8
 		y = 13
 		cost = 7
 		prerequisite = { focus = PRU_bismark_first_kanzler }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -873,14 +939,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_all_union_build
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_pru_all_union_economic_pakt
 		x = -8
 		y = 14
 		cost = 7
 		prerequisite = { focus = PRU_reform_packt }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -892,27 +958,31 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 3 }
-			if = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			every_country = {
 				limit = {
+					NOT = {
+						tag = PRU
+					}
 					is_in_faction_with = PRU
 				}
-				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = industrial_complex level = 1 }
 			}
+			add_ideas = pru_faction_trading_idea
 			custom_effect_tooltip = PRU_open_new_economic_effect
 		}
 	}
 	
 	focus = {
 		id = PRU_german_byzantian_strategia
-		icon = GFX_focus_generic_self_management
+		icon = GFX_focus_pru_ger_byz_strategy
 		x = -5
 		y = 13
 		cost = 7
 		prerequisite = { focus = PRU_bismark_first_kanzler }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -930,21 +1000,25 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_secret_protocol
-		icon = GFX_focus_hol_the_foundations_of_defense
+		icon = GFX_focus_pru_secret_protocols
 		x = -5
 		y = 14
 		cost = 7
 		prerequisite = { focus = PRU_german_byzantian_strategia }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
 		
 		#available = { }
 		
-		#bypass = { }
+		bypass = { 
+			BYZ = {
+				has_completed_focus = BYZ_italia
+			}
+		}
 		
 		#search_filters = {  }
 		
@@ -955,7 +1029,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_whole_german_elections
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_pru_first_all_german_elections
 		x = -9
 		y = 15
 		cost = 7
@@ -965,7 +1039,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_secret_protocol }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -987,14 +1061,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_oppressing_of_austria
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_pru_supress_dissenters
 		x = 2
 		y = 13
 		cost = 7
 		prerequisite = { focus = PRU_bismark_first_kanzler focus = PRU_emperor_domestic	}
 		mutually_exclusive = { focus = PRU_integration_of_austria }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1013,7 +1087,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_destroy_dangerous_element
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_pru_destroy_the_resistance
 		x = 2
 		y = 15
 		cost = 7
@@ -1021,7 +1095,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_set_loyal_goverment }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1051,14 +1125,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_march_in_viena
-		icon = GFX_focus_generic_little_entente
+		icon = GFX_focus_pru_marsh_on_vena
 		x = 1
 		y = 16
 		cost = 7
 		prerequisite = { focus = PRU_destroy_dangerous_element }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1084,14 +1158,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_set_loyal_goverment
-		icon = GFX_focus_generic_home_defense
+		icon = GFX_focus_pru_new_aus_govermente
 		x = 0
 		y = 14
 		cost = 7
 		prerequisite = { focus = PRU_integration_of_austria focus = PRU_oppressing_of_austria	}
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1108,16 +1182,8 @@ focus_tree = {
 					AUS = { is_puppet_of = PRU } 
 				}
 				AUS = {
-					create_country_leader = {
-						name = "Aus_Wilhelm_von_Braunschweig"
-						desc = "POLITICS_WILHELM_VON_BRAUNSCHWEIG_DESC"
-						picture = ".dds"
-						expire = "1965.1.1"
-						ideology = conservatism
-						traits = {
-						#
-						}
-					}
+					retire_character = AUS_Eduard_Taaffe
+					promote_character = AUS_Wilhelm_von_Braunschweig
 					hidden_effect = {
 						set_politics = { ruling_party = democratic elections_allowed = no }
 						set_popularities = {
@@ -1154,14 +1220,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_new_austria
-		icon = GFX_goal_generic_neutrality_focus
+		icon = GFX_focus_pru_the_german_age_of_austran_earth
 		x = 0
 		y = 17
 		cost = 7
 		prerequisite = { focus = PRU_religion_freedom_in_austria focus = PRU_march_in_viena }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1210,14 +1276,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_integration_of_austria
-		icon = GFX_focus_hol_the_foundations_of_defense
+		icon = GFX_focus_pru_austrian_earch_autonomy
 		x = -2
 		y = 13
 		cost = 7
 		prerequisite = { focus = PRU_bismark_first_kanzler focus = PRU_emperor_domestic	}
 		mutually_exclusive = { focus = PRU_oppressing_of_austria }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1253,6 +1319,7 @@ focus_tree = {
 					}
 					AUS = {
 						transfer_state = 810
+						add_state_core = 810
 					}
 				}
 			}
@@ -1271,19 +1338,16 @@ focus_tree = {
 						authoritarian = 50
 						socialism = 0
 					}
-					create_country_leader = {
-						name = "Aus_Austrian_Reichstag"
-						desc = "POLITICS_AUSTRIAN_REICHSTAG_DESC"
-						picture = ".dds"
-						expire = "1965.1.1"
-						ideology = elitarism
-						traits = {
-						#	
-						}
-					}
+					retire_character = AUS_Franz_Joseph_I
+					promote_character = AUS_Austrian_Reichstag
 					swap_ideas = {
-						remove_idea = constitutional_monarchy
+						remove_idea = constitutional_monarchy_fg
 						add_idea = republic
+					}
+					set_party_name = {
+						ideology = authoritarian
+						long_name = AUS_reichstag_party_long
+						name = AUS_reichstag_party
 					}
 					add_state_core = 4
 					if = {
@@ -1336,23 +1400,13 @@ focus_tree = {
 						remove_ideas = AUS_hungarian_revolution
 					}
 				}
-				if = {
-					limit = {
-						AUS = {
-							has_idea = fear_of_revolution
-						}
-					}
-					AUS = {
-						remove_ideas = fear_of_revolution
-					}
-				}
 			}
 		}
 	}
 	
 	focus = {
 		id = PRU_set_temporary_autonomy
-		icon = GFX_focus_generic_self_management
+		icon = GFX_focus_pru_create_timed_autonomy_borders
 		x = -2
 		y = 15
 		cost = 7
@@ -1360,7 +1414,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_set_loyal_goverment }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1381,14 +1435,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_religion_freedom_in_austria
-		icon = GFX_focus_mex_triumph_over_the_cristeros
+		icon = GFX_focus_pru_faith_freedon_in_aus
 		x = -1
 		y = 16
 		cost = 7
 		prerequisite = { focus = PRU_set_temporary_autonomy	}
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1409,14 +1463,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_emperor_domestic
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		icon = GFX_focus_pru_imperial_fraction_in_power
 		x = 9
 		y = 12
 		cost = 7
 		prerequisite = { focus = PRU_shot_focus }
 		mutually_exclusive = { focus = PRU_bismark_first_kanzler }
 		ai_will_do = {
-			factor = 10000
+			factor = 1250
 		}
 		
 		#cancel = { }
@@ -1436,7 +1490,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_emperor_save_power
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		icon = GFX_focus_pru_emperror_save_the_power
 		x = 6
 		y = 13
 		cost = 7
@@ -1456,18 +1510,15 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = constitutional_monarchy
+				remove_idea = constitutional_monarchy_fg
 				add_idea = monarchy
-			}
-			hidden_effect = {
-				PRU = { country_event = { id = ger.10 days = 98 } }
 			}
 		}
 	}
 	
 	focus = {
 		id = PRU_emperor_goal
-		icon = GFX_focus_hol_the_foundations_of_defense
+		icon = GFX_focus_pru_new_german_constitution
 		x = 6
 		y = 14
 		cost = 7
@@ -1494,7 +1545,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_emperor_main_reform
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_focus_pru_the_goverment_reform
 		x = 6
 		y = 15
 		cost = 7
@@ -1520,7 +1571,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_two_empire_politic
-		icon = GFX_focus_generic_monarchy_2
+		icon = GFX_focus_pru_politic_of_two_imperias
 		x = 4
 		y = 14
 		cost = 7
@@ -1552,7 +1603,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_emperor_italia_plan
-		icon = GFX_focus_generic_italy_first
+		icon = GFX_focus_pru_separate_itallian_peninsula
 		x = 4
 		y = 15
 		cost = 7
@@ -1566,7 +1617,11 @@ focus_tree = {
 		
 		#available = { }
 		
-		#bypass = { }
+		bypass = {
+			BYZ = {
+				has_completed_focus = BYZ_italia
+			}
+		}
 		
 		#search_filters = {  }
 		
@@ -1577,7 +1632,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_emperor_final_emperor_world
-		icon = GFX_focus_rom_parties_end
+		icon = GFX_focus_pru_the_speech_of_two_emperrors
 		x = 6
 		y = 16
 		cost = 7
@@ -1606,7 +1661,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_new_economica
-		icon = GFX_goal_generic_positive_trade_relations
+		icon = GFX_focus_pru_new_imperial_economical_politic
 		x = 9
 		y = 14
 		cost = 7
@@ -1625,13 +1680,24 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+			every_country = {
+				limit = {
+					NOT = {
+						tag = PRU
+					}
+					is_in_faction_with = PRU
+				}
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+			add_ideas = pru_faction_trading_idea
 			custom_effect_tooltip = PRU_open_new_economic_effect
 		}
 	}
 	
 	focus = {
 		id = PRU_war_rule
-		icon = GFX_focus_generic_combined_arms
+		icon = GFX_focus_pru_military_goverment
 		x = 9
 		y = 15
 		cost = 7
@@ -1659,7 +1725,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_juncker_take_power
-		icon = GFX_focus_generic_manpower
+		icon = GFX_focus_pru_the_unkers_coupe
 		x = 12
 		y = 13
 		cost = 7
@@ -1679,8 +1745,8 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = constitutional_monarchy
-				add_idea = dictature
+				remove_idea = constitutional_monarchy_fg
+				add_idea = dictature_fg
 			}
 			create_country_leader = {
 				name = "Карл Антон Гогенцоллерн-Зигмаринген"
@@ -1697,7 +1763,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_juncker_army_reform
-		icon = GFX_focus_generic_little_entente
+		icon = GFX_focus_pru_unkers_army_reforms
 		x = 15
 		y = 14
 		cost = 7
@@ -1746,7 +1812,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_juncker_economic_reform
-		icon = GFX_goal_generic_trade
+		icon = GFX_focus_pru_avtrarky
 		x = 15
 		y = 15
 		cost = 7
@@ -1794,7 +1860,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_juncker_no_election
-		icon = GFX_focus_usa_voter_registration_act
+		icon = GFX_focus_pru_ban_the_celebrations
 		x = 12
 		y = 14
 		cost = 7
@@ -1813,6 +1879,7 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
+			custom_effect_tooltip = pru_junker_ban_other_party_tt
 			hidden_effect = {
 				set_temp_variable = {
 					var = ban_ideology_var
@@ -1831,33 +1898,31 @@ focus_tree = {
 					value = 0.66
 				}
 				set_country_flag = banned_democratic_flag
-			}
-			custom_effect_tooltip = ban_democratic_party_tt
-			add_stability = ban_ideology_var
-			
-			hidden_effect = {
+				set_variable = {
+					var = pru_stability_debaff
+					value = ban_ideology_var
+				}
 				set_temp_variable = {
 					var = ban_ideology_var
-					value = party_popularity@reactionist
+					value = party_popularity@authoritarian
 				}
 				multiply_temp_variable = {
 					var = ban_ideology_var
 					value = -1
 				}
 				add_popularity = {
-					ideology = reactionist
+					ideology = authoritarian
 					popularity = ban_ideology_var
 				}
 				multiply_temp_variable = {
 					var = ban_ideology_var
 					value = 0.66
 				}
-				set_country_flag = banned_reactionist_flag
-			}
-			custom_effect_tooltip = ban_reactionist_party_tt
-			add_stability = ban_ideology_var
-			
-			hidden_effect = {
+				set_country_flag = banned_authoritarian_flag
+				add_to_variable = {
+					var = pru_stability_debaff
+					value = ban_ideology_var
+				}
 				set_temp_variable = {
 					var = ban_ideology_var
 					value = party_popularity@socialism
@@ -1875,15 +1940,18 @@ focus_tree = {
 					value = 0.66
 				}
 				set_country_flag = banned_socialism_flag
+				add_to_variable = {
+					var = pru_stability_debaff
+					value = ban_ideology_var
+				}
+				add_stability = pru_stability_debaff
 			}
-			custom_effect_tooltip = ban_socialism_party_tt
-			add_stability = ban_ideology_var
 		}
 	}
 	
 	focus = {
 		id = PRU_juncker_army_from_city
-		icon = GFX_goal_generic_trade
+		icon = GFX_focus_pru_conscription_to_army
 		x = 12
 		y = 15
 		cost = 7
@@ -2213,7 +2281,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_juncker_final_new_politic
-		icon = GFX_focus_generic_treaty
+		icon = GFX_focus_pru_abolish_the_empire
 		x = 12
 		y = 16
 		cost = 7
@@ -2242,14 +2310,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_war_economi
-		icon = GFX_war_time_economic
+		icon = GFX_focus_pru_war_time_economic
 		x = -10
 		y = 0
 		cost = 7
 		#prerequisite = {  }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2278,14 +2346,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi
-		icon = GFX_goal_generic_construct_civilian
+		icon = GFX_focus_pru_found_the_new_industry
 		x = -13
 		y = 1
 		cost = 7
 		prerequisite = { focus = PRU_war_economi }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2329,7 +2397,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_sauer
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_pru_millitary_industry
 		x = -15
 		y = 2
 		cost = 7
@@ -2337,7 +2405,7 @@ focus_tree = {
 		mutually_exclusive = { focus = PRU_economi_domr }
 		mutually_exclusive = { focus = PRU_economi_ebik }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2372,14 +2440,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_sauer_2
-		icon = GFX_focus_generic_tank_production
+		icon = GFX_focus_pru_expand_military_industry
 		x = -17
 		y = 3
 		cost = 7
 		prerequisite = { focus = PRU_economi_sauer }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2414,14 +2482,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_inf
-		icon = GFX_goal_generic_construct_infrastructure
+		icon = GFX_focus_pru_modern_infrastructure
 		x = -15
 		y = 3
 		cost = 7
 		prerequisite = { focus = PRU_economi_sauer focus = PRU_economi_domr focus = PRU_economi_ebik }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2478,7 +2546,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_domr
-		icon = GFX_goal_generic_neutrality_focus
+		icon = GFX_focus_pru_mixed_industry
 		x = -13
 		y = 2
 		cost = 7
@@ -2486,7 +2554,7 @@ focus_tree = {
 		mutually_exclusive = { focus = PRU_economi_sauer }
 		mutually_exclusive = { focus = PRU_economi_ebik }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2521,14 +2589,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_new_plan_of_city
-		icon = GFX_goal_generic_construction2
+		icon = GFX_focus_pru_expand_cities
 		x = -11
 		y = 3
 		cost = 7
 		prerequisite = { focus = PRU_economi_sauer focus = PRU_economi_domr focus = PRU_economi_ebik }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2565,14 +2633,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_domr_2
-		icon = GFX_prom_expand
+		icon = GFX_focus_pru_expand_mixed_trade
 		x = -13
 		y = 3
 		cost = 7
 		prerequisite = { focus = PRU_economi_domr }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2607,7 +2675,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_ebik
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_pru_civil_industry
 		x = -11
 		y = 2
 		cost = 7
@@ -2615,7 +2683,7 @@ focus_tree = {
 		mutually_exclusive = { focus = PRU_economi_sauer }
 		mutually_exclusive = { focus = PRU_economi_domr }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2650,14 +2718,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_economi_ebik_2
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_pru_expand_civil_prom
 		x = -9
 		y = 3
 		cost = 7
 		prerequisite = { focus = PRU_economi_ebik }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2692,7 +2760,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_german_economic_wonder
-		icon = GFX_focus_generic_industry_3
+		icon = GFX_focus_pru_german_economic_wonder
 		x = -13
 		y = 4
 		cost = 7
@@ -2701,7 +2769,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_economi_new_plan_of_city }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2719,14 +2787,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_resourse
-		icon = GFX_focus_generic_steel
+		icon = GFX_focus_pru_expand_resource_base
 		x = -17
 		y = 1
 		cost = 7
 		prerequisite = { focus = PRU_war_economi }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2744,7 +2812,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_econimia_techology
-		icon = GFX_focus_research
+		icon = GFX_focus_pru_expand_tech_base
 		x = -9
 		y = 1
 		cost = 7
@@ -2752,7 +2820,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_war_technologi }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2777,14 +2845,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_econimia_techology_final
-		icon = GFX_focus_research2
+		icon = GFX_focus_pru_innovations_in_industry
 		x = -9
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_econimia_techology }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2805,14 +2873,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_war_technologi
-		icon = GFX_goal_generic_scientific_exchange
+		icon = GFX_focus_pru_fonancing_war_techs
 		x = -8
 		y = 0
 		cost = 7
 		#prerequisite = {  }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2838,14 +2906,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_technologi_1
-		icon = GFX_goal_tfv_generic_tech_sharing
+		icon = GFX_focus_pru_open_new_instituts
 		x = -7
 		y = 1
 		cost = 7
 		prerequisite = { focus = PRU_war_technologi }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2863,14 +2931,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_technologi_2
-		icon = GFX_goal_continuous_research
+		icon = GFX_focus_pru_technocrat_reforms
 		x = -7
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_technologi_1 }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 250
 		}
 		
 		#cancel = { }
@@ -2890,14 +2958,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform
-		icon = GFX_focus_secret_rearmament
+		icon = GFX_focus_pru_army_reforms
 		x = 13
 		y = 0
 		cost = 7
 		#prerequisite = { }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -2917,14 +2985,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_technology
-		icon = GFX_goal_continuous_armor_production
+		icon = GFX_focus_pru_technological_war
 		x = 9
 		y = 1
 		cost = 7
 		prerequisite = { focus = PRU_army_reform }
 		mutually_exclusive = { focus = PRU_army_reform_will focus = PRU_army_reform_legion }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -2942,14 +3010,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_tank_1
-		icon = GFX_focus_generic_license_production
+		icon = GFX_focus_pru_prototype_development
 		x = 8
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_technology }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -2963,25 +3031,24 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = PRU_tank_equipment
 			army_experience = 10
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = land_doctrine
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 2
+				category = cat_mobile_warfare
 			}
 		}
 	}
 	
 	focus = {
 		id = PRU_army_reform_army_1
-		icon = GFX_goal_rhineland
+		icon = GFX_focus_pru_technological_education
 		x = 10
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_technology }
 		mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -2995,7 +3062,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.0
-				uses = 1
+				uses = 2
 				name = mech_army_bonus
 				category = armor
 			}	
@@ -3010,7 +3077,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_army_2
-		icon = GFX_goal_generic_axis_build_infantry
+		icon = GFX_focus_pru_create_individual_military_units
 		x = 9
 		y = 3
 		cost = 7
@@ -3018,7 +3085,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_army_reform_tank_1 }
 		mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3039,14 +3106,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_tank_2
-		icon = GFX_focus_generic_army_tanks2
+		icon = GFX_focus_pru_from_the_paper_ti_reality
 		x = 9
 		y = 4
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_army_2 }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 8500
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3064,11 +3131,18 @@ focus_tree = {
 				name = mech_army_bonus
 				category = armor
 			}	
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
 				uses = 2
-				category = land_doctrine
+				category = cat_mobile_warfare
+			}
+			hidden_effect = {
+				PRU = {
+					country_event = {
+						id = ger.17
+						days = 13
+					}
+				}
 			}
 		}
 	}
@@ -3077,14 +3151,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_will
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_pru_war_willpower
 		x = 13
 		y = 1
 		cost = 7
 		prerequisite = { focus = PRU_army_reform }
 		mutually_exclusive = { focus = PRU_army_reform_technology focus = PRU_army_reform_legion }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3102,14 +3176,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_will_teor_1
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_focus_pru_will_teory
 		x = 12
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_will }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3123,25 +3197,24 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = PRU_will_equipment
 			army_experience = 10
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = land_doctrine
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 2
+				category = cat_superior_firepower
 			}
 		}
 	}
 	
 	focus = {
 		id = PRU_army_reform_will_training_1
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_focus_pru_dicsipline_as_symbol
 		x = 14
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_will }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3161,8 +3234,8 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+				bonus = 0.75
+				uses = 2
 				category = support_tech
 			}
 		}
@@ -3170,7 +3243,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_will_training_2
-		icon = GFX_focus_generic_commonwealth_build_infantry
+		icon = GFX_focus_pru_discipline_above_all
 		x = 13
 		y = 3
 		cost = 7
@@ -3178,7 +3251,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_army_reform_will_training_1 }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3199,14 +3272,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_will_teor_2
-		icon = GFX_goal_continuous_reduce_training_time
+		icon = GFX_focus_pru_will_as_faith
 		x = 13
 		y = 4
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_will_training_2 }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3224,11 +3297,18 @@ focus_tree = {
 				name = mech_army_bonus
 				category = support_tech
 			}	
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
 				uses = 2
-				category = land_doctrine
+				category = cat_superior_firepower
+			}
+			hidden_effect = {
+				PRU = {
+					country_event = {
+						id = ger.17
+						days = 13
+					}
+				}
 			}
 		}
 	}
@@ -3237,14 +3317,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_legion
-		icon = GFX_focus_generic_little_entente
+		icon = GFX_focus_pru_amount_war
 		x = 17
 		y = 1
 		cost = 7
 		prerequisite = { focus = PRU_army_reform }
 		mutually_exclusive = { focus = PRU_army_reform_technology focus = PRU_army_reform_will }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3262,14 +3342,14 @@ focus_tree = {
 
 	focus = {
 		id = PRU_army_reform_legion_teor_1
-		icon = GFX_goal_generic_small_arms
+		icon = GFX_focus_pru_theory_of_quality_war
 		x = 16
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_legion }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3283,25 +3363,24 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = PRU_legion_equipment
 			army_experience = 10
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = land_doctrine
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
+				uses = 2
+				category = cat_mass_assault
 			}
 		}
 	}
 	
 	focus = {
 		id = PRU_army_reform_legion_train_1
-		icon = GFX_goal_generic_special_forces
+		icon = GFX_focus_pru_train_big_sqads
 		x = 18
 		y = 2
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_legion }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3324,7 +3403,7 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_legion_train_2
-		icon = GFX_focus_generic_manpower
+		icon = GFX_focus_pru_train_big_armies
 		x = 17
 		y = 3
 		cost = 7
@@ -3332,7 +3411,7 @@ focus_tree = {
 		prerequisite = { focus = PRU_army_reform_legion_train_1 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3353,14 +3432,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_army_reform_legion_teor_2
-		icon = GFX_focus_secret_rearmament
+		icon = GFX_focus_pru_than_more_silgiers_then_closer_victory
 		x = 17
 		y = 4
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_legion_train_2 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3378,11 +3457,18 @@ focus_tree = {
 				name = mech_army_bonus
 				category = infantry_weapons
 			}	
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1.0
 				uses = 2
-				category = land_doctrine
+				category = cat_mass_assault
+			}
+			hidden_effect = {
+				PRU = {
+					country_event = {
+						id = ger.17
+						days = 13
+					}
+				}
 			}
 		}
 	}
@@ -3391,14 +3477,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_creating_of_wehrmacht
-		icon = GFX_focus_ger_oppose_hitler
+		icon = GFX_focus_pru_create_wermaht
 		x = 13
 		y = 5
 		cost = 7
 		prerequisite = { focus = PRU_army_reform_tank_2 focus = PRU_army_reform_will_teor_2 focus = PRU_army_reform_legion_teor_2 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3411,6 +3497,20 @@ focus_tree = {
 		
 		completion_reward = {
 			army_experience = 100
+			if = {
+				limit = {
+					NOT = {
+						has_idea = PRU_technology_taktic_2
+					}
+					NOT = {
+						has_idea = PRU_will_taktic_2
+					}
+					NOT = {
+						has_idea = PRU_legion_taktic_2
+					}
+				}
+				custom_effect_tooltip = PRU_army_idea_upgraed
+			}
 			if = { 
 				limit = {
 					has_idea = PRU_technology_taktic_2 
@@ -3446,14 +3546,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_navy_reform
-		icon = GFX_goal_generic_navy_doctrines_tactics
+		icon = GFX_focus_pru_navy_reform
 		x = 10
 		y = 6
 		cost = 7
 		prerequisite = { focus = PRU_creating_of_wehrmacht }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3471,14 +3571,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_navy_reform_long_1
-		icon = GFX_goal_generic_navy_battleship
+		icon = GFX_focus_pru_ocean_war_reforms
 		x = 9
 		y = 7
 		cost = 7
 		prerequisite = { focus = PRU_navy_reform }
 		mutually_exclusive = { focus = PRU_navy_reform_coast_1 }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3508,14 +3608,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_navy_reform_long_2
-		icon = GFX_goal_generic_construct_naval_dockyard
+		icon = GFX_focus_pru_prepare_oceanic_navy
 		x = 9
 		y = 8
 		cost = 7
 		prerequisite = { focus = PRU_navy_reform_long_1 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3549,14 +3649,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_navy_reform_coast_1
-		icon = GFX_goal_generic_navy_submarine
+		icon = GFX_focus_pru_navy_forces_reform
 		x = 11
 		y = 7
 		cost = 7
 		prerequisite = { focus = PRU_navy_reform }
 		mutually_exclusive = { focus = PRU_navy_reform_long_1 }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3579,14 +3679,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_navy_reform_coast_2
-		icon = GFX_goal_generic_navy_cruiser
+		icon = GFX_focus_pru_prepare_navy
 		x = 11
 		y = 8
 		cost = 7
 		prerequisite = { focus = PRU_navy_reform_coast_1 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3652,14 +3752,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_creating_of_kriegsmarine
-		icon = GFX_Kriegsmarine
+		icon = GFX_focus_pru_create_kriegsmarine
 		x = 10
 		y = 9
 		cost = 7
 		prerequisite = { focus = PRU_navy_reform_long_2 focus = PRU_navy_reform_coast_2 }
 		#mutually_exclusive = { }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3680,14 +3780,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_air_reform
-		icon = GFX_goal_generic_air_doctrine
+		icon = GFX_focus_pru_air_forces_reform
 		x = 16
 		y = 6
 		cost = 7
 		prerequisite = { focus = PRU_creating_of_wehrmacht }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3705,14 +3805,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_air_reform_ground_1
-		icon = GFX_goal_generic_air_fighter
+		icon = GFX_focus_pru_air_as_the_support
 		x = 15
 		y = 7
 		cost = 7
 		prerequisite = { focus = PRU_air_reform }
 		mutually_exclusive = { focus = PRU_air_reform_bombing_1 }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3741,14 +3841,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_air_reform_ground_2
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_focus_pru_train_air_forces
 		x = 15
 		y = 8
 		cost = 7
 		prerequisite = { focus = PRU_air_reform_ground_1 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3771,14 +3871,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_air_reform_bombing_1
-		icon = GFX_goal_generic_air_bomber
+		icon = GFX_focus_pru_air_as_the_weapon
 		x = 17
 		y = 7
 		cost = 7
 		prerequisite = { focus = PRU_air_reform }
 		mutually_exclusive = { focus = PRU_air_reform_ground_1 }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3804,14 +3904,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_air_reform_bombing_2
-		icon = GFX_goal_poland_goal
+		icon = GFX_focus_pru_train_heavy_aviation
 		x = 17
 		y = 8
 		cost = 7
 		prerequisite = { focus = PRU_air_reform_bombing_1 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3834,14 +3934,14 @@ focus_tree = {
 	
 	focus = {
 		id = PRU_creating_of_luftwaffe
-		icon = GFX_Luftwaffe
+		icon = GFX_focus_pru_create_luftwaffe
 		x = 16
 		y = 9
 		cost = 7
 		prerequisite = { focus = PRU_air_reform_ground_2 focus = PRU_air_reform_bombing_2 }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 500
 		}
 		
 		#cancel = { }
@@ -3858,91 +3958,392 @@ focus_tree = {
 		}
 	}
 	
-	#Faction bonus
+	#First World war focus
 	
 	focus = {
-		id = PRU_faction_production
-		icon = GFX_faction_production
-		x = 26
+		id = PRU_first_world_war
+		icon = GFX_goal_generic_major_war
+		x = -13
 		y = 5
-		cost = 7
+		cost = 4.3
 		#prerequisite = { }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			has_global_flag = firts_world_war
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			PRU = {
+				add_ideas = pru_war_nation
+			}
+			PRU = {
+				set_variable = {
+					var = PRU.release_country_during_war
+					value = 0
+				}
+			}
+			hidden_effect = {
+				PRU = {
+					country_event = {
+						id = script_event.19
+						days = 392
+					}
+				}
+			}
+		}
+	}
+	
+	#Black Sun way
+	
+	focus = {
+		id = PRU_ask_black_sun_help
+		icon = GFX_goal_generic_dangerous_deal
+		x = -6
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_first_world_war }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			NOT = {
+				PRU = {
+					has_country_flag = pru_say_no_to_blacksun
+				}
+			}
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			PRU = {
+				country_event = {
+					id = ger_blackorder.2
+					hours = 4
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_hunt_partisan
+		icon = GFX_goal_generic_small_arms
+		x = -1
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_ask_black_sun_help
+		prerequisite = { focus = PRU_ask_black_sun_help }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		#available = { }
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			add_ideas = pru_blacksun_hunt_partisan_1
+			custom_effect_tooltip = pru_blacksun_influince_rise
+			hidden_effect = {
+				PRU = {
+					set_country_flag = black_sun_start_hunting
+				}
+				add_to_variable = {
+					var = PRU.blacksun_influence
+					value = 1
+				}
+				PRU = {
+					country_event = {
+						id = ger_blackorder.11
+						days = 59
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_all_partisan_must_die
+		icon = GFX_goal_generic_military_sphere
+		x = -1
+		y = 2
+		cost = 4.3
+		relative_position_id = PRU_ask_black_sun_help
+		prerequisite = { focus = PRU_hunt_partisan }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = blacksun_hunting_start_tt
+				PRU = {
+					has_country_flag = {
+						flag = black_sun_start_hunting
+						days > 58
+					}
+				}
+			}
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = pru_blacksun_hunt_partisan_1
+				add_idea = pru_blacksun_hunt_partisan_2
+			}
+			custom_effect_tooltip = pru_blacksun_influince_rise
+			hidden_effect = {
+				add_to_variable = {
+					var = PRU.blacksun_influence
+					value = 1
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_influence_on_govermant
+		icon = GFX_goal_generic_forceful_treaty
+		x = 1
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_ask_black_sun_help
+		prerequisite = { focus = PRU_ask_black_sun_help }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		#available = { }
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			PRU = {
+				country_event = {
+					id = ger_blackorder.3
+					hours = 4
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_new_present_by_blacksun
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 2
+		cost = 4.3
+		relative_position_id = PRU_ask_black_sun_help
+		prerequisite = { focus = PRU_influence_on_govermant }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		#available = { }
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = PRU
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 3750
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 2500
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 1250
+				producer = ROOT
+			}
+			custom_effect_tooltip = pru_blacksun_influince_rise
+			hidden_effect = {
+				add_to_variable = {
+					var = PRU.blacksun_influence
+					value = 1
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_rise_of_evil
+		icon = GFX_goal_generic_support_fascism
+		x = 0
+		y = 3
+		cost = 4.3
+		relative_position_id = PRU_ask_black_sun_help
+		prerequisite = { focus = PRU_all_partisan_must_die }
+		prerequisite = { focus = PRU_new_present_by_blacksun }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = blacksun_take_rulling_tt
+				PRU = {
+					has_country_flag = blacksun_end_germany
+				}
+			}
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			news_event = news.175
+			custom_effect_tooltip = blackorder_rise_in_germany_tt
+			hidden_effect = {
+				PRU = {
+					set_cosmetic_tag = PRU_SECONDREICH
+				}
+			}
+		}
+	}
+	
+	#Collaborators way
+	
+	focus = {
+		id = PRU_dialog_with_poland
+		icon = GFX_focus_generic_polish_deal
+		x = 0
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_first_world_war }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 5000
 		}
 		
 		#cancel = { }
 		
 		available = { 
 			OR = {
-				has_completed_focus = PRU_all_union_build
-				has_completed_focus = PRU_new_economica
+				AND = {
+					country_exists = PLH
+					PLH = {
+						is_in_faction_with = PRU
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = pru_control_plh_land
+					has_full_control_of_state = 10
+					has_full_control_of_state = 87
+					has_full_control_of_state = 90
+					has_full_control_of_state = 92
+					has_full_control_of_state = 97
+					has_full_control_of_state = 98
+					has_full_control_of_state = 853
+				}
 			}
+			
 		}
 		
-		#bypass = { }
+		bypass = {
+			AND = {
+				country_exists = PLH
+				NOT = {
+					PLH = {
+						has_war_with = RUS
+					}
+				}
+			}
+		}
 		
 		#search_filters = {  }
 		
 		completion_reward = {
-		
-		}
-	}
-	
-	#faction in Peace
-	
-	focus = {
-		id = PRU_faction_production_peace
-		icon = GFX_goal_generic_national_unity
-		x = 24
-		y = 6
-		cost = 7
-		prerequisite = { focus = PRU_faction_production }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			NOT = {
-				has_war = yes
+			custom_effect_tooltip = open_poland_decision_tt
+			PRU = {
+				country_event = ger_warpolitic.1
 			}
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_stability = 0.05
 		}
 	}
 	
 	focus = {
-		id = PRU_faction_production_factori
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 22
-		y = 7
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_peace }
-		#mutually_exclusive = {  }
+		id = PRU_poland_chose_they_own
+		icon = GFX_focus_POL_complete_april_constitution
+		x = -3
+		y = 2
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_dialog_with_poland }
+		mutually_exclusive = { focus = PRU_poland_help_to_chose_right focus = PRU_poland_need_king_our_king focus = PRU_who_will_ask_poland }
 		ai_will_do = {
-			factor = 9999
+			factor = 5000
 		}
 		
 		#cancel = { }
 		
-		available = {
-			NOT = {
-				has_war = yes
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = PRU_choose_poland_friend_tt
+				PLH = {
+					owns_state = 10
+					owns_state = 87
+					owns_state = 90
+					owns_state = 92
+					owns_state = 98
+					owns_state = 97
+					owns_state = 853
+				}
+				PRU = {
+					has_country_flag = PRU_choose_poland_friend
+				}
 			}
-			is_faction_leader = yes
-			num_faction_members > 1
 		}
 		
 		#bypass = { }
@@ -3950,436 +4351,557 @@ focus_tree = {
 		#search_filters = {  }
 		
 		completion_reward = {
-			random_state = {
-				limit = { is_core_of = PRU }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			PLH = {
+				add_opinion_modifier = {
+					target = PRU
+					modifier = pru_choose_frind_with_us
 				}
 			}
-			random_state = {
-				limit = { is_core_of = PRU }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			PRU = {
+				add_opinion_modifier = {
+					target = PLH
+					modifier = pru_choose_frind_with_us
 				}
 			}
-		if = {
+		}
+	}
+	
+	focus = {
+		id = PRU_poland_help_to_chose_right
+		icon = GFX_focus_LIT_support_polish_fascists
+		x = -1
+		y = 2
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_dialog_with_poland }
+		mutually_exclusive = { focus = PRU_poland_chose_they_own focus = PRU_poland_need_king_our_king focus = PRU_who_will_ask_poland }
+		ai_will_do = {
+			factor = 5000
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = PRU_chose_to_help_in_decision_tt
+				PLH = {
+					owns_state = 10
+					owns_state = 87
+					owns_state = 90
+					owns_state = 92
+					owns_state = 98
+					owns_state = 97
+					owns_state = 853
+				}
+				PRU = {
+					has_country_flag = PRU_chose_to_help_in_decision
+				}
+			}
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			PLH = {
+				country_event = {
+					id = ger_warpolitic.4
+					days = 2
+				}
+			}
+			PLH = {
+				add_opinion_modifier = {
+					target = PRU
+					modifier = pru_choose_our_politic
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_poland_need_king_our_king
+		icon = GFX_focus_LIT_king_of_poland
+		x = 1
+		y = 2
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_dialog_with_poland }
+		mutually_exclusive = { focus = PRU_poland_chose_they_own focus = PRU_poland_help_to_chose_right focus = PRU_who_will_ask_poland }
+		ai_will_do = {
+			factor = 5000
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = PRU_chose_king_in_poland_tt
+				PLH = {
+					owns_state = 10
+					owns_state = 87
+					owns_state = 90
+					owns_state = 92
+					owns_state = 98
+					owns_state = 97
+					owns_state = 853
+				}
+				PRU = {
+					has_country_flag = PRU_chose_king_in_poland
+				}
+			}
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			PLH = {
+				country_event = {
+					id = ger_warpolitic.5
+					days = 2
+				}
+			}
+			PLH = {
+				add_opinion_modifier = {
+					target = PRU
+					modifier = pru_choose_king_to_us
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_who_will_ask_poland
+		icon = GFX_focus_POL_prepare_for_the_inevitable
+		x = 3
+		y = 2
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_dialog_with_poland }
+		mutually_exclusive = { focus = PRU_poland_chose_they_own focus = PRU_poland_help_to_chose_right focus = PRU_poland_need_king_our_king }
+		ai_will_do = {
+			factor = 5000
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = PRU_chose_to_integrat_poland_tt
+				PLH = {
+					owns_state = 10
+					owns_state = 87
+					owns_state = 90
+					owns_state = 92
+					owns_state = 98
+					owns_state = 97
+					owns_state = 853
+				}
+				PRU = {
+					has_country_flag = PRU_chose_to_integrat_poland
+				}
+			}
+		}
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			PLH = {
+				country_event = {
+					id = ger_warpolitic.6
+					days = 2
+				}
+			}
+			PLH = {
+				add_opinion_modifier = {
+					target = PRU
+					modifier = pru_choose_destoed_us
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PRU_dialog_with_pribaltika
+		icon = GFX_focus_LIT_reclaim_courland
+		x = -1
+		y = 3
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_poland_chose_they_own focus = PRU_poland_help_to_chose_right focus = PRU_poland_need_king_our_king focus = PRU_who_will_ask_poland }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 5000
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = pru_control_blt_land
+				OR = {
+					has_full_control_of_state = 11
+					has_full_control_of_state = 12
+					has_full_control_of_state = 13
+					has_full_control_of_state = 189
+					has_full_control_of_state = 190
+					has_full_control_of_state = 191
+					has_full_control_of_state = 784
+				}
+			}
+		}
+		
+		bypass = {
+			AND = {
+				country_exists = BLT
+				NOT = {
+					BLT = {
+						has_war_with = RUS
+					}
+				}
+			}
+		}
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			custom_effect_tooltip = PRU_dialog_with_pribaltika_tt
+		}
+	}
+	
+	focus = {
+		id = PRU_dialog_with_white_ruttenia
+		icon = GFX_focus_LIT_restore_the_grand_duchy
+		x = 1
+		y = 3
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_poland_chose_they_own focus = PRU_poland_help_to_chose_right focus = PRU_poland_need_king_our_king focus = PRU_who_will_ask_poland }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 5000
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = pru_control_wrt_land
+				OR = {
+					has_full_control_of_state = 94
+					has_full_control_of_state = 95
+					has_full_control_of_state = 96
+					has_full_control_of_state = 194
+					has_full_control_of_state = 204
+					has_full_control_of_state = 206
+					has_full_control_of_state = 207
+					has_full_control_of_state = 224
+					has_full_control_of_state = 241
+					has_full_control_of_state = 243
+					has_full_control_of_state = 823
+				}
+			}
+		}
+		
+		bypass = {
+			AND = {
+				country_exists = WRT
+				NOT = {
+					WRT = {
+						has_war_with = RUS
+					}
+				}
+			}
+		}
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			custom_effect_tooltip = PRU_dialog_with_white_ruttenia_tt
+		}
+	}
+	
+	focus = {
+		id = PRU_dialog_with_ukraina
+		icon = GFX_focus_POL_ukrainian_army
+		x = 0
+		y = 4
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_dialog_with_pribaltika }
+		prerequisite = { focus = PRU_dialog_with_white_ruttenia }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 5000
+		}
+		
+		#cancel = { }
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = pru_control_wrt_land
+				OR = {
+					has_full_control_of_state = 93
+					has_full_control_of_state = 192
+					has_full_control_of_state = 193
+					has_full_control_of_state = 197
+					has_full_control_of_state = 198
+					has_full_control_of_state = 199
+					has_full_control_of_state = 201
+					has_full_control_of_state = 202
+					has_full_control_of_state = 203
+					has_full_control_of_state = 220
+					has_full_control_of_state = 221
+					has_full_control_of_state = 225
+					has_full_control_of_state = 226
+					has_full_control_of_state = 228
+					has_full_control_of_state = 240
+					has_full_control_of_state = 259
+					has_full_control_of_state = 859
+					has_full_control_of_state = 885
+					has_full_control_of_state = 886
+				}
+			}
+		}
+		
+		bypass = {
+			AND = {
+				country_exists = UKR
+				NOT = {
+					UKR = {
+						has_war_with = RUS
+					}
+				}
+			}
+		}
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			custom_effect_tooltip = PRU_dialog_with_ukraina_tt
+		}
+	}
+	
+	#Army needs
+	
+	focus = {
+		id = PRU_time_to_hard_decision
+		icon = GFX_focus_usa_voter_registration_act
+		x = 6
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_first_world_war
+		prerequisite = { focus = PRU_first_world_war }
+		#mutually_exclusive = {  }
+		ai_will_do = {
+			factor = 2500
+		}
+		
+		#cancel = { }
+		
+		#available = { }
+		
+		#bypass = { }
+		
+		#search_filters = {  }
+		
+		completion_reward = {
+			if = {
 				limit = {
-					is_in_faction_with = PRU
+					has_idea = disarmed_nation
 				}
-				random_state = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-				random_state = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_infrastructure
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 22
-		y = 8
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_factori }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			NOT = {
-				has_war = yes
-			}
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			random_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+				swap_ideas = {
+					remove_idea = disarmed_nation
+					add_idea = extensive_conscription
 				}
 			}
 			if = {
 				limit = {
-					is_in_faction_with = PRU
+					has_idea = volunteer_only
 				}
-				random_state = {
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-						instant_build = yes
+				swap_ideas = {
+					remove_idea = volunteer_only
+					add_idea = extensive_conscription
 				}
-				}
-				random_state = {
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-						instant_build = yes
-					}
-				}
-				random_state = {
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-						instant_build = yes
-					}
-				}
-			}	
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_politic
-		icon = GFX_focus_generic_treaty
-		x = 24
-		y = 7
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_peace }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			NOT = {
-				has_war = yes
 			}
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_political_power = 250
 			if = {
 				limit = {
-					is_in_faction_with = PRU
+					has_idea = limited_conscription
 				}
-				add_political_power = 250
-			}	
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_stability
-		icon = GFX_focus_generic_self_management
-		x = 24
-		y = 8
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_politic }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			NOT = {
-				has_war = yes
+				swap_ideas = {
+					remove_idea = limited_conscription
+					add_idea = extensive_conscription
+				}
 			}
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_stability = 0.05
 			if = {
 				limit = {
-					is_in_faction_with = PRU
+					has_idea = extensive_conscription
+				}
+				add_manpower = 50000
+				add_war_support = 0.05
+			}
+			if = {
+				limit = {
+					has_idea = civilian_economy
+				}
+				swap_ideas = {
+					remove_idea = civilian_economy
+					add_idea = war_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = low_economic_mobilisation
+				}
+				swap_ideas = {
+					remove_idea = low_economic_mobilisation
+					add_idea = war_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = partial_economic_mobilisation
+				}
+				swap_ideas = {
+					remove_idea = partial_economic_mobilisation
+					add_idea = war_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = war_economy
 				}
 				add_stability = 0.05
-			}
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_peace_final
-		icon = GFX_goal_generic_consumer_goods
-		x = 23
-		y = 9
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_infrastructure }
-		prerequisite = { focus = PRU_faction_production_stability }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			NOT = {
-				has_war = yes
-			}
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 3 }
-			if = {
-				limit = {
-					is_in_faction_with = PRU
-				}
-				add_offsite_building = { type = industrial_complex level = 2 }
-			}		
-		}
-	}
-	
-	#faction in war
-	
-	focus = {
-		id = PRU_faction_production_war
-		icon = GFX_goal_generic_forceful_treaty
-		x = 28
-		y = 6
-		cost = 7
-		prerequisite = { focus = PRU_faction_production }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			has_war = yes
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_war_support = 0.05
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_manpower
-		icon = GFX_focus_generic_little_entente
-		x = 28
-		y = 7
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_war }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			has_war = yes
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_manpower = 150000
-			add_stability = -0.1
-			if = {
-				limit = {
-					is_in_faction_with = PRU
-				}
-				add_manpower = 25000
-				PRU = { add_manpower = -25000 }
-			}	
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_warsupport
-		icon = GFX_goal_generic_propaganda
-		x = 28
-		y = 8
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_manpower }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			has_war = yes
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_war_support = 0.05
-			if = {
-				limit = {
-					is_in_faction_with = PRU
-				}
 				add_war_support = 0.05
 			}
 		}
 	}
 	
 	focus = {
-		id = PRU_faction_production_dockyard
+		id = PRU_convert_industria_in_dockyard
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 30
-		y = 7
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_war }
+		x = -1
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_time_to_hard_decision
+		prerequisite = { focus = PRU_time_to_hard_decision }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 2500
 		}
 		
 		#cancel = { }
 		
-		available = {
-			has_war = yes
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
+		#available = { }
 		
 		#bypass = { }
 		
 		#search_filters = {  }
 		
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
 					is_coastal = yes
+					industrial_complex > 1
+					NOT = {
+						has_state_flag = conver_ind_in_doc_complete
+					}
 				}
-				add_extra_state_shared_building_slots = 1
+				set_state_flag = conver_ind_in_doc_complete
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
-			random_owned_controlled_state = {
-				limit = {
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
 					is_coastal = yes
+					industrial_complex > 1
+					NOT = {
+						has_state_flag = conver_ind_in_doc_complete
+					}
 				}
-				add_extra_state_shared_building_slots = 1
+				set_state_flag = conver_ind_in_doc_complete
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
-			if = {
-				limit = {
-					is_in_faction_with = PRU
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
+					is_coastal = yes
+					industrial_complex > 1
+					NOT = {
+						has_state_flag = conver_ind_in_doc_complete
+					}
 				}
-				random_owned_controlled_state = {
-					limit = {
-						is_coastal = yes
+				set_state_flag = conver_ind_in_doc_complete
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
+					is_coastal = yes
+					industrial_complex > 1
+					NOT = {
+						has_state_flag = conver_ind_in_doc_complete
 					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
-				}	
-				random_owned_controlled_state = {
-					limit = {
-						is_coastal = yes
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
+				}
+				set_state_flag = conver_ind_in_doc_complete
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
 	}
 	
 	focus = {
-		id = PRU_faction_production_army_factory
+		id = PRU_convert_industria_in_arms_factory
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 30
-		y = 8
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_dockyard }
+		x = 1
+		y = 1
+		cost = 4.3
+		relative_position_id = PRU_time_to_hard_decision
+		prerequisite = { focus = PRU_time_to_hard_decision }
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 2500
 		}
 		
 		#cancel = { }
 		
-		available = {
-			has_war = yes
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
+		#available = { }
 		
 		#bypass = { }
 		
@@ -4387,8 +4909,18 @@ focus_tree = {
 		
 		completion_reward = {
 			random_state = {
-				limit = { is_core_of = PRU }
-				add_extra_state_shared_building_slots = 2
+				limit = { 
+					is_core_of = PRU 
+					industrial_complex > 2
+					NOT = {
+						has_state_flag = conver_ind_in_amf_complete
+					}
+				}
+				set_state_flag = conver_ind_in_amf_complete
+				remove_building = {
+					type = industrial_complex
+					level = 3
+				}
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -4396,197 +4928,102 @@ focus_tree = {
 				}
 			}
 			random_state = {
-				limit = { is_core_of = PRU }
-				add_extra_state_shared_building_slots = 2
+				limit = { 
+					is_core_of = PRU 
+					industrial_complex > 2
+					NOT = {
+						has_state_flag = conver_ind_in_amf_complete
+					}
+				}
+				set_state_flag = conver_ind_in_amf_complete
+				remove_building = {
+					type = industrial_complex
+					level = 3
+				}
 				add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
 			}
-			if = {
-				limit = {
-					is_in_faction_with = PRU
-				}
-				random_state = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
+					industrial_complex > 2
+					NOT = {
+						has_state_flag = conver_ind_in_amf_complete
 					}
 				}
-				random_state = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
+				set_state_flag = conver_ind_in_amf_complete
+				remove_building = {
+					type = industrial_complex
+					level = 3
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
+					industrial_complex > 2
+					NOT = {
+						has_state_flag = conver_ind_in_amf_complete
 					}
 				}
-			}
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_war_final
-		icon = GFX_goal_generic_attack_allies
-		x = 29
-		y = 9
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_warsupport }
-		prerequisite = { focus = PRU_faction_production_army_factory }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			has_war = yes
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 3 }
-			if = {
-				limit = {
-					is_in_faction_with = PRU
+				set_state_flag = conver_ind_in_amf_complete
+				remove_building = {
+					type = industrial_complex
+					level = 3
 				}
-				add_offsite_building = { type = arms_factory level = 2 }
-			}		
-		}
-	}
-	
-	# Centrl way
-	
-	focus = {
-		id = PRU_faction_production_xp
-		icon = GFX_focus_generic_combined_arms
-		x = 26
-		y = 7
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_peace focus = PRU_faction_production_war }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			army_experience = 25
-			navy_experience = 25
-			air_experience = 25
-			if = {
-				limit = {
-					is_in_faction_with = PRU
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
-				army_experience = 25
-				navy_experience = 25
-				air_experience = 25
 			}
-		}
-	}
-	
-	focus = {
-		id = PRU_faction_production_doctrin
-		icon = GFX_goal_generic_army_doctrines
-		x = 26
-		y = 8
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_xp }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {	
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 2
-				category = land_doctrine
-			}
-			if = {
-				limit = {
-					is_in_faction_with = PRU
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
+					industrial_complex > 2
+					NOT = {
+						has_state_flag = conver_ind_in_amf_complete
+					}
 				}
-				add_tech_bonus = {
-					name = land_doc_bonus
-					bonus = 1.0
-					uses = 1
-					category = land_doctrine
+				set_state_flag = conver_ind_in_amf_complete
+				remove_building = {
+					type = industrial_complex
+					level = 3
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = { 
+					is_core_of = PRU 
+					industrial_complex > 2
+					NOT = {
+						has_state_flag = conver_ind_in_amf_complete
+					}
+				}
+				set_state_flag = conver_ind_in_amf_complete
+				remove_building = {
+					type = industrial_complex
+					level = 3
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
 	}
-	
-	#final of faction 
-	
-	focus = {
-		id = PRU_faction_production_final
-		icon = GFX_goal_generic_major_alliance
-		x = 26
-		y = 10
-		cost = 7
-		prerequisite = { focus = PRU_faction_production_peace_final focus = PRU_faction_production_war_final }
-		prerequisite = { focus = PRU_faction_production_doctrin }
-		#mutually_exclusive = {  }
-		ai_will_do = {
-			factor = 9999
-		}
-		
-		#cancel = { }
-		
-		available = {
-			is_faction_leader = yes
-			num_faction_members > 1
-		}
-		
-		#bypass = { }
-		
-		#search_filters = {  }
-		
-		completion_reward = {
-			add_stability = 0.1
-			add_war_support = 0.1
-			if = {
-				limit = {
-					is_in_faction_with = PRU
-				}
-			add_stability = 0.1
-			add_war_support	= 0.1
-			}
-		}
-	}
-	 
 	 
 	#Kaisserreich
 	
@@ -4598,7 +5035,7 @@ focus_tree = {
 		cost = 4.3
 		#mutually_exclusive = {  }
 		ai_will_do = {
-			factor = 9999
+			factor = 5000
 		}
 		
 		#cancel = { }

@@ -185,7 +185,7 @@ allow_volunteers = {
 		text = "RULE_OPTION_FREE"
 		desc = "RULE_ALLOW_VOLUNTEERS_FREE_DESC"
 	}
-	option = {
+	default = {
 		name = "LIMITED"
 		text = "RULE_OPTION_LIMITED"
 		desc = "RULE_ALLOW_VOLUNTEERS_LIMITED_DESC"
@@ -195,7 +195,7 @@ allow_volunteers = {
 		text = "RULE_OPTION_SAME_IDEOLOGY"
 		desc = "RULE_ALLOW_VOLUNTEERS_SAME_IDEOLOGY_DESC"
 	}
-	default = {
+	option = {
 		name = BLOCKED
 		text = "RULE_OPTION_BLOCKED"
 		desc = "RULE_ALLOW_VOLUNTEERS_BLOCKED_DESC"
@@ -368,6 +368,22 @@ allow_paratroopers = {
 		name = no
 		text = "RULE_OPTION_BLOCKED"
 		desc = "RULE_ALLOW_PARATROOPERS_BLOCKED_DESC"
+	}
+}
+
+division_limite_rule = {
+	name = "RULE_DIVISION_LIMITE"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_volunteers"
+	default = {
+		name = yes
+		text = "RULE_OPTION_ALLOWED"
+		desc = "RULE_DIVISION_LIMITE_ALLOWED_DESC"
+	}
+	option = {
+		name = no
+		text = "RULE_OPTION_BLOCKED"
+		desc = "RULE_DIVISION_LIMITE_BLOCKED_DESC"
 	}
 }
 

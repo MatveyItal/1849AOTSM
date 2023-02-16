@@ -1,4 +1,5 @@
 characters = {
+
 	CBI_Uillem_Lem = {
 		name = CBI_Uillem_Lem
 		portraits = {
@@ -16,6 +17,7 @@ characters = {
 			id = -1
 		}
 	}
+	
 	CBI_Henry_Templ = {
 		name = CBI_Henry_Templ
 		portraits = {
@@ -29,17 +31,18 @@ characters = {
 		}
 		country_leader = {
 			#desc = "POLITICS_HENRY_TEMPL_DESC"
-			ideology = paternalism
+			ideology = centrism
 			traits = {  }
 			expire = "1900.1.1.1"
 			id = -1
 		}
 	}
-	CBI_Jordj_Gordon = {
-		name = CBI_Jordj_Gordon
+	
+	CBI_William_Lovett = {
+		name = CBI_William_Lovett
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/CBI/Portrait_Jordj_Gordon.dds"
+				large = "gfx/leaders/CBI/Portrait_William_Lovett.dds"
 			}
 			#army = {
 			#	large = "gfx/leaders/CBI/Portrait_.dds"
@@ -47,13 +50,14 @@ characters = {
 			#}
 		}
 		country_leader = {
-			#desc = "POLITICS_JORDJ_GORDON_DESC"
-			ideology = market_socialism
+			#desc = "POLITICS_WILLIAM_LOVETT_DESC"
+			ideology = syndicalism
 			traits = {  }
 			expire = "1900.1.1.1"
 			id = -1
 		}
 	}
+	
 	CBI_Eduard_Smit_Stenli = {
 		name = CBI_Eduard_Smit_Stenli
 		portraits = {
@@ -68,13 +72,12 @@ characters = {
 		country_leader = {
 			#desc = "POLITICS_EDUARD_SMIT_STENLEY_DESC"
 			ideology = conservatism 
-			traits = {  
-			temporary_acting
-			}
+			traits = {  }
 			expire = "1900.1.1.1"
 			id = -1
 		}
 	}
+	
 	CBI_Jordj_Rassel = {
 		name = CBI_Jordj_Rassel
 		portraits = {
@@ -87,13 +90,31 @@ characters = {
 			#}
 		}
 		country_leader = {
-			#desc = "POLITICS_JORDJ_RASSEL_DESC"
-			ideology = liberalism 
+			desc = "POLITICS_JORDJ_RASSEL_DESC"
+			ideology = paternalism 
 			traits = {  }
 			expire = "1900.1.1.1"
 			id = -1
 		}
+		advisor={
+			slot = political_advisor
+			idea_token = GFX_idea_bendjamin_disrassel	
+			available  = {
+				
+			}			
+			allowed  = {
+				original_tag = CBI
+			}				
+			traits  = {
+				sharp_tongued_lawyer 
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}			
+		}		
 	}	
+	
 	CBI_Robert_Pil = {
 		name = CBI_Robert_Pil
 		portraits = {
@@ -107,11 +128,145 @@ characters = {
 		}
 		country_leader = {
 			#desc = "POLITICS_ROBERT_PIL_DESC"
-			ideology = national_populism 
+			ideology = conservatism 
 			traits = {  }
 			expire = "1900.1.1.1"
 			id = -1
 		}
+		advisor={
+			slot = political_advisor
+			idea_token = GFX_idea_bendjamin_disrassel			
+			allowed  = {
+				original_tag  = CBI
+			}				
+			traits  = {
+				popular_figurehead 
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}			
+		}		
+	}
+	
+	BRI_Robert_Pil = {
+		name = CBI_Robert_Pil
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CBI/Portrait_Robert_Pil.dds"
+			}
+			#army = {
+			#	large = "gfx/leaders/CBI/Portrait_.dds"
+			#	small = "gfx/interface/ideas/idea_.dds"
+			#}
+		}
+		country_leader = {
+			#desc = "POLITICS_ROBERT_PIL_DESC"
+			ideology = conservatism 
+			traits = {  }
+			expire = "1900.1.1.1"
+			id = -1
+		}		
+	}
+	
+	WAL_John_Crichton_Stuart = {
+		name = CBI_John_Crichton_Stuart
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CBI/Portrait_John_Crichton_Stuart.dds"
+			}
+			#army = {
+			#	large = "gfx/leaders/CBI/Portrait_.dds"
+			#	small = "gfx/interface/ideas/idea_.dds"
+			#}
+		}
+		country_leader = {
+			#desc = "POLITICS_JOHN_CRICHTON_STUART_DESC"
+			ideology = conservatism 
+			traits = {  }
+			expire = "1900.1.1.1"
+			id = -1
+		}		
+	}
+	
+	SCO_James_Clerk_Maxwell = {
+		name = CBI_James_Clerk_Maxwell
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CBI/Portrait_James_Clerk_Maxwell.dds"
+			}
+			#army = {
+			#	large = "gfx/leaders/CBI/Portrait_.dds"
+			#	small = "gfx/interface/ideas/idea_.dds"
+			#}
+		}
+		country_leader = {
+			#desc = "POLITICS_JAMES_CLERK_MAXWELL_DESC"
+			ideology = conservatism 
+			traits = {  }
+			expire = "1900.1.1.1"
+			id = -1
+		}		
+	}
+	
+	IRE_Daniel_Connell = {
+		name = CBI_Daniel_Connell
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CBI/Portrait_Daniel_Connell.dds"
+			}
+			#army = {
+			#	large = "gfx/leaders/CBI/Portrait_.dds"
+			#	small = "gfx/interface/ideas/idea_.dds"
+			#}
+		}
+		country_leader = {
+			#desc = "POLITICS_DANIEL_CONNELL_DESC"
+			ideology = christian_democracy 
+			traits = {  }
+			expire = "1900.1.1.1"
+			id = -1
+		}		
+	}
+	
+	OIC_Jordj_Gordon = {
+		name = CBI_Jordj_Gordon
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CBI/Portrait_Jordj_Gordon.dds"
+			}
+			#army = {
+			#	large = "gfx/leaders/CBI/Portrait_.dds"
+			#	small = "gfx/interface/ideas/idea_.dds"
+			#}
+		}
+		country_leader = {
+			#desc = "POLITICS_JORDJ_GORDON_DESC"
+			ideology = conservatism 
+			traits = {  }
+			expire = "1900.1.1.1"
+			id = -1
+		}		
+	}
+	
+	NEN_Robert_Ouen = {
+		name = CBI_Robert_Ouen
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CBI/Portrait_Robert_Ouen.dds"
+			}
+			#army = {
+			#	large = "gfx/leaders/CBI/Portrait_.dds"
+			#	small = "gfx/interface/ideas/idea_.dds"
+			#}
+		}
+		country_leader = {
+			#desc = "POLITICS_ROBERT_OUEN_DESC"
+			ideology = conservatism 
+			traits = {  }
+			expire = "1900.1.1.1"
+			id = -1
+		}		
 	}
 
 	### ТЕОРЕТИКИ ###
@@ -120,11 +275,11 @@ characters = {
 		name = CBI_James_Thomas_Brudenell
 		portraits={
 			army={
-				small="Portrait_Henry_Havelock"
+				small = GFX_idea_henry_havelock
 			}
 		}
 		advisor={
-			cost = 100			
+			cost = 150			
 			slot = theorist
 			idea_token = CBI_James_Thomas_Brudenell
 			ledger = army
@@ -141,11 +296,11 @@ characters = {
 		name=CBI_Charles_Green
 		portraits={
 			army={
-				small="Portrait_Henry_Havelock"
+				small = GFX_idea_henry_havelock
 			}
 		}
 		advisor={
-			cost = 100		
+			cost = 150		
 			slot = theorist
 			idea_token = CBI_Charles_Green
 			ledger = air
@@ -162,11 +317,11 @@ characters = {
 		name=CBI_David_Price
 		portraits={
 			army={
-				small="Portrait_Henry_Havelock"
+				small = GFX_idea_henry_havelock
 			}
 		}
 		advisor={
-			cost = 100
+			cost = 150
 			slot = theorist
 			idea_token = CBI_David_Price
 			ledger = navy
@@ -184,11 +339,11 @@ characters = {
 		name=CBI_Charles_Napier
 		portraits={
 			army={
-				small="Portrait_Henry_Havelock"
+				small = GFX_idea_henry_havelock
 			}
 		}
 		advisor={
-			cost = 100
+			cost = 25
 			slot = theorist
 			idea_token = CBI_Charles_Napier
 			ledger = navy
@@ -215,14 +370,14 @@ characters = {
 				small="GFX_idea_gof_hugh"
 			}
 		}
-		field_marshal={
+		corps_commander={
 			traits={ trait_cautious infantry_officer defensive_doctrine old_guard }
 			skill=3
 			attack_skill=3
 			defense_skill=3
 			planning_skill=1
 			logistics_skill=3
-			legacy_id=-1
+			legacy_id=600
 		}
 	}	
 	
@@ -234,14 +389,14 @@ characters = {
 				small="GFX_idea_gof_hugh"
 			}
 		}
-		field_marshal={
+		corps_commander={
 			traits={ brilliant_strategist offensive_doctrine old_guard }
 			skill=2
 			attack_skill=3
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=3
-			legacy_id=-1
+			legacy_id=601
 		}
 	}
 
@@ -253,14 +408,28 @@ characters = {
 				small="GFX_idea_gof_hugh"
 			}
 		}
-		corps_commander={
+		advisor={
+			slot = army_chief
+			idea_token = CBI_Henry_Havelock
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+		field_marshal={
 			traits={ politically_connected old_guard }
 			skill=4
 			attack_skill=4
 			defense_skill=3
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			legacy_id=602
 		}
 	}	
 	
@@ -279,7 +448,7 @@ characters = {
 			defense_skill=4
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			legacy_id=603
 		}
 	}
 
@@ -291,30 +460,25 @@ characters = {
 				small="GFX_idea_gof_hugh"
 			}
 		}
-		field_marshal={
+		corps_commander={
 			traits={ harsh_leader defensive_doctrine old_guard }
 			skill=3
 			attack_skill=2
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=4
-			legacy_id=-1
+			legacy_id=604
 		}
 	}	
 			
 	
 	### ПОЛИТИКИ-ЭКОНОМИСТЫ ###
 	
-	CBI_Matthew_Marshall = {
-		name = CBI_Matthew_Marshall
-			portraits = {
-				army = {
-					#large="Portrait_Henry_Havelock"
-				}
-			}
+	CBI_William_Gladstone = {
+		name = CBI_William_Gladstone
 		advisor={
 			slot = political_advisor
-			idea_token = CBI_Matthew_Marshall
+			idea_token = CBI_William_Gladstone
 			allowed  = {
 				original_tag  = CBI
 			}
@@ -325,11 +489,6 @@ characters = {
 	}	
 	CBI_William_Miller = {
 		name = CBI_William_Miller
-			portraits = {
-				army = {
-					#large="Portrait_Henry_Havelock"
-				}
-			}
 		advisor={
 			slot = political_advisor
 			idea_token = CBI_William_Miller
@@ -344,11 +503,6 @@ characters = {
 
 	CBI_William_Fenwick = {
 		name = CBI_William_Fenwick
-			portraits = {
-				army = {
-					#large="Portrait_Henry_Havelock"
-				}
-			}
 		advisor={
 			slot = political_advisor
 			idea_token = CBI_William_Fenwick
@@ -376,7 +530,7 @@ characters = {
 			}
 		advisor={
 			slot = political_advisor
-			idea_token = CBI_Benjamin_Disraeli
+			idea_token = GFX_idea_bendjamin_disrassel
 			available  = {
 				has_country_flag = CBI_Smith_Stanley_win	
 			}			
@@ -391,7 +545,188 @@ characters = {
 				factor = 1
 			}			
 		}			
+	}
+		
+	
+	### ВОЕННЫЕ-СОВЕТНИКИ ###
+	
+	CBI_Edmund_Lyons = {
+		name = CBI_Edmund_Lyons
+			portraits = {
+				army = {
+					#large="GFX_idea_bendjamin_disrassel"
+					#small="GFX_idea_bendjamin_disrassel"
+				}
+			}
+		advisor={
+			slot = army_chief
+			idea_token = CBI_Edmund_Lyons
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}			
+	}
+	CBI_James_Simpson = {
+		name = CBI_James_Simpson
+			portraits = {
+				army = {
+					#large="GFX_idea_bendjamin_disrassel"
+					#small="GFX_idea_bendjamin_disrassel"
+				}
+			}
+		advisor={
+			slot = army_chief
+			idea_token = CBI_James_Simpson
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				army_chief_defensive_3
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}			
+	}	
+	CBI_Edward_Codrington = {
+		name = CBI_Edward_Codrington
+			portraits = {
+				army = {
+					#large="GFX_idea_bendjamin_disrassel"
+					#small="GFX_idea_bendjamin_disrassel"
+				}
+			}
+		advisor={
+			slot = navy_chief
+			idea_token = CBI_Edward_Codrington
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				navy_chief_decisive_battle_1
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}			
+	}
+	CBI_William_Codrington = {
+		name = CBI_William_Codrington
+			portraits = {
+				army = {
+					#large="GFX_idea_bendjamin_disrassel"
+					#small="GFX_idea_bendjamin_disrassel"
+				}
+			}
+		advisor={
+			slot = navy_chief
+			idea_token = CBI_William_Codrington
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				navy_chief_commerce_raiding_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}			
 	}	
 
+	### ВЫСШЕЕ ВОЕННОЕ КОМАНДОВАНИЕ ###
+
+	CBI_George_Elliot = {
+		name = CBI_George_Elliot
+			portraits = {
+				army = {
+					#large="GFX_idea_bendjamin_disrassel"
+					#small="GFX_idea_bendjamin_disrassel"
+				}
+			}
+		advisor={
+			slot = high_command
+			idea_token = kenneth_anderson
+			ledger = army
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				army_infantry_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 2.000
+			}
+		}			
+	}
+	CBI_Gordon_Bremer = {
+		name = CBI_Gordon_Bremer
+			portraits = {
+				army = {
+					#large="GFX_idea_bendjamin_disrassel"
+					#small="GFX_idea_bendjamin_disrassel"
+				}
+			}
+		advisor={
+			slot = high_command
+			idea_token = CBI_Gordon_Bremer
+			allowed = {
+				original_tag = CBI
+			}
+			traits = {
+				air_bomber_interception_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}			
+	}	
 	
+	CBI_Uilliam_Fenuik = {
+		name = CBI_Uilliam_Fenuik
+			portraits = {
+				army = {
+					large= "gfx/leaders/CBI/Portrait_Uilyam_Fenuik.dds"
+					small = GFX_idea_Fenuik
+				}
+			}
+		field_marshal={
+			traits={ old_guard infantry_officer trickster trait_engineer}
+			skill=4
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}		
+	}
+	CBI_Edmund_Layons = {
+		name = CBI_Edmund_Layons
+			portraits = {
+				army = {
+					large= "gfx/leaders/CBI/Portrait_Edmund_Layons.dds"
+					small = GFX_idea_Layons
+				}
+			}
+		field_marshal={
+			traits={ old_guard brilliant_strategist infantry_officer offensive_doctrine }
+			skill=4
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}		
+	}	
 }

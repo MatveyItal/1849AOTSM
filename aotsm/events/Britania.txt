@@ -3,6 +3,2218 @@
 ###########################
 
 add_namespace = CBI
+add_namespace = cbi
+add_namespace = cbi_frr
+add_namespace = cbi_pru
+add_namespace = cbi_rus
+add_namespace = cbi_byz
+add_namespace = cbi_rip
+add_namespace = cbi_soc_rev
+
+#### FRANCE ####
+
+country_event = { #Visit Paris
+	id = cbi_frr.1
+	title = cbi_frr.1.t
+	desc = cbi_frr.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cbi_frr.1.a
+		FRR = {
+			country_event = cbi_frr.2
+		}
+	}
+}
+
+country_event = { #proposal
+	id = cbi_frr.2
+	title = cbi_frr.2.t
+	desc = cbi_frr.2.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = cbi_frr.2.a
+		ai_chance = {
+			factor = 95
+		}
+		CBI = {
+			country_event = cbi_frr.3
+		}
+	}
+	
+	option = { #No
+		name = cbi_frr.2.b
+		ai_chance = {
+			factor = 5
+		}
+		CBI = {
+			country_event = cbi_frr.4
+		}
+	}
+}
+
+country_event = { #They say yes
+	id = cbi_frr.3
+	title = cbi_frr.3.t
+	desc = cbi_frr.3.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_frr.3.a
+		FRR = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = construction_tech
+			}
+		}
+		CBI = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+}
+
+country_event = { #They say no
+	id = cbi_frr.4
+	title = cbi_frr.4.t
+	desc = cbi_frr.4.d
+	picture = GFX_report_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_frr.4.a
+	}
+}
+
+country_event = { #deal with CBI
+	id = cbi_frr.5
+	title = cbi_frr.5.t
+	desc = cbi_frr.5.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_frr.5.a
+		ai_chance = {
+			factor = 90
+		}
+		CBI = {
+			add_political_power = 150
+		}
+		FRR = {
+			add_political_power = 150
+		}
+		CBI = {
+			set_country_flag = cbi_dialog_with_frr_accept
+		}
+	}
+	
+	option = { 
+		name = cbi_frr.5.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Join London pack
+	id = cbi_frr.6
+	title = cbi_frr.6.t
+	desc = cbi_frr.6.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_frr.6.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		CBI = { add_to_faction = FRR }
+		hidden_effect = {
+			FRR = {
+				unlock_national_focus = FRA_support_cbi
+			}
+		}
+	}
+	
+	option = { 
+		name = cbi_frr.6.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				PRU = {
+					is_ai = no
+				}
+			}
+			modifier = {
+				factor = 0
+				BYZ = {
+					is_ai = no
+				}
+			}
+		}
+	}
+}
+
+#### PRUSSIAN ####
+
+country_event = { #Visit Berlin
+	id = cbi_pru.1
+	title = cbi_pru.1.t
+	desc = cbi_pru.1.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cbi_pru.1.a
+		PRU = {
+			country_event = cbi_pru.2
+		}
+	}
+}
+
+country_event = { #proposal
+	id = cbi_pru.2
+	title = cbi_pru.2.t
+	desc = cbi_pru.2.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = cbi_pru.2.a
+		ai_chance = {
+			factor = 40
+		}
+		CBI = {
+			country_event = cbi_pru.3
+		}
+	}
+	
+	option = { #No
+		name = cbi_pru.2.b
+		ai_chance = {
+			factor = 60
+		}
+		CBI = {
+			country_event = cbi_pru.4
+		}
+	}
+}
+
+country_event = { #They say yes
+	id = cbi_pru.3
+	title = cbi_pru.3.t
+	desc = cbi_pru.3.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_pru.3.a
+		PRU = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+		CBI = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		126 = {
+			add_resource = {
+				type = leypoldit
+				amount = 16
+			}
+		}
+	}
+}
+
+country_event = { #They say no
+	id = cbi_pru.4
+	title = cbi_pru.4.t
+	desc = cbi_pru.4.d
+	picture = GFX_report_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_pru.4.a
+	}
+}
+
+country_event = { #deal with CBI
+	id = cbi_pru.5
+	title = cbi_pru.5.t
+	desc = cbi_pru.5.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_pru.5.a
+		ai_chance = {
+			factor = 50
+		}
+		CBI = {
+			add_political_power = 150
+		}
+		PRU = {
+			add_political_power = 150
+		}
+		CBI = {
+			set_country_flag = cbi_dialog_with_pru_accept
+		}
+	}
+	
+	option = { 
+		name = cbi_pru.5.b
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+#### RUSSIAN ####
+
+country_event = { #Visit Saint-Peterburg
+	id = cbi_rus.1
+	title = cbi_rus.1.t
+	desc = cbi_rus.1.d
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cbi_rus.1.a
+		RUS = {
+			country_event = cbi_rus.2
+		}
+	}
+}
+
+country_event = { #proposal
+	id = cbi_rus.2
+	title = cbi_rus.2.t
+	desc = cbi_rus.2.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = cbi_rus.2.a
+		ai_chance = {
+			factor = 100
+		}
+		CBI = {
+			country_event = cbi_rus.3
+		}
+	}
+	
+	option = { #No
+		name = cbi_rus.2.b
+		ai_chance = {
+			factor = 0
+		}
+		CBI = {
+			country_event = cbi_rus.4
+		}
+	}
+}
+
+country_event = { #They say yes
+	id = cbi_rus.3
+	title = cbi_rus.3.t
+	desc = cbi_rus.3.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_rus.3.a
+		RUS = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		CBI = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		RUS = {
+			give_military_access = CBI
+			army_experience = 15
+		}
+		CBI = {
+			give_military_access = RUS
+			army_experience = 15
+		}
+	}
+}
+
+country_event = { #They say no
+	id = cbi_rus.4
+	title = cbi_rus.4.t
+	desc = cbi_rus.4.d
+	picture = GFX_report_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_rus.4.a
+	}
+}
+
+country_event = { #deal with CBI
+	id = cbi_rus.5
+	title = cbi_rus.5.t
+	desc = cbi_rus.5.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_rus.5.a
+		ai_chance = {
+			factor = 90
+		}
+		CBI = {
+			add_political_power = 150
+		}
+		RUS = {
+			add_political_power = 150
+		}
+		CBI = {
+			set_country_flag = cbi_dialog_with_rus_accept
+		}
+	}
+	
+	option = { 
+		name = cbi_rus.5.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Join London pack
+	id = cbi_rus.6
+	title = cbi_rus.6.t
+	desc = cbi_rus.6.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_rus.6.a
+		ai_chance = {
+			factor = 75
+		}
+		CBI = { add_to_faction = RUS }
+	}
+	
+	option = { 
+		name = cbi_rus.6.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				PRU = {
+					is_ai = no
+				}
+			}
+			modifier = {
+				factor = 0
+				BYZ = {
+					is_ai = no
+				}
+			}
+		}
+	}
+}
+
+#### Byzantium ####
+
+country_event = { #deal with CBI
+	id = cbi_byz.1
+	title = cbi_byz.1.t
+	desc = cbi_byz.1.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi_byz.1.a
+		ai_chance = {
+			factor = 40
+		}
+		CBI = {
+			add_political_power = 150
+		}
+		FRR = {
+			add_political_power = 150
+		}
+		CBI = {
+			set_country_flag = cbi_dialog_with_byz_accept
+		}
+	}
+	
+	option = { 
+		name = cbi_byz.1.b
+		ai_chance = {
+			factor = 60
+		}
+	}
+}
+
+#### NEW ####
+
+country_event = { #Lem will
+	id = cbi.1
+	title = cbi.1.t
+	desc = cbi.1.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #cheater
+		name = cbi.1.a
+	}
+}
+
+country_event = { #Receiver
+	id = cbi.2
+	title = cbi.2.t
+	desc = cbi.2.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #cheater
+		name = cbi.2.a
+	}
+}
+
+country_event = { #Economica
+	id = cbi.3
+	title = cbi.3.t
+	desc = cbi.3.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #Democratic
+		name = cbi.3.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}		
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_d = 1 }
+		CBI = {
+			add_stability = -0.025
+			country_event = {
+				days = 2
+				id = cbi.4
+			}
+		}
+	}
+	
+	option = { #Autharitarian
+		name = cbi.3.b
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_a = 1 }
+		CBI = {
+			add_stability = 0.025
+			country_event = {
+				days = 2
+				id = cbi.4
+			}
+		}
+	}
+	
+	option = { #Reactionism
+		name = cbi.3.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		add_popularity = {
+			ideology = reactionist
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_r = 1 }
+		CBI = {
+			add_stability = 0.05
+			country_event = {
+				days = 2
+				id = cbi.4
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = cbi.4
+	title = cbi.4.t
+	desc = cbi.4.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #Democratic
+		name = cbi.4.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}		
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_d = 1 }
+		CBI = {
+			country_event = {
+				days = 2
+				id = cbi.5
+			}
+		}
+	}
+	
+	option = { #Autharitarian
+		name = cbi.4.b
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_a = 1 }
+		CBI = {
+			country_event = {
+				days = 2
+				id = cbi.5
+			}
+		}
+	}
+	
+	option = { #Reactionism
+		name = cbi.4.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		add_popularity = {
+			ideology = reactionist
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_r = 1 }
+		CBI = {
+			add_stability = -0.05
+			country_event = {
+				days = 2
+				id = cbi.5
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = cbi.5
+	title = cbi.5.t
+	desc = cbi.5.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #Democratic
+		name = cbi.5.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}		
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_d = 1 }
+		CBI = {
+			add_stability = 0.05
+			add_war_support = -0.10
+			country_event = {
+				days = 2
+				id = cbi.6
+			}
+		}
+	}
+	
+	option = { #Autharitarian
+		name = cbi.5.b
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_a = 1 }
+		CBI = {
+			add_war_support = 0.05
+			country_event = {
+				days = 2
+				id = cbi.6
+			}
+		}
+	}
+	
+	option = { #Reactionism
+		name = cbi.5.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		add_popularity = {
+			ideology = reactionist
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_r = 1 }
+		CBI = {
+			add_stability = -0.05
+			add_war_support = 0.10
+			country_event = {
+				days = 2
+				id = cbi.6
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = cbi.6
+	title = cbi.6.t
+	desc = cbi.6.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #Democratic
+		name = cbi.6.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}		
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_d = 1 }
+		CBI = {
+			add_stability = 0.05
+			country_event = {
+				days = 2
+				id = cbi.7
+			}
+		}
+	}
+	
+	option = { #Autharitarian
+		name = cbi.6.b
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_a = 1 }
+		CBI = {
+			country_event = {
+				days = 2
+				id = cbi.7
+			}
+		}
+	}
+	
+	option = { #Reactionism
+		name = cbi.6.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		add_popularity = {
+			ideology = reactionist
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_r = 1 }
+		BRI = {
+			transfer_navy = {
+				target = CBI
+			}
+		}
+		WAL = {
+			transfer_navy = {
+				target = CBI
+			}
+		}
+		SCO = {
+			transfer_navy = {
+				target = CBI
+			}
+		}
+		IRE = {
+			transfer_navy = {
+				target = CBI
+			}
+		}
+		CBI = {
+			add_stability = -0.05
+			add_war_support = 0.10
+			country_event = {
+				days = 2
+				id = cbi.7
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = cbi.7
+	title = cbi.7.t
+	desc = cbi.7.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #Democratic
+		name = cbi.7.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}		
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_d = 1 }
+		CBI = {
+			country_event = {
+				days = 2
+				id = cbi.8
+			}
+		}
+	}
+	
+	option = { #Autharitarian
+		name = cbi.7.b
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_a = 1 }
+		CBI = {
+			country_event = {
+				days = 2
+				id = cbi.8
+			}
+		}
+	}
+	
+	option = { #Reactionism
+		name = cbi.7.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		add_popularity = {
+			ideology = reactionist
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_r = 1 }
+		CBI = {
+			country_event = {
+				days = 2
+				id = cbi.8
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = cbi.8
+	title = cbi.8.t
+	desc = cbi.8.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #Democratic
+		name = cbi.8.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}		
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_d = 1 }
+		CBI = {
+			add_stability = 0.10
+		}
+	}
+	
+	option = { #Autharitarian
+		name = cbi.8.b
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = authoritarian
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_a = 1 }
+		CBI = {
+			add_stability = 0.075
+			add_war_support = 0.075
+		}
+	}
+	
+	option = { #Reactionism
+		name = cbi.8.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		add_popularity = {
+			ideology = reactionist
+			popularity = 0.05
+		}
+		add_to_variable = { cbi_influence_of_r = 1 }
+		CBI = {
+			add_stability = 0.05
+			add_war_support = 0.10
+		}
+	}
+}
+
+country_event = { #results
+	id = cbi.9
+	title = cbi.9.t
+	desc = cbi.9.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { #Eduard_Smit_Stenli
+		name = cbi.9.a
+		trigger = {
+			check_variable = {
+				cbi_influence_of_d > 2
+			}
+			NOT = {
+				check_variable = {
+					cbi_influence_of_a > 2
+				}
+			}
+			NOT = {
+				check_variable = {
+					cbi_influence_of_r > 2
+				}
+			}
+		}
+		CBI = {
+			retire_character = CBI_Robert_Pil
+			promote_character = CBI_Eduard_Smit_Stenli
+			add_stability = 0.25
+			complete_national_focus = CBI_eduard_smit_stenli
+		}
+		custom_effect_tooltip = cbi_confederaty_normal
+		add_to_variable = { cbi_bri_opinion = -15 }
+		clamp_variable = {
+			var = cbi_bri_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_bri_integration_procces = -10 }
+		clamp_variable = {
+			var = cbi_bri_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_opinion = -15 }
+		clamp_variable = {
+			var = cbi_wal_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_integration_procces = -10 }
+		clamp_variable = {
+			var = cbi_wal_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_opinion = -15 }
+		clamp_variable = {
+			var = cbi_sco_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_integration_procces = -10 }
+		clamp_variable = {
+			var = cbi_sco_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_opinion = -15 }
+		clamp_variable = {
+			var = cbi_ire_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_integration_procces = -10 }
+		clamp_variable = {
+			var = cbi_ire_integration_procces
+			min = 0
+			max = 100
+		}
+		hidden_effect = {
+			CBI = {
+				country_event = {
+					id = cbi_soc_rev.1
+					days = 90
+				}
+			}
+		}
+		news_event = news.95
+	}
+	
+	option = { #Genri_Templ
+		name = cbi.9.b
+		trigger = {
+			check_variable = {
+				cbi_influence_of_a > 2
+			}
+			NOT = {
+				check_variable = {
+					cbi_influence_of_d > 2
+				}
+			}
+			NOT = {
+				check_variable = {
+					cbi_influence_of_r > 2
+				}
+			}
+		}
+		CBI = {
+			retire_character = CBI_Robert_Pil
+			promote_character = CBI_Eduard_Smit_Stenli
+			add_stability = 0.15
+			complete_national_focus = CBI_genri_templ
+		}
+		CBI = {
+			set_politics = {
+				ruling_party = authoritarian
+				elections_allowed = no
+				last_election = "1849.8.30"
+				election_frequency = 480
+			}
+		}
+		custom_effect_tooltip = cbi_confederaty_low
+		add_to_variable = { cbi_bri_opinion = -25 }
+		clamp_variable = {
+			var = cbi_bri_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_bri_integration_procces = -25 }
+		clamp_variable = {
+			var = cbi_bri_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_opinion = -25 }
+		clamp_variable = {
+			var = cbi_wal_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_integration_procces = -25 }
+		clamp_variable = {
+			var = cbi_wal_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_opinion = -25 }
+		clamp_variable = {
+			var = cbi_sco_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_integration_procces = -25 }
+		clamp_variable = {
+			var = cbi_sco_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_opinion = -25 }
+		clamp_variable = {
+			var = cbi_ire_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_integration_procces = -25 }
+		clamp_variable = {
+			var = cbi_ire_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_plan = 1 }
+		clamp_variable = {
+			var = cbi_ire_plan
+			min = 0
+			max = 5
+		}
+		hidden_effect = {
+			CBI = {
+				country_event = {
+					id = cbi_soc_rev.1
+					days = 90
+				}
+			}
+		}
+		news_event = news.95
+	}
+	
+	option = { #Jordj_Rassel
+		name = cbi.9.c
+		trigger = {
+			check_variable = {
+				cbi_influence_of_r > 2
+			}
+			NOT = {
+				check_variable = {
+					cbi_influence_of_d > 2
+				}
+			}
+			NOT = {
+				check_variable = {
+					cbi_influence_of_a > 2
+				}
+			}
+		}
+		CBI = {
+			retire_character = CBI_Robert_Pil
+			promote_character = CBI_Eduard_Smit_Stenli
+			add_stability = 0.125
+			complete_national_focus = CBI_jorrdj_rassel
+		}
+		CBI = {
+			set_politics = {
+				ruling_party = reactionist
+				elections_allowed = no
+				last_election = "1849.8.30"
+				election_frequency = 480
+			}
+		}
+		custom_effect_tooltip = cbi_confederaty_very_low
+		add_to_variable = { cbi_bri_opinion = -50 }
+		clamp_variable = {
+			var = cbi_bri_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_bri_integration_procces = -45 }
+		clamp_variable = {
+			var = cbi_bri_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_opinion = -45 }
+		clamp_variable = {
+			var = cbi_wal_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_integration_procces = -40 }
+		clamp_variable = {
+			var = cbi_wal_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_opinion = -30 }
+		clamp_variable = {
+			var = cbi_sco_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_integration_procces = -30 }
+		clamp_variable = {
+			var = cbi_sco_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_opinion = -25 }
+		clamp_variable = {
+			var = cbi_ire_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_integration_procces = -25 }
+		clamp_variable = {
+			var = cbi_ire_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_plan = 2 }
+		clamp_variable = {
+			var = cbi_ire_plan
+			min = 0
+			max = 5
+		}
+		add_to_variable = { cbi_ire_position = 1 }
+		clamp_variable = {
+			var = cbi_ire_position
+			min = 0
+			max = 5
+		}
+		hidden_effect = {
+			CBI = {
+				country_event = {
+					id = cbi_soc_rev.1
+					days = 94
+				}
+			}
+		}
+		news_event = news.95
+	}
+	
+	option = { #Electoral stalemate
+		name = cbi.9.f
+		trigger = {
+			OR = {
+				AND = {
+					check_variable = {
+						cbi_influence_of_d < 3
+					}
+					check_variable = {
+						cbi_influence_of_a < 3
+					}
+					check_variable = {
+						cbi_influence_of_r < 3
+					}
+				}
+				AND = {
+					check_variable = {
+						cbi_influence_of_d > 2
+					}
+					check_variable = {
+						cbi_influence_of_a > 2
+					}
+				}
+				AND = {
+					check_variable = {
+						cbi_influence_of_d > 2
+					}
+					check_variable = {
+						cbi_influence_of_r > 2
+					}
+				}
+				AND = {
+					check_variable = {
+						cbi_influence_of_a > 2
+					}
+					check_variable = {
+						cbi_influence_of_r > 2
+					}
+				}
+			}
+		}
+		CBI = {
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.25
+			}
+			add_stability = -0.25
+			set_country_flag = CBI_SOCIALISM_CRISIS
+			set_country_flag = cbi_soc_revolution_begin
+		}
+		custom_effect_tooltip = cbi_confederaty_neutraliti
+		add_to_variable = { cbi_bri_opinion = -50 }
+		clamp_variable = {
+			var = cbi_bri_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_bri_integration_procces = -45 }
+		clamp_variable = {
+			var = cbi_bri_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_opinion = -40 }
+		clamp_variable = {
+			var = cbi_wal_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_wal_integration_procces = -40 }
+		clamp_variable = {
+			var = cbi_wal_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_opinion = -20 }
+		clamp_variable = {
+			var = cbi_sco_opinion
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_sco_integration_procces = -20 }
+		clamp_variable = {
+			var = cbi_sco_integration_procces
+			min = 0
+			max = 100
+		}
+		add_to_variable = { cbi_ire_opinion = -30 }
+		clamp_variable = {
+			var = cbi_ire_opinion
+			min = 0
+			max = 100
+		}
+	}
+}
+
+country_event = { #visit block
+	id = cbi.10
+	title = cbi.10.t
+	desc = cbi.10.d
+	picture = GFX_report_event_british_inspect_troops
+	
+	is_triggered_only = yes
+	
+	option = { #if democratic
+		name = cbi.10.a
+		trigger = {
+			CBI = {
+				has_country_leader = {
+					character = CBI_Eduard_Smit_Stenli
+					ruling_only = yes
+				}
+			}
+		}
+		IRE = {
+			add_stability = 0.05
+		}
+		SCO = {
+			add_stability = 0.05
+		}
+		WAL = {
+			add_stability = 0.05
+		}
+		BRI = {
+			add_stability = 0.05
+		}
+		custom_effect_tooltip = cbi_inegration_rise
+		hidden_effect = {
+			add_to_variable = { cbi_bri_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_bri_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_wal_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_wal_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_sco_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_sco_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_ire_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_ire_integration_procces
+				min = 0
+				max = 100
+			}
+		}
+	}
+	
+	option = { #if authoritarian
+		name = cbi.10.b
+		trigger = {
+			CBI = {
+				has_country_leader = {
+					character = CBI_Henry_Templ
+					ruling_only = yes
+				}
+			}
+		}
+		IRE = {
+			add_war_support = 0.05
+		}
+		SCO = {
+			add_war_support = 0.05
+		}
+		WAL = {
+			add_war_support = 0.05
+		}
+		BRI = {
+			add_war_support = 0.05
+		}
+		custom_effect_tooltip = cbi_inegration_rise
+		hidden_effect = {
+			add_to_variable = { cbi_bri_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_bri_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_wal_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_wal_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_sco_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_sco_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_ire_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_ire_integration_procces
+				min = 0
+				max = 100
+			}
+		}
+	}
+	
+}
+
+country_event = { #London parad
+	id = cbi.11
+	title = cbi.11.t
+	desc = cbi.11.d
+	picture = GFX_report_event_generic_military_parade
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = cbi.11.a
+		add_war_support = 0.10
+		add_manpower = 25000
+	}
+	
+}
+
+country_event = { #Work day
+	id = cbi.12
+	title = cbi.12.t
+	desc = cbi.12.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #8-hours
+		name = cbi.12.a
+		add_ideas = CBI_8_hour_working_day
+	}
+	
+	option = { #old work fine
+		name = cbi.12.b
+		add_stability = 0.05
+	}
+	
+	option = { #14-hours
+		name = cbi.12.c
+		add_ideas = CBI_14_hour_working_day
+	}
+	
+}
+
+country_event = { #child labour
+	id = cbi.13
+	title = cbi.13.t
+	desc = cbi.13.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = { #stop
+		name = cbi.13.a
+		add_stability = 0.05
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.05
+		}
+		set_country_flag = cbi_stop_child_labour
+	}
+	
+	option = { #do nothing
+		name = cbi.13.b
+		add_stability = -0.05
+		set_country_flag = cbi_stop_not_child_labour
+	}
+	
+}
+
+country_event = { #Fund question
+	id = cbi.14
+	title = cbi.14.t
+	desc = cbi.14.d
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = { #for domestic market
+		name = cbi.14.a
+		swap_ideas = {
+			remove_idea = CBI_fund_of_cromwell_1
+			add_idea = CBI_fund_of_cromwell_1a
+		}
+	}
+	
+	option = { #foreign trade operations
+		name = cbi.14.b
+		swap_ideas = {
+			remove_idea = CBI_fund_of_cromwell_1
+			add_idea = CBI_fund_of_cromwell_1b
+		}
+	}
+	
+	option = { #for British world
+		name = cbi.14.c
+		swap_ideas = {
+			remove_idea = CBI_fund_of_cromwell_1
+			add_idea = CBI_fund_of_cromwell_1c
+		}
+	}
+	
+}
+
+country_event = { #Nen Situation
+	id = cbi.15
+	title = cbi.15.t
+	desc = cbi.15.d
+	picture = GFX_report_event_generic_usa_treaty
+	
+	is_triggered_only = yes
+	
+	option = { #more freedom
+		name = cbi.15.a
+		ai_chance = {
+			factor = 50
+		}
+		CBI = {
+			hidden_effect = {
+				if = {
+					limit = {
+						NEN = {
+							has_government = democratic
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						NEN = {
+							has_government = socialism
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						NEN = {
+							has_government = reactionist
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						NEN = {
+							has_government = authoritarian
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 4
+					}
+				}
+				NEN = {
+					set_variable = {
+						var = NEN.NEN_democraty_number
+						value = party_popularity@democratic
+					}
+					set_variable = {
+						var = NEN.NEN_socialism_number
+						value = party_popularity@socialism
+					}
+					set_variable = {
+						var = NEN.NEN_reactionist_number
+						value = party_popularity@reactionist
+					}
+					set_variable = {
+						var = NEN.NEN_authoritarian_number
+						value = party_popularity@authoritarian
+					}
+				}
+			}
+			set_autonomy = {
+				target = NEN
+				autonomy_state = autonomy_dominion
+				end_wars = no
+				end_civil_wars = no
+			}
+			hidden_effect = {
+				NEN = {
+					multiply_variable = {
+						var = NEN.NEN_democraty_number
+						value = 100
+					}
+					multiply_variable = {
+						var = NEN.NEN_socialism_number
+						value = 100
+					}
+					multiply_variable = {
+						var = NEN.NEN_reactionist_number
+						value = 100
+					}
+					multiply_variable = {
+						var = NEN.NEN_authoritarian_number
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 1
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = democratic
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 2
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = socialism
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 3
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = reactionist
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 4
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = authoritarian
+						}
+					}
+				}
+				NEN = {
+					set_popularities = {
+						democratic = NEN.NEN_democraty_number
+						socialism = NEN.NEN_socialism_number
+						reactionist = NEN.NEN_reactionist_number
+						authoritarian = NEN.NEN_authoritarian_number
+					}
+				}
+			}
+		}
+	}
+	
+	option = { #no changes
+		name = cbi.15.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = { #no freedom
+		name = cbi.15.c
+		ai_chance = {
+			factor = 50	
+		}
+		CBI = {
+			hidden_effect = {
+				if = {
+					limit = {
+						NEN = {
+							has_government = democratic
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						NEN = {
+							has_government = socialism
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						NEN = {
+							has_government = reactionist
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						NEN = {
+							has_government = authoritarian
+						}
+					}
+					set_variable = {
+						var = NEN.NEN_rulling_party
+						value = 4
+					}
+				}
+				NEN = {
+					set_variable = {
+						var = NEN.NEN_democraty_number
+						value = party_popularity@democratic
+					}
+					set_variable = {
+						var = NEN.NEN_socialism_number
+						value = party_popularity@socialism
+					}
+					set_variable = {
+						var = NEN.NEN_reactionist_number
+						value = party_popularity@reactionist
+					}
+					set_variable = {
+						var = NEN.NEN_authoritarian_number
+						value = party_popularity@authoritarian
+					}
+				}
+			}
+			set_autonomy = {
+				target = NEN
+				autonomy_state = autonomy_puppet
+				end_wars = no
+				end_civil_wars = no
+			}
+			hidden_effect = {
+				NEN = {
+					multiply_variable = {
+						var = NEN.NEN_democraty_number
+						value = 100
+					}
+					multiply_variable = {
+						var = NEN.NEN_socialism_number
+						value = 100
+					}
+					multiply_variable = {
+						var = NEN.NEN_reactionist_number
+						value = 100
+					}
+					multiply_variable = {
+						var = NEN.NEN_authoritarian_number
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 1
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = democratic
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 2
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = socialism
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 3
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = reactionist
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = NEN.NEN_rulling_party
+							value = 4
+						}
+					}
+					NEN = {
+						set_politics = {
+							ruling_party = authoritarian
+						}
+					}
+				}
+				NEN = {
+					set_popularities = {
+						democratic = NEN.NEN_democraty_number
+						socialism = NEN.NEN_socialism_number
+						reactionist = NEN.NEN_reactionist_number
+						authoritarian = NEN.NEN_authoritarian_number
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = { #Celtic Solidarity
+	id = cbi.16
+	title = cbi.16.t
+	desc = cbi.16.d
+	picture = GFX_report_event_gre_allied_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #One forever
+		name = cbi.16.a
+		custom_effect_tooltip = integretion_incress_small_sco
+		custom_effect_tooltip = integretion_incress_small_wal
+		hidden_effect = {
+			add_to_variable = { cbi_sco_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_sco_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_wal_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_wal_integration_procces
+				min = 0
+				max = 100
+			}
+		}
+	}
+	
+}
+
+country_event = { #old history
+	id = cbi.17
+	title = cbi.17.t
+	desc = cbi.17.d
+	picture = GFX_report_event_gre_allied_diplomacy_military
+	
+	is_triggered_only = yes
+	
+	option = { #Not enemy, but frieds
+		name = cbi.17.a
+		custom_effect_tooltip = integretion_incress_small_wal
+		custom_effect_tooltip = integretion_incress_small_bri
+		hidden_effect = {
+			add_to_variable = { cbi_wal_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_wal_integration_procces
+				min = 0
+				max = 100
+			}
+			add_to_variable = { cbi_bri_integration_procces = 5 }
+			clamp_variable = {
+				var = cbi_bri_integration_procces
+				min = 0
+				max = 100
+			}
+		}
+	}
+	
+}
+
+country_event = { #north_irish_qustian
+	id = cbi.18
+	title = cbi.18.t
+	desc = cbi.18.d
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { #Irish is irish
+		name = cbi.18.a
+		ai_chance = {
+			factor = 33
+		}
+		custom_effect_tooltip = incress_opinion_small
+		hidden_effect = {
+			add_to_variable = { cbi_ire_opinion = 15 }
+			clamp_variable = {
+				var = cbi_ire_opinion
+				min = 0
+				max = 100
+			}
+		}
+
+	}
+	
+	option = { #no probleb of confederaty
+		name = cbi.18.b
+		ai_chance = {
+			factor = 34
+		}
+
+	}
+	
+	option = { #North irish is english
+		name = cbi.18.c
+		ai_chance = {
+			factor = 33
+		}
+		if = {
+			limit = {
+				country_exists = BRI
+				BRI = {
+					is_subject_of = CBI
+				}
+			}
+			BRI = {
+				transfer_state = 119
+				add_state_core = 119
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					country_exists = BRI
+				}
+			}
+			CBI = {
+				transfer_state = 119
+			}
+		}
+	}
+	
+}
+
+### RIP ###
+
+country_event = { #Lem found dead
+	id = cbi_rip.1
+	title = cbi_rip.1.t
+	desc = cbi_rip.1.d
+	picture = GFX_CBI_Lam_funeral
+	
+	is_triggered_only = yes
+	
+	option = { #Clouds cover the sky
+		name = cbi_rip.1.a
+		custom_effect_tooltip = cbi_lem_dead_tt
+		add_stability = -0.15
+		add_political_power = -500
+		news_event = news.94
+		hidden_effect = {
+			CBI = {
+				set_variable = { cbi_influence_of_d = 0 }
+				set_variable = { cbi_influence_of_a = 0 }
+				set_variable = { cbi_influence_of_r = 0 }
+			}
+			CBI = {
+				retire_character = CBI_Uillem_Lem
+				promote_character = CBI_Robert_Pil
+			}
+			CBI = {
+				set_popularities = {
+					democratic = 25
+					authoritarian = 25
+					reactionist = 25
+					socialism = 25
+				}
+			}
+			set_global_flag = LEM_IS_DEAD
+			CBI = {
+				country_event = {
+					days = 2
+					id = cbi.3
+				}
+			}
+		}
+	}
+}
+
+#### Socialism revolution ####
+
+country_event = { #Socialism revolution begin
+	id = cbi_soc_rev.1
+	title = cbi_soc_rev.1.t
+	desc = cbi_soc_rev.1.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		CBI = {
+			set_country_flag = cbi_soc_revolution_begin
+			set_country_flag = cbi_soc_revolution_active_phase
+		}
+	}
+	
+	option = { #Ops....
+		name = cbi_soc_rev.1.a
+		CBI = {
+			add_stability = -0.25
+			add_timed_idea = {
+				idea = CBI_chartist_revolution
+				days = 180
+			}
+			add_timed_idea = {
+				idea = CBI_global_strikes
+				days = 30
+			}
+		}
+		news_event = news.102
+	}
+}
+
+country_event = { #Solve the problem
+	id = cbi_soc_rev.2
+	title = cbi_soc_rev.2.t
+	desc = cbi_soc_rev.2.d
+	picture = GFX_report_event_eng_mosley_march_on_downing_street
+	
+	is_triggered_only = yes
+	
+	option = { #truth Pile
+		name = cbi_soc_rev.2.a
+		trigger = {
+			NOT = {
+				has_country_flag = CBI_SOCIALISM_CRISIS
+			}
+		}
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 1
+				is_historical_focus_on = yes
+			}	
+		}
+		custom_effect_tooltip = cbi_truth_pile
+		set_country_flag = cbi_truth_pile_flag
+		clr_country_flag = cbi_soc_revolution_active_phase
+		set_country_flag = cbi_soc_revolution_passive_phase
+		add_manpower = -73
+		hidden_effect = {
+			BRI = {
+				transfer_navy = {
+					target = CBI
+				}
+			}
+			CBI = {
+				annex_country = {
+					target = BRI
+					transfer_troops = yes
+				}
+				add_ideas = CBI_industrial_heart_mini
+				set_country_flag = bri_been_integration
+			}
+		}
+	}
+	
+	option = { #Try compromis
+		name = cbi_soc_rev.2.b
+		trigger = {
+			NOT = {
+				has_country_flag = CBI_SOCIALISM_CRISIS
+			}
+		}
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		custom_effect_tooltip = cbi_try_compromis
+		set_country_flag = cbi_try_compromis_flag
+		clr_country_flag = cbi_soc_revolution_active_phase
+		set_country_flag = cbi_soc_revolution_passive_phase
+	}
+	
+	option = { #Chartits are right 
+		name = cbi_soc_rev.2.c
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}	
+		}
+		custom_effect_tooltip = cbi_chartists_are_right
+		set_country_flag = cbi_chartists_are_right_flag
+		clr_country_flag = cbi_soc_revolution_active_phase
+		set_country_flag = cbi_soc_revolution_passive_phase
+		CBI = {
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.25
+			}
+		}
+	}
+}
+
+#### OLD ####
 
 country_event = {
 	id = CBI.100
@@ -109,10 +2321,6 @@ country_event = {
 		retire_character = CBI_Uillem_Lem
 		CBI = {
 			promote_character = CBI_Eduard_Smit_Stenli
-			}
-		add_trait = {
-			character = CBI_Eduard_Smit_Stenli
-			trait = temporary_acting
 			}
 		load_focus_tree = british_lord_protector_election	
 		add_political_power = -150
@@ -339,16 +2547,29 @@ country_event = { ### РОБЕРТ ПИЛЬ ###
 	}
 }
 
-country_event = { ### РОБЕРТ ПИЛЬ ###
+country_event = { ### СМИТ-СТЕНЛИ ###
 	id = CBI.117
 	title = СBI.117.t
 	desc = CBI.117.d
-	picture = GFX_CBI_stop_war_conservator_vs_liberal
+	picture = GFX_CBI_Smith_Stanley
 	
 	is_triggered_only = yes	
 	
 	option = {
 		name = CBI.117.a
+	}
+}
+
+country_event = { ### ДЖОН РАССЕЛ ###
+	id = CBI.119
+	title = СBI.119.t
+	desc = CBI.119.d
+	picture = GFX_CBI_Smith_Stanley
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = CBI.119.a
 	}
 }
 
@@ -378,19 +2599,32 @@ country_event = { ### ПЕРЕВОРОТ РОБЕРТА ПИЛЯ ###
 			long_name = CBI_party_Cromwell_long 
 			name = CBI_party_Cromwell 
 		}
-		create_country_leader = {
-			name = "Роберт Пиль"
-			desc = "POLITICS_ROBERT_PIL_DESC"
-			picture = "Portrait_Robert_Pil.dds"
-			expire = "1865.1.1"
-			ideology = integralism 
-			traits = {
-				#
-			}
-		}
 		news_event = { 
 			id = news.21 
 			days = 2 
+		}
+	}
+}
+
+country_event = { ### ПРИХОД К ВЛАСТИ ДЖОНА РАССЕЛА 30 НОЯБРЯ ### 
+	id = CBI.169
+	title = CBI.169.t
+	desc = CBI.169.d
+	picture = GFX_CBI_stop_war_conservator_vs_liberal
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = CBI.169.a
+			add_political_power = 300
+			add_popularity = {
+				ideology = democratic		
+				popularity = 0.05
+			}
+		add_stability = 0.15
+		retire_character = CBI_Eduard_Smit_Stenli
+		CBI = {
+			promote_character = CBI_Jordj_Rassel
 		}
 	}
 }
@@ -407,13 +2641,13 @@ country_event = { ### ПРИХОД К ВЛАСТИ СМИТ-СТЕНЛИ 30 НО
 		name = CBI.170.a
 		add_political_power = 300
 			add_popularity = {
-			ideology = democratic		
-			popularity = 0.05
-				}
-		add_stability = 0.15
-		remove_country_leader_trait = temporary_acting
+				ideology = democratic		
+				popularity = 0.05
+			}
+			add_stability = 0.15
+			remove_country_leader_trait = temporary_acting
 		hidden_effect = {
-		set_country_flag = CBI_Smith_Stanley_win
+			set_country_flag = CBI_Smith_Stanley_win
 		}
 	}
 }
@@ -1040,6 +3274,10 @@ country_event = {
 	option = {
 	name = CBI.202.a
 	remove_ideas = CBI_old_guard
+		set_nationality = {
+			target_country = prt
+			character = CBI_Charles_Napier
+		}	
 	}
 	
 	option = {
@@ -1047,6 +3285,7 @@ country_event = {
 	remove_ideas = CBI_old_guard	
 	add_political_power = 75
 	add_stability = -0.1
+	retire_character = CBI_Charles_Napier	
 	}	
 }
 
@@ -1064,44 +3303,236 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { ### ПРЕДЛОЖЕНИЕ О МОСКОВСКОЙ КОМПАНИИ В РОССИЮ ###
 	id = CBI.204
 	title = CBI.204.t
 	desc = CBI.204.d
-	picture = GFX_CBI_Charles_John_Napier
+	picture = GFX_report_event_SOV_national_academy_of_sciences
 	
 	is_triggered_only = yes	
 	
 	option = {
+		ai_chance = {
+			factor = 48
+			}	
 	name = CBI.204.a
-
+		RUS = {
+			add_ideas = CBI_Expand_Moscow_company
+				}
+		CBI = {					
+	country_event = { id = CBI.205 days = 2 }
+		}	
 	}
+	option = {
+		ai_chance = {
+			factor = 1
+			}	
+	name = CBI.204.b
+		CBI = {	
+	country_event = { id = CBI.206 days = 2 }
+		}
+	}	
 }
 
-country_event = {
+country_event = { ### ОТВЕКА - ДА ###
 	id = CBI.205
 	title = CBI.205.t
 	desc = CBI.205.d
-	picture = GFX_CBI_Charles_John_Napier
+	picture = GFX_report_event_SOV_national_academy_of_sciences
 	
 	is_triggered_only = yes	
 	
 	option = {
 	name = CBI.205.a
-
+	add_political_power = 50
+		CBI = {
+			add_ideas = CBI_Expand_Moscow_company
+				}
 	}
 }
 
-country_event = {
+country_event = { ### ОТВЕТКА - НЕТ ###
 	id = CBI.206
 	title = CBI.206.t
 	desc = CBI.206.d
-	picture = GFX_CBI_Charles_John_Napier
+	picture = GFX_report_event_SOV_national_academy_of_sciences
 	
 	is_triggered_only = yes	
 	
 	option = {
 	name = CBI.206.a
+	}
+}
 
+country_event = { ### ПРЕДЛОЖЕНИЕ О ВСТУПЛЕНИИ В ЛОНДОНСКИЙ ПАКТ В РОССИЮ ###
+	id = CBI.207
+	title = CBI.207.t
+	desc = CBI.207.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+		ai_chance = {
+			factor = 48
+			}	
+	name = CBI.207.a
+		CBI = {					
+	country_event = { id = CBI.208 days = 2 }
+		}	
+	}
+	option = {
+		ai_chance = {
+			factor = 1
+			}	
+	name = CBI.207.b
+		CBI = {	
+	country_event = { id = CBI.209 days = 2 }
+		}
+	}	
+}
+
+country_event = { ### ОТВЕКА - ДА ###
+	id = CBI.208
+	title = CBI.208.t
+	desc = CBI.208.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+	name = CBI.208.a
+	add_political_power = 50
+		CBI = { add_to_faction = RUS }
+	}
+}
+
+country_event = { ### ОТВЕТКА - НЕТ ###
+	id = CBI.209
+	title = CBI.209.t
+	desc = CBI.209.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+	name = CBI.209.a
+	}
+}
+
+country_event = { ### ПРЕДЛОЖЕНИЕ О ДРУЖБЕ В ПРУССИЮ/ГЕРМАНИЮ ###
+	id = CBI.210
+	title = CBI.210.t
+	desc = CBI.210.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+		ai_chance = {
+			factor = 48
+			}	
+	name = CBI.210.a
+	add_political_power = 100
+	PRU = {					
+	country_event = { id = CBI.211 days = 2 }
+		}	
+	}
+	option = {
+		ai_chance = {
+			factor = 1
+			}	
+	name = CBI.211.b
+		PRU = {	
+	country_event = { id = CBI.212 days = 2 }
+		}
+	}	
+}
+
+country_event = { ### ОТВЕКА - ДА ###
+	id = CBI.211
+	title = CBI.211.t
+	desc = CBI.211.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+	name = CBI.211.a
+	add_political_power = 50
+		diplomatic_relation = {
+			country = PRU
+			relation = non_aggression_pact
+			active = yes
+		}	
+	}
+}
+
+country_event = { ### ОТВЕТКА - НЕТ ###
+	id = CBI.212
+	title = CBI.212.t
+	desc = CBI.212.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+	name = CBI.212.a
+	}
+}
+
+country_event = { ### ПРЕДЛОЖЕНИЕ О СНЯТИИ ЭМБАРГО В ВИЗАНТИЮ ###
+	id = CBI.213
+	title = CBI.213.t
+	desc = CBI.213.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+		ai_chance = {
+			factor = 48
+			}	
+	name = CBI.213.a
+	CBI = {					
+	country_event = { id = CBI.214 days = 2 }
+		}	
+	}
+	option = {
+		ai_chance = {
+			factor = 2
+			}	
+	name = CBI.213.b
+	CBI = {	
+	country_event = { id = CBI.215 days = 2 }
+		}
+	}	
+}
+
+country_event = { ### ОТВЕКА - ДА ###
+	id = CBI.214
+	title = CBI.214.t
+	desc = CBI.214.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+	name = CBI.214.a
+	add_political_power = 50
+	
+	}
+}
+
+country_event = { ### ОТВЕТКА - НЕТ ###
+	id = CBI.215
+	title = CBI.215.t
+	desc = CBI.215.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes	
+	
+	option = {
+	name = CBI.215.a
 	}
 }

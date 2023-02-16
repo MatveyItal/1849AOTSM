@@ -11,7 +11,7 @@ state={
 
 	history={
 		buildings = {
-			infrastructure = 6
+			infrastructure = 5
 			industrial_complex = 2
 		}
 		
@@ -25,6 +25,7 @@ state={
 		owner = AUS
 		add_core_of = AUS
 		add_core_of	= BOH
+		add_core_of = GER
 	}
 
 	provinces={

@@ -68,11 +68,9 @@ jap_invasion_on_kor = {
 	}
 
 	ai_strategy = {
-		type = front_control
-		ordertype = invasion
-        execute_order = yes
-		tag = "KOR"
-		priority = 10
+		type = invade
+		id = "KOR"
+		value = 200
 	}
 }
 
@@ -100,11 +98,9 @@ jap_invasion_on_phi = {
 	}
 
 	ai_strategy = {
-		type = front_control
-		ordertype = invasion
-        execute_order = yes
-		tag = "PHI"
-		priority = 10
+		type = invade
+		id = "PHI"
+		value = 200
 	}
 }
 
@@ -132,12 +128,74 @@ jap_invasion_on_vie = {
 	}
 
 	ai_strategy = {
-		type = front_control
-		ordertype = invasion
-        execute_order = yes
-		tag = "VIE"
-		priority = 10
+		type = invade
+		id = "VIE"
+		value = 200
 	}
+}
+
+jap_invasion_on_oceani = {
+	
+	allowed = {
+		OR = {
+			original_tag = JAP
+			original_tag = JAS
+			original_tag = TUK
+		}
+	}
+	
+	enable = {
+		date > 1854.1.1
+	}
+
+	abort = {
+		NOT = {
+			AND = {
+				country_exists = BAS
+				country_exists = PAS
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "BAS"
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = "PAS"
+		value = 200
+	}
+}
+
+jap_invasion_on_indonesia = {
+	
+	allowed = {
+		OR = {
+			original_tag = JAP
+			original_tag = JAS
+			original_tag = TUK
+		}
+	}
+	
+	enable = {
+		date > 1856.1.1
+	}
+
+	abort = {
+		NOT = {
+			country_exists = IND
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "IND"
+		value = 200
+	}
+	
 }
 
 jap_care_less_about_making_friends = {

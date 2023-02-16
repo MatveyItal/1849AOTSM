@@ -1,6 +1,12 @@
 capital = 56
 set_technology = {
 	infantry_weapons = 1
+	tech_mountaineers = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	basic_train = 1
 }
 set_convoys = 150
 add_political_power = 150
@@ -18,18 +24,20 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 0
+	reactionist = 1
 	socialism = 0
-	democratic  = 35
-	authoritarian = 65
+	democratic = 1
+	authoritarian = 98
 }
 add_ideas = {
-	constitutional_monarchy
-	potential_world_power
+	constitutional_monarchy_fg
+	little_country
 	protestantism
 	
 	regional_corruption
 	medium_developed_industry
 	low_investment_level
+	
+	saint_allience_idea
 }
 

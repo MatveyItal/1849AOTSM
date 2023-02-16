@@ -1,0 +1,612 @@
+story_decision_categories = {
+
+	main_story_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_main.1
+		}
+		
+	}
+	
+	open_country_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+		
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			NOT = {
+				has_country_flag = open_country_decision_flag
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			set_country_flag = open_country_decision_flag
+		}
+		
+	}
+	
+	close_country_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			clr_country_flag = open_country_decision_flag
+		}
+		
+	}
+	
+	history_of_PRU = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {	
+			country_event = story_decision_country.1
+		}
+		
+	}
+	
+	history_of_BYZ = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_country.2
+		}
+		
+	}
+	
+	history_of_FRR = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {	
+			country_event = story_decision_country.3
+		}
+		
+	}
+	
+	history_of_RUS = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {	
+			country_event = story_decision_country.4
+		}
+		
+	}
+	
+	history_of_CBI = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_country.5
+		}
+		
+	}
+	
+	history_of_other = {
+	
+		icon = generic_decision
+		
+		allowed = {
+		
+		}
+		
+		available = {
+			always = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+		}
+		
+	}
+	
+	open_country_mechanic_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			NOT = {
+				has_country_flag = open_country_mechanic_decision_flag
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			set_country_flag = open_country_mechanic_decision_flag
+		}
+		
+	}
+	
+	close_country_mechanic_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_mechanic_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			clr_country_flag = open_country_mechanic_decision_flag
+		}
+		
+	}
+	
+	mechanic_base_information = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_mechanic_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_mechanic.1
+		}
+		
+	}
+	
+	mechanic_german_region = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_mechanic_decision_flag
+			OR = {
+				tag = PRU
+				tag = AUS
+				tag = MCS
+				tag = MCL
+				tag = LBE
+				tag = HLS
+				tag = SLG
+				tag = HAM
+				tag = BRM
+				tag = OLD
+				tag = HAN
+				tag = VES
+				tag = SAK
+				tag = TYR
+				tag = WEI
+				tag = MEI
+				tag = HES
+				tag = WLD
+				tag = FRN
+				tag = KOL
+				tag = LUX
+				tag = BAV
+				tag = VUR
+				tag = HOH
+				tag = BAD
+				tag = ELS
+				tag = SWI
+				tag = LIE
+				tag = BOH
+				tag = BRD
+				tag = POM
+				tag = SIL
+				tag = GPO
+			}
+			NOT = {
+				has_country_flag = leave_german_union
+			}
+			NOT = {
+				has_global_flag = german_empire_now_exist
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_mechanic.2
+		}
+		
+	}
+	
+	mechanic_more_information = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			always = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_country_mechanic_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+		}
+		
+	}
+	
+	open_event_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			NOT = {
+				has_country_flag = open_event_decision_flag
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			set_country_flag = open_event_decision_flag
+		}
+		
+	}
+	
+	close_event_decision = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_event_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			clr_country_flag = open_event_decision_flag
+		}
+		
+	}
+	
+	history_of_colonialism = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			always = no
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_event_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_event.1
+		}
+		
+	}
+	
+	history_of_napoleon_war = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			always = no
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_event_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_event.2
+		}
+		
+	}
+	
+	history_of_leypoldit = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_event_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			country_event = story_decision_event.3
+		}
+		
+	}
+	
+	history_of_important_event_more = {
+	
+		icon = generic_decision
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			always = no
+		}
+		
+		visible = {
+			is_ai = no
+			has_country_flag = open_event_decision_flag
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+		}
+		
+	}
+	
+	close_country_decision_forever_decision = {
+	
+		icon = generic_break_treaty
+		
+		allowed = {
+			
+		}
+		
+		available = {
+			is_ai = no
+		}
+		
+		visible = {
+			is_ai = no
+		}
+		
+		fire_only_once = no
+		
+		days_re_enable = 1
+		
+		complete_effect = {		
+			set_country_flag = close_story_decision_forever
+		}
+		
+	}
+		
+}

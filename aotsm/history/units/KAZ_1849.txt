@@ -120,7 +120,7 @@ units = {
 			name_order = 1
 		}
 		name = "Infantry Division"	
-		location = 10253
+		location = 642
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.50
@@ -157,5 +157,18 @@ units = {
 		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.50
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "KAZ"
+		}
+		requested_factories = 2
+		progress = 0.5
+		efficiency = 100
 	}
 }

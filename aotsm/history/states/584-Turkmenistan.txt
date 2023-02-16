@@ -11,6 +11,7 @@ state={
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
+			arms_factory = 1
 
 		}
 		add_core_of = HIV
@@ -18,9 +19,10 @@ state={
 	}
 
 	provinces={
-		1493 1593 4563 4599 7477 7541 7563 7635 10348 10359 10395 10406 10435 10485 12324 12383 12454 12491 13207 
+		1493 1593 4563 4599 7477 7541 7563 7635 10348 10359 10395 10406 10435 10485 10510 12324 12333 12359 12383 12454 12491 13207 
 	}
 	manpower=176232
 	buildings_max_level_factor=1.000
-	state_category=pastoral
+	state_category=town
+	local_supplies=0.000
 }

@@ -1,4 +1,4 @@
-capital = 12
+capital = 915
 
 set_technology = {
 	infantry_weapons = 1
@@ -21,7 +21,7 @@ set_technology = {
 	mobile_warfare = 1
 	trade_interdiction = 1
 	formation_flying = 1
-	synth_oil_experiments = 1
+	 rubber_processing_experiments = 1
 	fuel_silos = 1
 	fuel_refining = 1
 }
@@ -95,8 +95,8 @@ if = {
 		basic_light_battery = 1
 		basic_medium_battery = 1
 		basic_heavy_battery = 1
-		basic_secondary_battery = 1
-		improved_secondary_battery = 1
+		
+		
 		basic_depth_charges = 1
 		sonar = 1
 		basic_cruiser_armor_scheme = 1
@@ -433,7 +433,7 @@ set_popularities = {
 	authoritarian = 56
 }
 add_ideas = {
-	constitutional_monarchy
+	dictature_fg
 	little_country
 	protestantism
 
@@ -442,13 +442,8 @@ add_ideas = {
 	low_investment_level
 	medium_taxation
 	prussian_science_manufacturer
-	
-	BLT_lithuania_anger
 }
 
-recruit_character = BLT_Bismark_dem
-recruit_character = BLT_Bismark_soc
-recruit_character = BLT_Bismark_rea
 recruit_character = BLT_Bismark_aut
 
 

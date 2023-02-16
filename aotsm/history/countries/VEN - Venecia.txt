@@ -6,11 +6,8 @@ set_technology = {
 	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	early_fighter = 1
-	early_bomber = 1
 	fuel_silos = 1
-	synth_oil_experiments = 1
+	 rubber_processing_experiments = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -35,7 +32,7 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		coastal_defense_ships = 1
@@ -50,16 +47,16 @@ set_stability = 0.6
 set_war_support = 0.5
 set_oob = "AUS_1849"
 set_politics = {
-	ruling_party = authoritarian
-	last_election = "188.1.1"
+	ruling_party = democratic
+	last_election = "1848.4.17"
 	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 0
-	socialism = 0
-	reactionist = 0
-	authoritarian = 100
+	democratic = 44
+	socialism = 1
+	reactionist = 40
+	authoritarian = 15
 }
 add_ideas = {
 	republic

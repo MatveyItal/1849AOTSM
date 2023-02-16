@@ -76,7 +76,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = chi_forced_conscription
+			picture = FRR_separate_army_from_goverment_1
 	
 			modifier = {
 				army_attack_factor = -0.06
@@ -97,7 +97,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = chi_forced_conscription
+			picture = FRR_separate_army_from_goverment_2
 	
 			modifier = {
 				army_attack_factor = -0.04
@@ -118,7 +118,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = chi_forced_conscription
+			picture = FRR_separate_army_from_goverment_3
 	
 			modifier = {
 				army_attack_factor = -0.02
@@ -142,9 +142,10 @@ ideas = {
 			picture = ast_volunteer_defence_corps
 	
 			modifier = {
-				army_attack_factor = 0.06
-				army_defence_factor = 0.06
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
 				experience_gain_army_factor = 0.08
+				breakthrough_factor = 0.03
 			}
 		}
 		FRR_low_export_duties = { 
@@ -159,7 +160,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = fra_market_dynamism
+			picture = FRR_low_export_duties
 	
 			modifier = {
 				political_power_factor = 0.08
@@ -179,7 +180,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = generic_intel_bonus
+			picture = FRA_matignon_agreements
 	
 			modifier = {
 				stability_factor = 0.05
@@ -223,6 +224,8 @@ ideas = {
 				production_speed_infrastructure_factor = 0.1
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
+				production_speed_rail_way_factor = 0.1
+				production_speed_supply_node_factor = 0.1
 			}
 		}
 		FRR_improved_mil_production = { #
@@ -230,14 +233,14 @@ ideas = {
 			removal_cost = -1
 			
 			allowed = {
-				always = no
+				has_war = yes
 			}
 
 			allowed_civil_war = {
 				always = yes
 			}
 
-			picture = idea_usa_great_depression_3
+			picture = FRA_factory_strikes
 	
 			modifier = {
 				industrial_capacity_factory = 0.15
@@ -256,10 +259,10 @@ ideas = {
 				always = yes
 			}
 
-			picture = generic_production_bonus
+			picture = generic_manpower_bonus
 	
 			modifier = {
-
+				experience_gain_army_factor = 0.25
 			}
 		}
 		FRR_foreign_legion = { #
@@ -274,7 +277,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = spa_la_division_azul
+			picture = SPA_la_division_azul
 	
 			modifier = {
 				conscription = 0.03
@@ -293,7 +296,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = fra_undividable
+			picture = FRA_undividable
 	
 			modifier = {
 				stability_factor = 0.1
@@ -406,7 +409,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = usa_great_depression_3
+			picture = EST_democratic_opposition
 	
 			modifier = {
 				political_power_gain = -0.08
@@ -424,7 +427,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = usa_great_depression_3
+			picture = POL_Ideology_Drift_Defence
 	
 			modifier = {
 				political_power_gain = -0.05
@@ -444,7 +447,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = usa_great_depression_3
+			picture = generic_constitutional_guarantee
 	
 			modifier = {
 				stability_factor = 0.1
@@ -463,7 +466,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = usa_great_depression_3
+			picture = generic_democratic_drift_bonus
 	
 			modifier = {
 				drift_defence_factor = 0.5
@@ -484,7 +487,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = usa_great_depression_3
+			picture = generic_navy_bonus
 	
 			modifier = {
 				convoy_escort_efficiency = 0.05
@@ -504,7 +507,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = usa_great_depression_3
+			picture = FRA_la_deluge
 	
 			modifier = {
 				stability_factor = 0.1
@@ -516,23 +519,24 @@ ideas = {
 			removal_cost = -1
 			
 			allowed = {
-				always = no
+				has_war = yes
 			}
 
 			allowed_civil_war = {
 				always = yes
 			}
 
-			picture = ast_volunteer_defence_corps
+			picture = FRA_fortification_focus
 	
 			modifier = {
-				consumer_goods_factor = -0.2
-				industry_repair_factor = 0.15
+				consumer_goods_factor = -0.3
+				industry_repair_factor = 0.18
 				conscription = 0.05
-				army_core_attack_factor = 0.15
-				army_core_defence_factor = 0.15
-				out_of_supply_factor = -0.2
-				minimum_training_level = -0.3
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+				out_of_supply_factor = -0.3
+				minimum_training_level = -0.4
+				breakthrough_factor = 0.1
 			}
 		}
 		FRR_militarists_society = {
@@ -546,7 +550,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = fra_deluge
+			picture = FRA_scw_intervention_nationalists_focus
 	
 			modifier = {
 				reactionist_drift = 0.01
@@ -577,6 +581,182 @@ ideas = {
 				war_support_factor = 0.05
 			}
 		}
+		FRR_regime_auth_dem = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_victors_of_ww1
+	
+			modifier = {
+				authoritarian_drift = 0.03
+				democratic_drift = 0.01
+				stability_factor = 0.1
+			}
+		}
+		FRR_weaken_the_opposition = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_intel_bonus
+	
+			modifier = {
+				reactionist_drift = -0.01
+				political_power_factor = -0.05
+			}
+		}
+		FRR_auth_politic = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = neutrality_idea
+	
+			modifier = {
+				stability_factor = 0.1
+				authoritarian_acceptance = 20
+			}
+		}
+		FRR_militaristsk_politic = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_manpower_bonus
+	
+			modifier = {
+				conscription_factor = 0.1
+				reactionist_acceptance = 20
+			}
+		}
+		FRR_constitution = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = HUN_treaty_of_triannon
+	
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		FRR_peaceful_politic = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_disjointed_gov
+	
+			modifier = {
+				army_attack_factor = -0.05
+				army_defence_factor = 0.05
+				training_time_factor = 0.05
+				army_org_factor = 0.08
+				political_power_factor = 0.08
+			}
+		}
+		FRR_agressive_politic = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_scw_intervention_republicans_focus
+	
+			modifier = {
+				conscription = 0.002
+				out_of_supply_factor = -0.05
+				army_attack_factor = 0.05
+				army_defence_factor = -0.05
+				land_reinforce_rate = 0.08
+			}
+		}
+		FRR_technical_researches = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_morale_bonus
+	
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		FRR_hist_attack_germany = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_scw_intervention_nationalists_focus
+	
+			modifier = {
+				attrition = -0.1
+				out_of_supply_factor = -0.15
+				breakthrough_factor = 0.15
+				terrain_penalty_reduction = 0.1
+			}
+			
+			targeted_modifier = {
+				tag = PRU
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
 		
 	}
 	tank_manufacturer = {
@@ -595,7 +775,7 @@ ideas = {
 			traits = { heavy_tank_manufacturer }
 			
 			modifier = {
-				
+				experience_gain_army = 0.05
 			}
 		}
 		FRR_renault = {
@@ -613,14 +793,14 @@ ideas = {
 			traits = { fast_tank_manufacturer }
 			
 			modifier = {
-				
+				experience_gain_army = 0.05
 			}
 		}
 	}
 	naval_manufacturer = {
 		FRR_norman = {
 		
-			picture = generic_naval_manufacturer_3
+			picture = Normand
 			
 			allowed = {
 				original_tag = FRR
@@ -633,13 +813,13 @@ ideas = {
 			traits = { raiding_fleet_naval_manufacturer }
 			
 			modifier = {
-				
+				experience_gain_army = 0.05
 			}
 		}
 	}
 	aircraft_manufacturer= {
 		FRR_dasso = {
-			picture = generic_air_manufacturer_3
+			picture = Dasso
 
 			
 			allowed = {
@@ -653,7 +833,7 @@ ideas = {
 			traits = { light_aircraft_manufacturer }
 			
 			modifier = {
-				
+				experience_gain_army = 0.05
 			}
 		}
 	}
@@ -673,7 +853,7 @@ ideas = {
 			traits = { artillery_manufacturer }
 			
 			modifier = {
-				
+				experience_gain_army = 0.05
 			}
 			
 			equipment_bonus = {
@@ -705,6 +885,7 @@ ideas = {
 			modifier = {
 				army_infantry_attack_factor = 0.03
 				army_infantry_defence_factor = 0.03
+				experience_gain_army = 0.05
 			}
 			
 			
@@ -719,9 +900,9 @@ ideas = {
 			}
 		}
 		
-		FRR_daimler = {
+		FRR_darracq = {
 			
-			picture = generic_motorized_equipment_manufacturer_3
+			picture = Darracq
 			
 			allowed = {
 				original_tag = FRR			
@@ -729,6 +910,10 @@ ideas = {
 			
 			available = {
 				
+			}
+			
+			modifier = {
+				experience_gain_army = 0.05
 			}
 			
 			research_bonus = {
@@ -755,6 +940,10 @@ ideas = {
 				has_completed_focus = FRA_fond_leklerk
 			}
 			
+			modifier = {
+				experience_gain_army = 0.05
+			}
+			
 			research_bonus = {
 				motorized_equipment = 0.15
 			}
@@ -779,7 +968,7 @@ ideas = {
 	}
 	industrial_concern = {
 		FRR_guen = {
-			picture = generic_industrial_concern_1
+			picture = Guen
 
 			
 			allowed = {
@@ -802,7 +991,7 @@ ideas = {
 		}
 		FRR_bruay = {
 
-			picture = generic_industrial_concern_3
+			picture = Bruay
 		
 			allowed = {
 				original_tag = FRR
@@ -822,11 +1011,12 @@ ideas = {
 			modifier = {
 				fuel_gain_factor_from_states = 0.1
 				production_oil_factor = 0.05
+				
 			}
 		}
 		FRR_Schneider_Electric = {
 			
-			picture = generic_electronics_concern_1
+			picture = Schnaider_electric
 		
 			allowed = {
 				original_tag = FRR
@@ -855,13 +1045,20 @@ ideas = {
 		french_science_manufacturer = {
 
 			allowed = {
-				tag = FRR
+				OR = {
+					tag = FRR
+					tag = NWA
+				}
 			}
 			
 			picture = french_science_manufactirer
 			
 			cost = 150
-			removal_cost = 10
+			#removal_cost = 10
+			
+			allowed_to_remove = {
+				aotsm_always_no = yes
+			}
 			
 			research_bonus = {
 				industry = 0.08

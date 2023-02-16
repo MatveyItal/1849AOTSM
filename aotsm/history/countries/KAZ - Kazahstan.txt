@@ -1,16 +1,15 @@
 capital = 405
 set_technology = {
 	infantry_weapons = 1
-	tech_mountaineers = 1
+	uniform_equipment = 1
+	#tech_mountaineers = 1
 	tech_support = 1		
 	tech_engineers = 1
 	tech_recon = 1
+	motorised_infantry = 1
+	basic_machine_tools = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	early_fighter = 1
-	early_bomber = 1
-	fuel_silos = 1
-	synth_oil_experiments = 1
+	basic_train = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -35,7 +34,7 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		coastal_defense_ships = 1
@@ -49,8 +48,8 @@ recruit_character = KAZ_Kenesary_Khan
 set_convoys = 150
 add_political_power = 0
 set_research_slots = 3
-set_stability = 0.6
-set_war_support = 0.5
+set_stability = 0.7
+set_war_support = 0.6
 set_oob = "KAZ_1849"
 set_politics = {
 	ruling_party = authoritarian
@@ -59,20 +58,27 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 3
-	socialism = 2
-	reactionist = 10
-	authoritarian = 85
+	democratic = 5
+	socialism = 5
+	reactionist = 23
+	authoritarian = 67
 }
 add_ideas = {
-	constitutional_monarchy
+	constitutional_monarchy_fg
 	medium_country
 	islamism	
 	regional_corruption
 	medium_developed_industry
 	low_investment_level
+	limited_conscription
+	KAZ_tashkent_agreement_idea
+	KAZ_juz_system
+	KAZ_trade_witch_china
 	divided_islam_idea
 }
 
+create_faction = KAZ_tashkent_agreement
+add_to_faction = HIV
+add_to_faction = BUK
 
 

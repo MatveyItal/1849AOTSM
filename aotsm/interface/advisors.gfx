@@ -1,8 +1,8 @@
 spriteTypes = {
 
 	SpriteType = {
-		name = "GFX_idea_Andrew_Muron"
-		texturefile = "gfx/interface/ideas/characters/characters/idea_Andrew_Muron.dds"	
+		name = "GFX_idea_Andrew_Murom"
+		texturefile = "gfx/interface/ideas/characters/idea_Andrew_Murom.dds"	
 	}
 	SpriteType = {
 		name = "GFX_idea_Dostoevskyi"
@@ -163,5 +163,521 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_idea_Moris_fon_Bissing"
 		texturefile = "gfx/interface/ideas/characters/idea_Moris_fon_Bissing.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Istomin_vi"
+		texturefile = "gfx/interface/ideas/characters/idea_Istomin_vi.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Ermolov_ka"
+		texturefile = "gfx/interface/ideas/characters/idea_Ermolov_ka.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Vrangel_kk"
+		texturefile = "gfx/interface/ideas/characters/idea_Vrangel_kk.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Yosidziro_Umedzu"
+		texturefile = "gfx/interface/ideas/characters/idea_Yosidziro_Umedzu.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Sorokin_fs"
+		texturefile = "gfx/interface/ideas/characters/idea_Sorokin_fs.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Skobelev_md"
+		texturefile = "gfx/interface/ideas/characters/idea_Skobelev_md.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Postolsliy_pi"
+		texturefile = "gfx/interface/ideas/characters/idea_Postolsliy_pi.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Pavlov_py"
+		texturefile = "gfx/interface/ideas/characters/idea_Pavlov_py.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Hrushev_sp"
+		texturefile = "gfx/interface/ideas/characters/idea_Hrushev_sp.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Hadjime_Sigiama"
+		texturefile = "gfx/interface/ideas/characters/idea_Hadjime_Sigiama.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Hata_Sunroky"
+		texturefile = "gfx/interface/ideas/characters/idea_Hata_Sunroky.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Hideki_Todze"
+		texturefile = "gfx/interface/ideas/characters/idea_Hideki_Todze.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Saygo_Tsugumiti"
+		texturefile = "gfx/interface/ideas/characters/idea_Saygo_Tsugumiti.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Yamaga_Arimoto"
+		texturefile = "gfx/interface/ideas/characters/idea_Yamaga_Arimoto.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Kotokhito_Fusimi"
+		texturefile = "gfx/interface/ideas/characters/idea_Kotokhito_Fusimi.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Matsui_Ivane"
+		texturefile = "gfx/interface/ideas/characters/idea_Matsui_Ivane.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Oku_Yasukata"
+		texturefile = "gfx/interface/ideas/characters/idea_Oku_Yasukata.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Andronnikov_IA"
+		texturefile = "gfx/interface/ideas/characters/idea_Andronnikov_IA.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Bagration_PI"
+		texturefile = "gfx/interface/ideas/characters/idea_Bagration_PI.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Briskorn_PI"
+		texturefile = "gfx/interface/ideas/characters/idea_Briskorn_PI.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Muravyev_Karskiy_NN"
+		texturefile = "gfx/interface/ideas/characters/idea_Muravyev_Karskiy_NN.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Peleshin_PA"
+		texturefile = "gfx/interface/ideas/characters/idea_Peleshin_PA.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Fenuik"
+		texturefile = "gfx/interface/ideas/characters/idea_Fenuik.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Laons"
+		texturefile = "gfx/interface/ideas/characters/idea_Laons.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Teodoros_Kolokotronis"
+		texturefile = "gfx/interface/ideas/characters/idea_Teodoros_Kolokotronis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Fumimaro"
+		texturefile = "gfx/interface/ideas/characters/idea_Fumimaro.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Sigeto"
+		texturefile = "gfx/interface/ideas/characters/idea_Sigeto.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Sukenori"
+		texturefile = "gfx/interface/ideas/characters/idea_Sukenori.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Frans"
+		texturefile = "gfx/interface/ideas/characters/idea_Frans.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Goerdler"
+		texturefile = "gfx/interface/ideas/characters/idea_Goerdler.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Leber"
+		texturefile = "gfx/interface/ideas/characters/idea_Leber.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Neuraz"
+		texturefile = "gfx/interface/ideas/characters/idea_Neuraz.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Shteynmetz"
+		texturefile = "gfx/interface/ideas/characters/idea_Shteynmetz.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Shtrasser"
+		texturefile = "gfx/interface/ideas/characters/idea_Shtrasser.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Spedel"
+		texturefile = "gfx/interface/ideas/characters/idea_Spedel.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Ivanov_Bilevich"
+		texturefile = "gfx/interface/ideas/characters/idea_Ivanov_Bilevich.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Suho_Kobylin"
+		texturefile = "gfx/interface/ideas/characters/idea_Suho_Kobylin.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Mitisura"
+		texturefile = "gfx/interface/ideas/characters/idea_Mitisura.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Romanov_AN"
+		texturefile = "gfx/interface/ideas/characters/idea_Romanov_AN.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Totleben_EI"
+		texturefile = "gfx/interface/ideas/characters/idea_Totleben_EI.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Romanov_MN"
+		texturefile = "gfx/interface/ideas/characters/idea_Romanov_MN.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Romanov_NN"
+		texturefile = "gfx/interface/ideas/characters/idea_Romanov_NN.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Romanov_NP"
+		texturefile = "gfx/interface/ideas/characters/idea_Romanov_NP.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Gallas"
+		texturefile = "gfx/interface/ideas/characters/idea_Gallas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Benedek"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Benedek.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Gablents"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Gablents.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Mitrovits_Netolitsky"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Mitrovits_Netolitsky.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Neupnerg"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Neupnerg.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Radets"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Radets.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Ridkirhen"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Ridkirhen.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_von_Westmet"
+		texturefile = "gfx/interface/ideas/characters/idea_von_Westmet.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Albert_Austrian"
+		texturefile = "gfx/interface/ideas/characters/idea_Albert_Austrian.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Frants_Kun_von_Kunenfeld"
+		texturefile = "gfx/interface/ideas/characters/idea_Frants_Kun_von_Kunenfeld.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Wilgelm_von_Tegerhoff"
+		texturefile = "gfx/interface/ideas/characters/idea_Wilgelm_von_Tegerhoff.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Matsey_Rybinskiy"
+		texturefile = "gfx/interface/ideas/characters/idea_Matsey_Rybinskiy.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Yan_Nepomuk_Fomilskiy"
+		texturefile = "gfx/interface/ideas/characters/idea_Yan_Nepomuk_Fomilskiy.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Usef_Zaharias_Bem"
+		texturefile = "gfx/interface/ideas/characters/idea_Usef_Zaharias_Bem.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Yan_Skrjinetsky"
+		texturefile = "gfx/interface/ideas/characters/idea_Yan_Skrjinetsky.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Frans_Iosif_I"
+		texturefile = "gfx/interface/ideas/characters/idea_Frans_Iosif_I.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Napoleon_II"
+		texturefile = "gfx/interface/ideas/characters/idea_Napoleon_II.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Maximillian_von_Shternek"
+		texturefile = "gfx/interface/ideas/characters/idea_Maximillian_von_Shternek.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Karl_Rudolf_Brommi"
+		texturefile = "gfx/interface/ideas/characters/idea_Karl_Rudolf_Brommi.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Chernyshevskiy_Nikolay_Gavrilovich"
+		texturefile = "gfx/interface/ideas/characters/idea_Chernyshevskiy_Nikolay_Gavrilovich.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Dmitriy_Sergeevich_Arseniev"
+		texturefile = "gfx/interface/ideas/characters/idea_Dmitriy_Sergeevich_Arseniev.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Nikolay_Andreevich_Arkas"
+		texturefile = "gfx/interface/ideas/characters/idea_Nikolay_Andreevich_Arkas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Leopold_Ludwig_Austrian"
+		texturefile = "gfx/interface/ideas/characters/idea_Leopold_Ludwig_Austrian.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Anton_von_Pets"
+		texturefile = "gfx/interface/ideas/characters/idea_Anton_von_Pets.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Alekos_Miriade"
+		texturefile = "gfx/interface/ideas/characters/idea_Alekos_Miriade.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Alex_Metaxas"
+		texturefile = "gfx/interface/ideas/characters/idea_Alex_Metaxas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Anthimos_Balotis"
+		texturefile = "gfx/interface/ideas/characters/idea_Anthimos_Balotis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Alexis_Manide"
+		texturefile = "gfx/interface/ideas/characters/idea_Alexis_Manide.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Apollon_Paliadis"
+		texturefile = "gfx/interface/ideas/characters/idea_Apollon_Paliadis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Apollon_Siskeas"
+		texturefile = "gfx/interface/ideas/characters/idea_Apollon_Siskeas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Christoforos_Sideropoulou"
+		texturefile = "gfx/interface/ideas/characters/idea_Christoforos_Sideropoulou.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Aristidis_Vlahas"
+		texturefile = "gfx/interface/ideas/characters/idea_Aristidis_Vlahas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Christos_Tripoleas"
+		texturefile = "gfx/interface/ideas/characters/idea_Christos_Tripoleas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Dimitris_Metridis"
+		texturefile = "gfx/interface/ideas/characters/idea_Dimitris_Metridis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Filippos_Politeli"
+		texturefile = "gfx/interface/ideas/characters/idea_Filippos_Politeli.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Iason_Galanides"
+		texturefile = "gfx/interface/ideas/characters/idea_Iason_Galanides.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Konstantin_Tyutchev"
+		texturefile = "gfx/interface/ideas/characters/idea_Konstantin_Tyutchev.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Iason_Galanides"
+		texturefile = "gfx/interface/ideas/characters/idea_Iason_Galanides.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Likourgos_Strakiade"
+		texturefile = "gfx/interface/ideas/characters/idea_Likourgos_Strakiade.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Manos_Lillatos"
+		texturefile = "gfx/interface/ideas/characters/idea_Manos_Lillatos.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Nikos_Kanelidi"
+		texturefile = "gfx/interface/ideas/characters/idea_Nikos_Kanelidi.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Romanos_Barou"
+		texturefile = "gfx/interface/ideas/characters/idea_Romanos_Barou.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Stavros_Gareas"
+		texturefile = "gfx/interface/ideas/characters/idea_Stavros_Gareas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Stefanos_Tocceli"
+		texturefile = "gfx/interface/ideas/characters/idea_Stefanos_Tocceli.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Thalis_Xenili"
+		texturefile = "gfx/interface/ideas/characters/idea_Thalis_Xenili.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Titos_Trainea"
+		texturefile = "gfx/interface/ideas/characters/idea_Titos_Trainea.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Vaso_Kostas"
+		texturefile = "gfx/interface/ideas/characters/idea_Vaso_Kostas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Vlasis_Strakelli"
+		texturefile = "gfx/interface/ideas/characters/idea_Vlasis_Strakelli.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Zacharias_Rodiniadi"
+		texturefile = "gfx/interface/ideas/characters/idea_Zacharias_Rodiniadi.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Zacharias_Tassou"
+		texturefile = "gfx/interface/ideas/characters/idea_Zacharias_Tassou.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Andreas_Baridis"
+		texturefile = "gfx/interface/ideas/characters/idea_Andreas_Baridis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Antonis_Nassas"
+		texturefile = "gfx/interface/ideas/characters/idea_Antonis_Nassas.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Dionissis_Economiadis"
+		texturefile = "gfx/interface/ideas/characters/idea_Dionissis_Economiadis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Dionissis_Saliades"
+		texturefile = "gfx/interface/ideas/characters/idea_Dionissis_Saliades.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Filippos_Remiade"
+		texturefile = "gfx/interface/ideas/characters/idea_Filippos_Remiade.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Georgios_Antonides"
+		texturefile = "gfx/interface/ideas/characters/idea_Georgios_Antonides.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Ignatios_Ganiadis"
+		texturefile = "gfx/interface/ideas/characters/idea_Ignatios_Ganiadis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Nikolas_Maliadis"
+		texturefile = "gfx/interface/ideas/characters/idea_Nikolas_Maliadis.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_August_von_Wurtemberg"
+		texturefile = "gfx/interface/ideas/characters/idea_August_von_Wurtemberg.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Eduard_Fridrich_von_Falkenstein"
+		texturefile = "gfx/interface/ideas/characters/idea_Eduard_Fridrich_von_Falkenstein.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Eduard_von_Bonin"
+		texturefile = "gfx/interface/ideas/characters/idea_Eduard_von_Bonin.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Eduard_von_Yahman"
+		texturefile = "gfx/interface/ideas/characters/idea_Eduard_von_Yahman.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Fridrich_Ernst_von_Wrangel"
+		texturefile = "gfx/interface/ideas/characters/idea_Fridrich_Ernst_von_Wrangel.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Adolf_Niel"
+		texturefile = "gfx/interface/ideas/characters/idea_Adolf_Niel.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Arman_Jack_de_Sent_Arno"
+		texturefile = "gfx/interface/ideas/characters/idea_Arman_Jack_de_Sent_Arno.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Bertran_Klosel"
+		texturefile = "gfx/interface/ideas/characters/idea_Bertran_Klosel.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Emil_Erbyion"
+		texturefile = "gfx/interface/ideas/characters/idea_Emil_Erbyion.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Fransua_Serten_de_Kantrober"
+		texturefile = "gfx/interface/ideas/characters/idea_Fransua_Serten_de_Kantrober.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Gaston_Galife"
+		texturefile = "gfx/interface/ideas/characters/idea_Gaston_Galife.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Lui_Ashil_Barage_d_liye"
+		texturefile = "gfx/interface/ideas/characters/idea_Lui_Ashil_Barage_d_liye.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Sharl_Giyom_Antuan_kusen_Montaban"
+		texturefile = "gfx/interface/ideas/characters/idea_Sharl_Giyom_Antuan_kusen_Montaban.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Arman_Josef_Brua"
+		texturefile = "gfx/interface/ideas/characters/idea_Arman_Josef_Brua.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Bonar_Lui_Adolf"
+		texturefile = "gfx/interface/ideas/characters/idea_Bonar_Lui_Adolf.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Bue_Villiome_Lui_Eduard"
+		texturefile = "gfx/interface/ideas/characters/idea_Bue_Villiome_Lui_Eduard.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Gamelen_Ferdinand_Alfons"
+		texturefile = "gfx/interface/ideas/characters/idea_Gamelen_Ferdinand_Alfons.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Kireevsky_Ivan_Vasilievich"
+		texturefile = "gfx/interface/ideas/characters/idea_Kireevsky_Ivan_Vasilievich.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Lavrov_Petr_Lavrovich"
+		texturefile = "gfx/interface/ideas/characters/idea_Lavrov_Petr_Lavrovich.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Petrashevsky_Mikhail_Vasikievich"
+		texturefile = "gfx/interface/ideas/characters/idea_Petrashevsky_Mikhail_Vasikievich.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Pirogov_Nicolay_Ivanovich"
+		texturefile = "gfx/interface/ideas/characters/idea_Pirogov_Nicolay_Ivanovich.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Georg_Hannoverskiy"
+		texturefile = "gfx/interface/ideas/characters/idea_Georg_Hannoverskiy.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Adolf_Frederick"
+		texturefile = "gfx/interface/ideas/characters/idea_Adolf_Frederick.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Karl_Bavarian"
+		texturefile = "gfx/interface/ideas/characters/idea_Karl_Bavarian.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Luitpold_Karl_Iosif"
+		texturefile = "gfx/interface/ideas/characters/idea_Luitpold_Karl_Iosif.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Alberht_Prussian"
+		texturefile = "gfx/interface/ideas/characters/idea_Alberht_Prussian.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Fridrich_Karl_Alex_Prussian"
+		texturefile = "gfx/interface/ideas/characters/idea_Fridrich_Karl_Alex_Prussian.dds"	
+	}
+	SpriteType = {
+		name = "GFX_idea_Ernst_von_Pfuel"
+		texturefile = "gfx/interface/ideas/characters/idea_Ernst_von_Pfuel.dds"	
 	}
 }

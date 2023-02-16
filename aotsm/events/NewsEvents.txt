@@ -8,7 +8,7 @@ news_event = { # Austria-Prussian war
 	id = news.1
 	title = news.1.t
 	desc = news.1.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_german_soldiers_on_marsh
 	
 	major = yes
 	
@@ -39,7 +39,7 @@ news_event = { # Prussian Win First AUS vs PRU
 	id = news.2
 	title = news.2.t
 	desc = news.2.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_generic_sign_treaty1
 	
 	major = yes
 	
@@ -54,7 +54,7 @@ news_event = { # Austria Win First AUS vs PRU
 	id = news.3
 	title = news.3.t
 	desc = news.3.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_generic_sign_treaty2
 	
 	major = yes
 	
@@ -71,7 +71,7 @@ news_event = { # German Economic Wonder
 	id = news.4
 	title = news.4.t
 	desc = news.4.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_generic_factory
 	
 	major = yes
 	
@@ -104,7 +104,7 @@ news_event = { # Second German Reich
 	id = news.5
 	title = news.5.t
 	desc = news.5.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_003
 	
 	major = yes
 	
@@ -125,7 +125,7 @@ news_event = { # Покушение на главу пр-ва Франции
 	id = news.6
 	title = news.6.t
 	desc = news.6.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_generic_riot
 	
 	major = yes
 	
@@ -142,7 +142,7 @@ news_event = { # Убийство главы пр-ва Франции
 	id = news.7
 	title = news.7.t
 	desc = news.7.d
-	picture = GFX_news_event_001
+	picture = GFX_news_event_generic_riot
 	
 	major = yes
 	
@@ -254,7 +254,7 @@ news_event = { # Prussian Win Second AUS vs PRU
 	id = news.13
 	title = news.13.t
 	desc = news.13.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_generic_sign_treaty2
 	
 	major = yes
 	
@@ -269,7 +269,7 @@ news_event = { # Austria Win Second AUS vs PRU
 	id = news.14
 	title = news.14.t
 	desc = news.14.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_generic_sign_treaty1
 	
 	major = yes
 	
@@ -284,7 +284,7 @@ news_event = { # Prussian Win Third AUS vs PRU
 	id = news.15
 	title = news.15.t
 	desc = news.15.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_generic_sign_treaty3
 	
 	major = yes
 	
@@ -299,7 +299,7 @@ news_event = { # Austria Win Third AUS vs PRU
 	id = news.16
 	title = news.16.t
 	desc = news.16.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_generic_sign_treaty3
 	
 	major = yes
 	
@@ -314,7 +314,7 @@ news_event = { # shot that circled the whole world
 	id = news.17
 	title = news.17.t
 	desc = news.17.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_german_speech
 	
 	major = yes
 	
@@ -331,7 +331,7 @@ news_event = { # New Roman Empire
 	id = news.18
 	title = news.18.t
 	desc = news.18.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_rome_rose_from_the_ashes
 	
 	major = yes
 	
@@ -356,7 +356,7 @@ news_event = { # Вторжениев фр в Алжир
 	id = news.19
 	title = news.19.t
 	desc = news.19.d
-	picture = GFX_news_event_hitler_handshake
+	picture = GFX_news_event_french_soldiers_on_the_marsh
 	
 	major = yes
 	
@@ -381,7 +381,7 @@ news_event = { # Death of Kaiser
 	id = news.20
 	title = news.20.t
 	desc = news.20.d
-	picture = GFX_news_event_king_speech
+	picture = GFX_news_event_death_of_kaiser
 	
 	major = yes
 	
@@ -639,7 +639,7 @@ news_event = { # JAP civil war win
 	id = news.28
 	title = news.28.t
 	desc = news.28.d
-	picture = GFX_olympics_1940
+	picture = GFX_news_event_japanese_army_parade
 	
 	major = yes
 	
@@ -668,7 +668,7 @@ news_event = { # JAS civil war win
 	id = news.29
 	title = news.29.t
 	desc = news.29.d
-	picture = GFX_olympics_1940
+	picture = GFX_news_event_japanese_army_parade
 	
 	major = yes
 	
@@ -696,7 +696,7 @@ news_event = { # TUK civil war win
 	id = news.30
 	title = news.30.t
 	desc = news.30.d
-	picture = GFX_olympics_1940
+	picture = GFX_news_event_japanese_army_parade
 	
 	major = yes
 	
@@ -917,6 +917,4512 @@ news_event = { # Смерть императора китая
 
 	option = {
 		name = news.40.a
+		trigger = {
+			NOT = { tag = FRR }
+		}
+	}
+	
+	option = {
+		name = news.40.b
+		trigger = {
+			tag = FRR 
+		}
+	}
+	
+}
+
+news_event = { # Установление французского протектората над С-З Африкой
+	id = news.41
+	title = news.41.t
+	desc = news.41.d
+	picture = GFX_news_event_fascist_militia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.41.a
+		trigger = {
+			NOT = { tag = FRR }
+		}
+	}
+	
+	option = {
+		name = news.41.b
+		trigger = {
+			tag = FRR
+		}
+	}
+}
+
+news_event = { # Триумф в Алжире
+	id = news.42
+	title = news.42.t
+	desc = news.42.d
+	picture = GFX_news_event_fascist_militia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.42.a
+		trigger = {
+			NOT = { tag = FRR }
+		}
+	}
+	
+	option = {
+		name = news.42.b
+		trigger = {
+			tag = FRR
+		}
+	}
+}
+
+news_event = { # Поражение в Алжире
+	id = news.43
+	title = news.43.t
+	desc = news.43.d
+	picture = GFX_news_event_fascist_militia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.43.a
+		trigger = {
+			NOT = { tag = FRR }
+		}
+	}
+	
+	option = {
+		name = news.43.b
+		trigger = {
+			tag = FRR
+		}
+	}
+}
+
+news_event = { # 
+	id = news.44
+	title = news.44.t
+	desc = news.44.d
+	picture = GFX_news_event_fascist_militia
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.44.a
+		trigger = {
+			NOT = { tag = FRR }
+		}
+	}
+	
+	option = {
+		name = news.44.b
+		trigger = {
+			tag = FRR
+		}
+	}
+}
+
+news_event = { # Persian Civil war
+	id = news.45
+	title = news.45.t
+	desc = news.45.d
+	picture = GFX_news_event_worker_protests
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.45.a
+	}
+}
+
+news_event = { # Iran win
+	id = news.46
+	title = news.46.t
+	desc = news.46.d
+	picture = GFX_news_event_secure_the_wayward_ally
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.46.a
+	}
+}
+
+news_event = { # Persia win
+	id = news.47
+	title = news.47.t
+	desc = news.47.d
+	picture = GFX_news_event_secure_the_wayward_ally
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.47.a
+	}
+}
+
+news_event = { # Parfia win
+	id = news.48
+	title = news.48.t
+	desc = news.48.d
+	picture = GFX_news_event_secure_the_wayward_ally
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.48.a
+	}
+}
+
+news_event = { # Смерть Трубецкого
+	id = news.49
+	title = news.49.t
+	desc = news.49.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.49.a
+	}
+}
+
+news_event = { # Президент Милютин
+	id = news.50 
+	title = news.50.t
+	desc = news.50.d
+	picture = GFX_news_event_journalists_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.50.a
+	}
+}
+
+news_event = {
+	id = news.51 # Президент Ромамнов
+	title = news.51.t
+	desc = news.51.d
+	picture = GFX_news_event_journalists_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.51.a
+	}
+}
+
+news_event = {
+	id = news.52 # Президент Орлов
+	title = news.52.t
+	desc = news.52.d
+	picture = GFX_news_event_journalists_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.52.a
+	}
+}
+
+news_event = { # Торговое противостояние с Германией
+	id = news.53
+	title = news.53.t
+	desc = news.53.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.53.a
+	}
+}
+
+news_event = { #  Отмена Монархии
+	id = news.54
+	title = news.54.t
+	desc = news.54.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.54.a
+	}
+}
+
+news_event = {
+	id = news.55 # Орлов - новый правитель России
+	title = news.55.t
+	desc = news.55.d
+	picture = GFX_news_event_generic_read_write
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.55.a
+	}
+}
+
+news_event = { # Романов КН - новый правитель России
+	id = news.56
+	title = news.56.t
+	desc = news.56.d
+	picture = GFX_news_event_generic_read_write
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.56.a
+	}
+}
+
+news_event = {
+	id = news.57 # Россия провозглашает Монархию
+	title = news.57.t
+	desc = news.57.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.57.a
+	}
+}
+
+news_event = {
+	id = news.58 # Россия претендует на "Северные врата"
+	title = news.58.t
+	desc = news.58.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.58.a
+	}
+}
+
+news_event = {
+	id = news.59 #Amazonia tribal assembly
+	title = news.59.t
+	desc = news.59.d
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.59.a
+	}
+}
+
+news_event = {
+	id = news.60 #Amazonia socialism
+	title = news.60.t
+	desc = news.60.d
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.60.a
+	}
+}
+
+news_event = {
+	id = news.61 #Amazonia democratic
+	title = news.61.t
+	desc = news.61.d
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.61.a
+	}
+}
+
+news_event = {
+	id = news.62 #Amazonia reactionism
+	title = news.62.t
+	desc = news.62.d
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.62.a
+	}
+}
+
+news_event = {
+	id = news.63 #Amazonia authoritarian
+	title = news.63.t
+	desc = news.63.d
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.63.a
+	}
+}
+
+news_event = {
+	id = news.64 #Gas attack from Germany
+	title = news.64.t
+	desc = news.64.d
+	picture = GFX_news_event_gas_attack
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.64.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.64.b
+		trigger = {
+			is_in_faction_with = PRU
+		}
+	}
+	
+	option = {
+		name = news.64.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				is_in_faction_with = PRU
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.65 #Great Summer invasion
+	title = news.65.t
+	desc = news.65.d
+	picture = GFX_news_event_polish_army
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.65.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.65.b
+		trigger = {
+			NOT = {
+				tag = PRU
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.66 #Attack of the Dead Men
+	title = news.66.t
+	desc = news.66.d
+	picture = GFX_news_event_attack_of_the_dead_men
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.66.a
+		trigger = {
+			tag = PRU
+		}
+		PRU = {
+			add_stability = -0.15
+			add_war_support = -0.15
+		}
+	}
+	
+	option = {
+		name = news.66.b
+		trigger = {
+			tag = RUS
+		}
+		RUS = {
+			remove_ideas = gas_attack_idea
+			add_war_support = 0.20
+		}
+	}
+	
+	option = {
+		name = news.66.c
+		trigger = {
+			NOT = {
+				OR = {
+					tag = RUS
+					tag = PRU
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.67 #Polish urprising
+	title = news.67.t
+	desc = news.67.d
+	picture = GFX_news_event_worker_protests
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.67.a
+	}
+	
+}
+
+news_event = {
+	id = news.68 #Germany Gurant Polish
+	title = news.68.t
+	desc = news.68.d
+	picture = GFX_news_event_german_will_fight_for_poland
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.68.a
+	}
+	
+}
+
+news_event = {
+	id = news.69 #First world war
+	title = news.69.t
+	desc = news.69.d
+	picture = GFX_news_event_first_world_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.69.a
+	}
+	
+}
+
+news_event = {
+	id = news.70 #Japan attack colony
+	title = news.70.t
+	desc = news.70.d
+	picture = GFX_news_event_usa_japan_at_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.70.a
+	}
+	
+}
+
+news_event = {
+	id = news.71 #Scandinavia intervent
+	title = news.71.t
+	desc = news.71.d
+	picture = GFX_news_event_generic_army
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.71.a
+	}
+	
+}
+
+news_event = {
+	id = news.72 #Scandinavia leave war
+	title = news.72.t
+	desc = news.72.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.72.a
+	}
+	
+}
+
+news_event = {
+	id = news.73 #Hungary with coalition
+	title = news.73.t
+	desc = news.73.d
+	picture = GFX_news_event_battle_for_the_bosporus
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.73.a
+	}
+	
+}
+
+news_event = {
+	id = news.74 #Hungary win
+	title = news.74.t
+	desc = news.74.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.74.a
+	}
+	
+}
+
+news_event = {
+	id = news.75 #Hungary lose
+	title = news.75.t
+	desc = news.75.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.75.a
+	}
+	
+}
+
+news_event = {
+	id = news.76 #RUS capitulation
+	title = news.76.t
+	desc = news.76.d
+	picture = GFX_news_event_soldier_surrounded_by_crosses
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.76.a
+	}
+	
+}
+
+news_event = {
+	id = news.77 #CBI capitulation
+	title = news.77.t
+	desc = news.77.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.77.a
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.77.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.78 #PRT capitulation
+	title = news.78.t
+	desc = news.78.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.78.a
+	}
+	
+}
+
+news_event = {
+	id = news.79 #FRR capitulation
+	title = news.79.t
+	desc = news.79.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.79.a
+	}
+	
+}
+
+news_event = {
+	id = news.80 #PRU capitulation
+	title = news.80.t
+	desc = news.80.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.80.a
+	}
+	
+}
+
+news_event = {
+	id = news.81 #BYZ capitulation
+	title = news.81.t
+	desc = {
+		text = news.81.d1
+		trigger = {
+			NOT = {
+				BYZ = {
+					owns_state = 2
+				}
+			}
+		}
+	}
+	desc = {
+		text = news.81.d2
+		trigger = {
+			BYZ = {
+				owns_state = 2
+			}
+		}
+	}
+				
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.81.a
+	}
+	
+}
+
+news_event = {
+	id = news.82 #Byzantium Prussian cold war
+	title = news.82.t
+	desc = news.82.d
+	picture = GFX_news_event_election_vote
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.82.a
+	}
+	
+}
+
+news_event = {
+	id = news.83 #Russian collapse
+	title = news.83.t
+	desc = news.83.d
+	picture = GFX_news_event_worker_protests
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.83.a
+	}
+	
+}
+
+news_event = {
+	id = news.84 #Moskovia with Prussia
+	title = news.84.t
+	desc = news.84.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.84.a
+	}
+	
+}
+
+news_event = {
+	id = news.85 #Гражданка в Сомали
+	title = news.85.t
+	desc = news.85.d
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.85.a
+
+	}
+	
+}
+
+news_event = {
+	id = news.86 #Leypoldit Bomb Success
+	title = news.86.t
+	desc = news.86.d
+	picture = GFX_news_event_nuke
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.86.a
+
+	}
+	
+}
+
+news_event = {
+	id = news.87 #Leypoldit Bomb Fail
+	title = news.87.t
+	desc = news.87.d
+	picture = GFX_news_event_nuke
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				goto_state = 720
+			}
+			launch_nuke = {
+				province = 10995
+				state = 720
+				use_nuke = yes
+			}
+			720 = {
+				remove_building = {
+					type = nuclear_reactor
+					level = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = news.87.a
+
+	}
+	
+}
+
+news_event = {
+	id = news.88 #first ultimatum
+	title = news.88.t
+	desc = news.88.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.88.a
+	}
+	
+}
+
+news_event = {
+	id = news.89 #second ultimatum
+	title = news.89.t
+	desc = news.89.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.89.a
+	}
+	
+}
+
+news_event = {
+	id = news.90 #third ultimatum
+	title = news.90.t
+	desc = news.90.d
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.90.a
+	}
+	
+}
+
+news_event = {
+	id = news.91 #afganistan lose
+	title = news.91.t
+	desc = news.91.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.91.a
+	}
+	
+}
+
+news_event = {
+	id = news.92 #afganistan win
+	title = news.92.t
+	desc = news.92.d
+	picture = GFX_news_event_072
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.92.a
+	}
+	
+}
+
+news_event = {
+	id = news.93 #Creating of Mittleafrika
+	title = news.93.t
+	desc = news.93.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.93.a
+	}
+	
+}
+
+news_event = {
+	id = news.94 #Death of Lem
+	title = news.94.t
+	desc = news.94.d
+	picture = GFX_news_event_generic_funeral
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.94.a
+		trigger = {
+			NOT = {
+				tag = CBI
+				tag = BRI
+				tag = WAL
+				tag = SCO
+				tag = IRE
+			}
+		}
+	}
+	
+	option = {
+		name = news.94.b
+		trigger = {
+			OR = {
+				tag = CBI
+				tag = BRI
+				tag = WAL
+				tag = SCO
+				tag = IRE
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.95 #New Lord-protector
+	title = news.95.t
+	desc = news.95.d
+	picture = GFX_news_event_eng_imperial_conference
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.95.a
+		trigger = {
+			NOT = {
+				tag = CBI
+				tag = BRI
+				tag = WAL
+				tag = SCO
+				tag = IRE
+			}
+		}
+	}
+	
+	option = {
+		name = news.95.b
+		trigger = {
+			OR = {
+				tag = CBI
+				tag = BRI
+				tag = WAL
+				tag = SCO
+				tag = IRE
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.96 #Romea leave Saint Pakt
+	title = news.96.t
+	desc = news.96.d
+	picture = GFX_news_event_053
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+		hidden_effect = {
+		
+			BYZ = {
+				add_ideas = russian_history_enemy_1
+			}
+			BYZ = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = history_enemy
+				}
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = BYZ
+					modifier = history_enemy
+				}
+			}
+			
+			BUL = {
+				diplomatic_relation = {
+					country = BYZ
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BYZ
+					modifier = saint_pact
+				}
+			}
+			SER = {
+				diplomatic_relation = {
+					country = BYZ
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BYZ
+					modifier = saint_pact
+				}
+			}
+			ALB = {
+				diplomatic_relation = {
+					country = BYZ
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BYZ
+					modifier = saint_pact
+				}
+			}
+			BOS = {
+				diplomatic_relation = {
+					country = BYZ
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BYZ
+					modifier = saint_pact
+				}
+			}
+			CRO = {
+				diplomatic_relation = {
+					country = BYZ
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BYZ
+					modifier = saint_pact
+				}
+			}
+			SLO = {
+				diplomatic_relation = {
+					country = BYZ
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BYZ
+					modifier = saint_pact
+				}
+			}
+			BYZ = {
+				diplomatic_relation = {
+					country = BUL
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BUL
+					modifier = saint_pact
+				}
+				diplomatic_relation = {
+					country = SER
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = SER
+					modifier = saint_pact
+				}
+				diplomatic_relation = {
+					country = ALB
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = ALB
+					modifier = saint_pact
+				}
+				diplomatic_relation = {
+					country = BOS
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = BOS
+					modifier = saint_pact
+				}
+				diplomatic_relation = {
+					country = CRO
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = CRO
+					modifier = saint_pact
+				}
+				diplomatic_relation = {
+					country = SLO
+					relation = non_aggression_pact
+					active = no
+				}
+				remove_opinion_modifier = {
+					target = SLO
+					modifier = saint_pact
+				}
+			}
+		
+		}
+		
+	}
+	
+	option = {
+		name = news.96.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.96.b
+		trigger = {
+			tag = RUS
+		}
+	}
+	
+	option = {
+		name = news.96.c
+		trigger = {
+			OR = {
+				tag = BUL
+				tag = ALB
+				tag = SER
+				tag = BOS
+			}
+		}
+	}
+	
+	option = {
+		name = news.96.f
+		trigger = {
+			tag = PAP
+		}
+	}
+	
+	option = {
+		name = news.96.g
+		trigger = {
+			NOT = {
+				tag = BYZ
+				tag = RUS
+				tag = BUL
+				tag = ALB
+				tag = SER
+				tag = BOS
+				tag = PAP
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.97 #SCA capitulation
+	title = news.97.t
+	desc = news.97.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.97.a
+	}
+	
+}
+
+news_event = {
+	id = news.98 #German Civil war
+	title = news.98.t
+	desc = news.98.d
+	picture = GFX_news_event_ger_civil_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.98.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.98.b
+		trigger = {
+			tag = SGE
+		}
+	}
+	
+	option = {
+		name = news.98.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = SGE
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.99 #End of Romea
+	title = news.99.t
+	desc = news.99.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.99.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.99.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.100 #coup in sca
+	title = news.100.t
+	desc = news.100.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.100.a
+		trigger = {
+			tag = SCA
+		}
+	}
+	
+	option = {
+		name = news.100.b
+		trigger = {
+			NOT = {
+				tag = SCA
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.101 #create vinland
+	title = news.101.t
+	desc = news.101.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.101.a
+		trigger = {
+			tag = SCA
+		}
+	}
+	
+	option = {
+		name = news.101.b
+		trigger = {
+			NOT = {
+				tag = SCA
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.102 #Socialistic Revolution in CBI
+	title = news.102.t
+	desc = news.102.d
+	picture = GFX_news_event_socialist_miting
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.102.a
+		trigger = {
+			tag = CBI
+		}
+	}
+	
+	option = {
+		name = news.102.b
+		trigger = {
+			NOT = {
+				tag = CBI
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.103 #Coliseum Restored
+	title = news.103.t
+	desc = news.103.d
+	picture = GFX_news_event_rebuild_colisey
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.103.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.103.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.104 #Fritz Gaber Start
+	title = news.104.t
+	desc = news.104.d
+	picture = GFX_news_event_partition_of_india
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			news_event = {
+				id = news.105
+				days = 297
+			}
+		}
+	}
+	
+	option = {
+		name = news.104.a
+	}
+	
+}
+
+news_event = {
+	id = news.105 #Fritz Gaber midle
+	title = news.105.t
+	desc = news.105.d
+	picture = GFX_news_event_generic_factory
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				50 = {
+					news_event = {
+						id = news.106
+						days = 1441
+					}
+				}
+				50 = {
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = news.105.a
+	}
+	
+}
+
+news_event = {
+	id = news.106 #Fritz Gaber end
+	title = news.106.t
+	desc = news.106.d
+	picture = GFX_news_event_canadian_artillery
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = Fritz_Gaber_success
+	}
+	
+	option = {
+		name = news.106.a
+	}
+	
+}
+
+news_event = {
+	id = news.107 #ROOT leave german union
+	title = news.107.t
+	desc = news.107.d
+	picture = GFX_news_event_generic_read_write
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = no
+	
+	option = {
+		name = news.107.a
+	}
+	
+}
+
+news_event = {
+	id = news.108 #Verfassung des deutschen Reiches
+	title = news.108.t
+	desc = news.108.d
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.108.a
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = HOH
+				tag = AUS
+				tag = LIE
+				tag = FRN
+				tag = ELS
+				tag = BAV
+				tag = KOL
+				tag = SAK
+				tag = TYR
+				tag = MCS
+				tag = LBE
+				tag = HAM
+				tag = BRM
+				tag = WLD
+				tag = WEI
+				tag = MEI
+				tag = HES
+				tag = BAD
+				tag = MCL
+				tag = VUR
+				tag = OLD
+				tag = SLG
+				tag = HLS
+				tag = LUX
+				tag = SWI
+				tag = GPO
+				tag = SIL
+				tag = BRD
+				tag = POM
+				tag = BOH
+				tag = AUS
+			}
+		}
+	}
+	
+	option = {
+		name = news.108.b
+		trigger = {
+			OR = {
+				tag = PRU
+				tag = HOH
+				tag = AUS
+				tag = LIE
+				tag = FRN
+				tag = ELS
+				tag = BAV
+				tag = KOL
+				tag = SAK
+				tag = TYR
+				tag = MCS
+				tag = LBE
+				tag = HAM
+				tag = BRM
+				tag = WLD
+				tag = WEI
+				tag = MEI
+				tag = HES
+				tag = BAD
+				tag = MCL
+				tag = VUR
+				tag = OLD
+				tag = SLG
+				tag = HLS
+				tag = LUX
+				tag = SWI
+				tag = GPO
+				tag = SIL
+				tag = BRD
+				tag = POM
+				tag = BOH
+			}
+		}
+		if = {
+			limit = {
+				tag = PRU 
+			}
+			PRU = {
+				add_ideas = crow_without_country
+			}	
+		}
+	}
+	
+	option = {
+		name = news.108.c
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.109 #End of Habsburg Empire
+	title = news.109.t
+	desc = news.109.d
+	picture = GFX_news_event_worker_protests
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.109.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.109.b
+		trigger = {
+			NOT = {
+				tag = AUS
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.110 #annex of Elsas
+	title = news.110.t
+	desc = news.110.d
+	picture = GFX_news_event_053
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.110.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.110.b
+		trigger = {
+			tag = FRR
+		}
+		hidden_effect = {
+		}
+	}
+	
+	option = {
+		name = news.110.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = FRR
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.111 #winter of 1854-1855
+	title = news.111.t
+	desc = news.111.d
+	picture = GFX_news_event_winter_1854_1855
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.111.a
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.111.b
+		trigger = {
+			OR = {
+				tag = RUS
+				is_in_faction_with = RUS
+			}
+			OR = {
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.111.c
+		trigger = {
+			NOT = {
+				has_war_with = RUS
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.112 #winter of 1855-1856
+	title = news.112.t
+	desc = news.112.d
+	picture = GFX_news_event_winter_1855_1856
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.112.a
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.112.b
+		trigger = {
+			OR = {
+				tag = RUS
+				is_in_faction_with = RUS
+			}
+			OR = {
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.112.c
+		trigger = {
+			NOT = {
+				has_war_with = RUS
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.113 #Byzantium and Germany
+	title = news.113.t
+	desc = news.113.d
+	picture = GFX_news_event_the_megali_idea_succeeds
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.113.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.113.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.113.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.114 #Germany win battle for Elsas
+	title = news.114.t
+	desc = news.114.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.114.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.114.b
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.114.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = FRR
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.115 #France win battle for Elsas
+	title = news.115.t
+	desc = news.115.d
+	picture = GFX_news_event_french_parade
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.115.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.115.b
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.115.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = FRR
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.116 #Scandinavia join the war
+	title = news.116.t
+	desc = news.116.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.116.a
+		trigger = {
+			tag = SCA
+		}
+	}
+	
+	option = {
+		name = news.116.b
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.116.c
+		trigger = {
+			NOT = {
+				tag = SCA
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.117 #Russian help anti-hungarian coalition
+	title = news.117.t
+	desc = news.117.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.117.a
+		trigger = {
+			tag = HUN
+		}
+	}
+	
+	option = {
+		name = news.117.b
+		trigger = {
+			tag = VLH
+		}
+	}
+	
+	option = {
+		name = news.117.b
+		trigger = {
+			tag = GLA
+			GLA = {
+				has_war_with = HUN
+			}
+		}
+	}
+	
+	option = {
+		name = news.117.c
+		trigger = {
+			tag = RUS
+		}
+	}
+	
+	option = {
+		name = news.117.f
+		trigger = {
+			OR = {
+				tag = PRU
+				tag = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.117.g
+		trigger = {
+			NOT = {
+				tag = HUN
+				tag = VLH
+				tag = RUS
+				tag = PRU
+				tag = BYZ
+				AND = {
+					tag = GLA
+					GLA = {
+						has_war_with = HUN
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.118 #Fraternization on front
+	title = news.118.t
+	desc = news.118.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.118.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.118.b
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.118.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = AUS
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.119 #Maximilian new Kaiser of Mittlecromwland
+	title = news.119.t
+	desc = news.119.d
+	picture = GFX_news_event_king_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.119.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.119.b
+		trigger = {
+			tag = MEC
+		}
+	}
+	
+	option = {
+		name = news.119.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = MEC
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.120 #Franz Iosif found in Zentrumamazonia
+	title = news.120.t
+	desc = news.120.d
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			AUS = {
+				set_nationality = {
+					target_country = ZEN
+					character = AUS_Franz_Joseph_I
+				}
+			}
+			ZEN = {
+				promote_character = {
+					character = AUS_Franz_Joseph_I
+					ideology = authoritarian
+				}
+				set_politics = {
+					ruling_party = authoritarian
+				}
+				set_popularities = {
+					democratic = 15
+					socialism = 0
+					reactionist = 14
+					authoritarian = 71
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = news.120.a
+		trigger = {
+			tag = ZEN
+		}
+	}
+	
+	option = {
+		name = news.120.b
+		trigger = {
+			NOT = {
+				tag = ZEN
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.121 #Coronation of Romania
+	title = news.121.t
+	desc = news.121.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					VLH = {
+						has_country_leader = {
+							character = BUL_Alexandr_Battenberg
+							ruling_only = yes
+						}
+					}
+				}
+				VLH = {
+					set_character_name = {
+						character = BUL_Alexandr_Battenberg
+						name = BUL_Alexandr_Battenberg_I
+					}
+				}
+			}
+			if = {
+				limit = {
+					VLH = {
+						has_country_leader = {
+							character = MOL_Alex_Ioan_Kusa
+							ruling_only = yes
+						}
+					}
+				}
+				VLH = {
+					set_character_name = {
+						character = MOL_Alex_Ioan_Kusa
+						name = MOL_Alex_Ioan_Kusa_II
+					}
+				}
+			}
+		}
+	}
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.121.a
+		trigger = {
+			tag = VLH
+		}
+	}
+	
+	option = {
+		name = news.121.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.121.c
+		trigger = {
+			NOT = {
+				tag = VLH
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.122 #Black sun Rising
+	title = news.122.t
+	desc = news.122.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.122.a
+		trigger = {
+			tag = KOL
+		}
+	}
+	
+	option = {
+		name = news.122.b
+		trigger = {
+			NOT = {
+				tag = KOL
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.123 #King of Romania die on coronation
+	title = news.123.t
+	desc = news.123.d
+	picture = GFX_news_event_generic_funeral
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.123.a
+		trigger = {
+			tag = VLH
+		}
+	}
+	
+	option = {
+		name = news.123.b
+		trigger = {
+			NOT = {
+				tag = VLH
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.124 #Balkan conferenc Peace
+	title = news.124.t
+	desc = news.124.d
+	picture = GFX_news_event_canada_treaty
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.124.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.124.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.124.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.125 #Balkan ultimatum Peace
+	title = news.125.t
+	desc = news.125.d
+	picture = GFX_news_event_canada_patriation
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.125.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.125.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.125.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.126 #Balkan conferenc BAD
+	title = news.126.t
+	desc = news.126.d
+	picture = GFX_news_event_bulgarian_troops
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.126.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.126.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.126.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.127 #Balkan ultimatum WAR
+	title = news.127.t
+	desc = news.127.d
+	picture = GFX_news_event_bulgarian_partisans
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.127.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.127.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.127.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.128 #Balkan war begin
+	title = news.128.t
+	desc = news.128.d
+	picture = GFX_news_event_battle_for_the_bosporus
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.128.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.128.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.128.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.129 #Balkan war byzantium win
+	title = news.129.t
+	desc = news.129.d
+	picture = GFX_news_event_the_megali_idea_succeeds
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.129.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.129.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.129.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.130 #Balkan war austrian win
+	title = news.130.t
+	desc = news.130.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.130.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.130.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.130.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.131 #Coronation of Franz Iosif
+	title = news.131.t
+	desc = news.131.d
+	picture = GFX_news_event_003
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.131.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.131.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.131.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.132 #Wenn die Soldaten adopted in Germany
+	title = news.132.t
+	desc = news.132.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.132.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.132.b
+		trigger = {
+			NOT = {
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.133 #Napoleon suicide
+	title = news.133.t
+	desc = news.133.d
+	picture = GFX_news_event_generic_funeral
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			AUS = {
+				retire_character = AUS_Napoleon_II
+			}
+		}
+	}
+		
+	option = {
+		name = news.133.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.133.b
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.133.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = FRR
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.134 #end of tashkent pact
+	title = news.134.t
+	desc = news.134.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.134.a
+		trigger = {
+			NOT = {
+				tag = KAZ
+				tag = BUK
+				tag = HIV
+			}
+		}
+	}
+	
+	option = {
+		name = news.134.b
+		trigger = {
+			OR = {
+				tag = KAZ
+				tag = BUK
+				tag = HIV
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.135 #tashkent pact has crisis
+	title = news.135.t
+	desc = news.135.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.135.a
+		trigger = {
+			NOT = {
+				tag = KAZ
+				tag = BUK
+				tag = HIV
+			}
+		}
+	}
+	
+	option = {
+		name = news.135.b
+		trigger = {
+			OR = {
+				tag = KAZ
+				tag = BUK
+				tag = HIV
+			}
+		}
+	}
+}	
+
+news_event = {
+	id = news.136 #sor wim civil war
+	title = news.136.t
+	desc = news.136.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.136.a
+		trigger = {
+			NOT = {
+				tag = SOR
+			}
+		}
+	}
+	
+	option = {
+		name = news.136.b
+		trigger = {
+			tag = SOR
+		}
+	}
+}	
+
+news_event = {
+	id = news.137 #sos win sivil war
+	title = news.137.t
+	desc = news.137.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.137.a
+		trigger = {
+			NOT = {
+				tag = SOS
+			}
+		}
+	}
+	
+	option = {
+		name = news.137.b
+		trigger = {
+			tag = SOS
+		}
+	}
+}	
+
+news_event = {
+	id = news.138 #Napoleon I and Napoleon II
+	title = news.138.t
+	desc = news.138.d
+	picture = GFX_news_event_churchill_degaulle
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.138.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	
+	option = {
+		name = news.138.b
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.138.c
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = FRR
+			}
+		}
+	}
+}	
+
+news_event = { #Christmac Truse
+	id = news.139
+	title = news.139.t
+	desc = news.139.d
+	picture = GFX_news_event_christmac_thruse
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.139.a
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.139.b
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.139.c
+		trigger = {
+			NOT = {
+				tag = FRR
+				tag = PRU
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.140
+	title = news.140.t
+	desc = news.140.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.140.a
+		trigger = {
+	
+		}
+	}
+}
+
+news_event = {
+	id = news.141
+	title = news.141.t
+	desc = news.141.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.141.a
+		trigger = {
+	
+		}
+	}
+}
+
+news_event = {
+	id = news.142
+	title = news.142.t
+	desc = news.142.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.142.a
+		trigger = {
+	
+		}
+	}
+}
+
+news_event = {
+	id = news.143
+	title = news.143.t
+	desc = news.143.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.143.a
+		trigger = {
+	
+		}
+	}
+}
+
+news_event = {
+	id = news.144
+	title = news.144.t
+	desc = news.144.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.144.a
+		trigger = {
+	
+		}
+	}
+}
+
+news_event = { #TPN uprising
+	id = news.145
+	title = news.145.t
+	desc = news.145.d
+	picture = GFX_news_event_taypin_uprising
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.145.a
+		trigger = {
+			NOT = {
+				tag = QIN
+				tag = TPN
+			}
+		}
+	}
+	option = {
+		name = news.145.b
+		trigger = {
+			tag = QIN
+		}
+	}
+	option = {
+		name = news.145.c
+		trigger = {
+			tag = TPN
+		}
+	}
+}
+
+news_event = {
+	id = news.146
+	title = news.146.t
+	desc = news.146.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.146.a
+		trigger = {
+			NOT = {
+				tag = TPN
+			}
+		}
+	}
+	option = {
+		name = news.146.b
+		trigger = {
+			tag = TPN
+		}
+	}
+}
+
+news_event = {
+	id = news.147
+	title = news.147.t
+	desc = news.147.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.147.a
+		trigger = {
+			NOT = {
+				tag = QIN
+			}
+		}
+	}
+	
+	option = {
+		name = news.147.b
+		trigger = {
+			tag = QIN
+		}
+	}
+}
+
+news_event = { #Japan Force annex Palaman
+	id = news.148
+	title = news.148.t
+	desc = news.148.d
+	picture = GFX_news_event_usa_japan_at_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.148.a
+		trigger = {
+			tag = RAT
+		}
+	}
+	
+	option = {
+		name = news.148.b
+		trigger = {
+			OR = {
+				tag = JAP
+				tag = JAS
+				tag = TUK
+			}
+		}
+	}
+	
+	option = {
+		name = news.148.c
+		trigger = {
+			NOT = {
+				tag = RAT
+				tag = JAP
+				tag = JAS
+				tag = TUK
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.149 #Status Quo
+	title = news.149.t
+	desc = news.149.d
+	picture = GFX_news_event_spr_spanish_civil_war2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.149.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.149.b
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.149.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = FRR
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.150 #Byzantium Intervation in Afganistan
+	title = news.150.t
+	desc = news.150.d
+	picture = GFX_news_event_spr_spanish_civil_war2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.150.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.150.b
+		trigger = {
+			tag = AFG
+		}
+	}
+	
+	option = {
+		name = news.150.c
+		trigger = {
+			OR = {
+				tag = RIT
+				tag = PAR
+				tag = PNJ
+			}
+		}
+	}
+	
+	option = {
+		name = news.150.f
+		trigger = {
+			NOT = {
+				tag = BYZ
+				tag = AFG
+				tag = RIT
+				tag = PAR
+				tag = PNJ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.151 #Creating of Imperial Guard
+	title = news.151.t
+	desc = news.151.d
+	picture = GFX_news_event_new_roman_imperial_guard
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.151.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.151.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.152 #Creating of StormTrupper
+	title = news.152.t
+	desc = news.152.d
+	picture = GFX_news_event_creating_of_stormtrupper
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.152.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.152.b
+		trigger = {
+			NOT = {
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.153 #Romea Decentrize
+	title = news.153.t
+	desc = news.153.d
+	picture = GFX_news_event_german_volunteers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.153.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.153.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.154 #Romea Centilize
+	title = news.154.t
+	desc = news.154.d
+	picture = GFX_news_event_german_volunteers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.154.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.154.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.155 #Student Protest in Romea
+	title = news.155.t
+	desc = news.155.d
+	picture = GFX_news_event_worker_protests
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.155.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.155.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.156 #Student was reassured
+	title = news.156.t
+	desc = news.156.d
+	picture = GFX_news_event_generic_read_write
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.156.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.156.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.157 #Student Revolt in Romea
+	title = news.157.t
+	desc = news.157.d
+	picture = GFX_news_event_generic_riot
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.157.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.157.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.158 #Student Revol fail
+	title = news.158.t
+	desc = news.158.d
+	picture = GFX_news_event_king_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.158.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.158.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.159 #Student Revol succes
+	title = news.159.t
+	desc = news.159.d
+	picture = GFX_news_event_montreux_convention_succeeds
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.159.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.159.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.160 #Start of bloodbath
+	title = news.160.t
+	desc = news.160.d
+	picture = GFX_news_event_greek_civil_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.160.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.160.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.161 #Imperor survive assassination
+	title = news.161.t
+	desc = news.161.d
+	picture = GFX_news_event_generic_funeral
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.161.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.161.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.162 #No more Ankara
+	title = news.162.t
+	desc = news.162.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.162.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.162.b
+		trigger = {
+			NOT = {
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.163 #SUN ECLIPSE
+	title = news.163.t
+	desc = news.163.d
+	picture = GFX_news_event_the_sun_eclipse
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.163.a
+		
+	}
+	
+}
+
+news_event = {
+	id = news.164 #COMET IN THE SKY
+	title = news.164.t
+	desc = news.164.d
+	picture = GFX_news_event_comet_in_the_sky
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.164.a
+
+	}
+	
+}
+
+news_event = {
+	id = news.165 #Creating of Wehrmacht
+	title = news.165.t
+	desc = news.165.d
+	picture = GFX_news_event_german_soldiers_on_marsh
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.165.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.165.b
+		trigger = {
+			NOT = {
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.166 #Burn Second Tom of Dead Souls
+	title = news.166.t
+	desc = news.166.d
+	picture = GFX_news_event_burning_paper
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.166.a
+	}
+	
+}
+
+news_event = {
+	id = news.167 #Mystical death of Gogol
+	title = news.167.t
+	desc = news.167.d
+	picture = GFX_news_event_generic_funeral
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.167.a
+	}
+	
+}
+
+news_event = {
+	id = news.168 #German Mass attack
+	title = news.168.t
+	desc = news.168.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.168.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.168.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.168.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+			has_war_with = PRU
+		}
+	}
+	
+	option = {
+		name = news.168.f
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+			NOT = {
+				has_war_with = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.169 #Fail
+	title = news.169.t
+	desc = news.169.d
+	picture = GFX_news_event_destroyers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			PRU = {
+				remove_ideas = mass_attack_by_wrangel
+			}
+		}
+	}
+	
+	option = {
+		name = news.169.a
+		trigger = {
+			tag = PRU
+		}
+		custom_effect_tooltip = pru_mass_attack_remove
+	}
+	
+	option = {
+		name = news.169.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.169.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+			has_war_with = PRU
+		}
+	}
+	
+	option = {
+		name = news.169.f
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+			NOT = {
+				has_war_with = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.170 #winter of 1854-1855 #Bismark plan
+	title = news.170.t
+	desc = news.170.d
+	picture = GFX_news_event_winter_1854_1855
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.170.a
+		trigger = {
+			OR = {
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.170.b
+		trigger = {
+			OR = {
+				tag = RUS
+				is_in_faction_with = RUS
+			}
+			OR = {
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.170.c
+		trigger = {
+			NOT = {
+				has_war_with = RUS
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.170.f
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+			}
+			has_war_with = RUS
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.171 #German prepeared to winter
+	title = news.171.t
+	desc = news.171.d
+	picture = GFX_news_event_military_planning
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.171.a
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+			}
+		}
+	}
+	
+	option = {
+		name = news.171.b
+		trigger = {
+			OR = {
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.171.c
+		trigger = {
+			OR = {
+				tag = CBI
+				tag = FRR
+				tag = RUS
+			}
+			has_war_with = PRU
+		}
+	}
+	
+	option = {
+		name = news.171.f
+		trigger = {
+			NOT = {
+				tag = BYZ
+				is_subject_of = BYZ
+				tag = PRU
+				is_subject_of = PRU
+				has_war_with = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.172 #winter of 1855-1856 #Bismark plan
+	title = news.172.t
+	desc = news.172.d
+	picture = GFX_news_event_winter_1855_1856
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.172.a
+		trigger = {
+			OR = {
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.172.b
+		trigger = {
+			OR = {
+				tag = RUS
+				is_in_faction_with = RUS
+			}
+			OR = {
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.172.c
+		trigger = {
+			NOT = {
+				has_war_with = RUS
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.172.f
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+			}
+			has_war_with = RUS
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.173 #winter of 1856-1857
+	title = news.173.t
+	desc = news.173.d
+	picture = GFX_news_event_winter_1856_1857
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.173.a
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.173.b
+		trigger = {
+			OR = {
+				tag = RUS
+				is_in_faction_with = RUS
+			}
+			OR = {
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.173.c
+		trigger = {
+			NOT = {
+				has_war_with = RUS
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.174 #winter of 1856-1857 #Bismark plan
+	title = news.174.t
+	desc = news.174.d
+	picture = GFX_news_event_winter_1856_1857
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.174.a
+		trigger = {
+			OR = {
+				tag = BYZ
+				is_subject_of = BYZ
+			}
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.174.b
+		trigger = {
+			OR = {
+				tag = RUS
+				is_in_faction_with = RUS
+			}
+			OR = {
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.174.c
+		trigger = {
+			NOT = {
+				has_war_with = RUS
+				has_war_with = PRU
+				has_war_with = BYZ
+			}
+		}
+	}
+	
+	option = {
+		name = news.174.f
+		trigger = {
+			OR = {
+				tag = PRU
+				is_subject_of = PRU
+			}
+			has_war_with = RUS
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.175 #Rise of Evil
+	title = news.175.t
+	desc = news.175.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.175.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.175.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.175.c
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.176 #Battle of Senadai
+	title = news.176.t
+	desc = news.176.d
+	picture = GFX_news_event_last_samurai_battle
+	
+	major = yes
+	
+	immediate = {
+		set_global_flag = last_samurai_battle_in_history
+	}
+	
+	trigger = {
+		533 = { 
+			OR = {
+				is_controlled_by = JAP 
+				is_controlled_by = TUK
+			}
+		}
+		533 = { 
+			is_owned_by = JAS 
+		}
+		OR = {
+			JAP = {
+				has_war_with = JAS 
+			}
+			TUK = {
+				has_war_with = TUK
+			}
+		}
+		NOT = { 
+			has_global_flag = last_samurai_battle_in_history
+		}
+		JAS = {	
+			has_capitulated = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.176.a
+		trigger = {
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = news.176.b
+		trigger = {
+			tag = JAS
+		}
+	}
+	
+	option = {
+		name = news.176.c
+		trigger = {
+			tag = TUK
+		}
+	}
+	
+	option = {
+		name = news.176.f
+		trigger = {
+			NOT = {
+				tag = JAP
+				tag = JAS
+				tag = TUK
+			}
+		}
+	}
+	
+	
+}
+
+news_event = {
+	id = news.177 #Not Edo just Tokio
+	title = news.177.t
+	desc = news.177.d
+	picture = GFX_news_event_japanese_army_parade
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.177.a
+		trigger = {
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = news.177.b
+		trigger = {
+			tag = JAS
+		}
+	}
+	
+	option = {
+		name = news.177.c
+		trigger = {
+			NOT = {
+				tag = JAP
+				tag = JAS
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.178 #Russia join London pact
+	title = news.178.t
+	desc = news.178.d
+	picture = GFX_news_event_political_discussion
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.178.a
+		trigger = {
+			OR = {
+				tag = RUS
+				tag = CBI
+			}
+		}
+	}
+	option = {
+		name = news.178.b
+		trigger = {
+			NOT = {
+				tag = RUS
+				tag = CBI
+				tag = BYZ
+				tag = PRU
+			}
+		}
+	}
+	option = {
+		name = news.178.c
+		trigger = {
+			OR = {
+				tag = BYZ
+				tag = PRU
+			}
+		}
+	}		
+}
+
+news_event = {
+	id = news.179 #Create entente
+	title = news.179.t
+	desc = news.179.d
+	picture = GFX_news_event_political_discussion
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.179.a
+		trigger = {
+		
+		}
+	}
+		
+}
+
+news_event = {
+	id = news.180
+	title = news.180.t
+	desc = news.180.d
+	picture = GFX_news_event_political_discussion
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.180.a
+		trigger = {
+		
+		}
+	}
+		
+}
+
+news_event = {
+	id = news.181 #Battle for Crimea
+	title = news.181.t
+	desc = news.181.d
+	picture = GFX_news_event_battle_for_cremia
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.181.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.181.b
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.181.c
+		trigger = {
+			OR = {
+				tag = RUS
+				tag = FRR
+				tag = CBI
+			}
+			has_war_with = BYZ
+		}
+	}
+	
+	option = {
+		name = news.181.f
+		trigger = {
+			NOT = {
+				tag = PRU
+				tag = BYZ
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.182 #Russian win battle for Crimea
+	title = news.182.t
+	desc = news.182.d
+	picture = GFX_news_event_russian_win_battle_for_cremia
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.182.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.182.b
+		trigger = {
+			is_in_faction_with = BYZ
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.182.c
+		trigger = {
+			tag = RUS
+		}
+	}
+	
+	option = {
+		name = news.182.f
+		trigger = {
+			is_in_faction_with = RUS
+			has_war_with = BYZ
+		}
+	}
+	
+	option = {
+		name = news.182.g
+		trigger = {
+			NOT = {
+				tag = BYZ
+				tag = RUS
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.183 #Romea win battle for Crimea
+	title = news.183.t
+	desc = news.183.d
+	picture = GFX_news_event_romea_win_battle_for_cremia
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.183.a
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	option = {
+		name = news.183.b
+		trigger = {
+			is_in_faction_with = BYZ
+			has_war_with = RUS
+		}
+	}
+	
+	option = {
+		name = news.183.c
+		trigger = {
+			tag = RUS
+		}
+	}
+	
+	option = {
+		name = news.183.f
+		trigger = {
+			is_in_faction_with = RUS
+			has_war_with = BYZ
+		}
+	}
+	
+	option = {
+		name = news.183.g
+		trigger = {
+			NOT = {
+				tag = BYZ
+				tag = RUS
+			}
+			NOT = {
+				has_war_with = BYZ
+				has_war_with = RUS
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.184 #Coup in Germany
+	title = news.184.t
+	desc = news.184.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.184.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.184.b
+		trigger = {
+			NOT = {
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.185 #Kontinental Europa end dimplomacy with Russian
+	title = news.185.t
+	desc = news.185.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.185.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.185.b
+		trigger = {
+			tag = RUS
+		}
+	}
+	
+	option = {
+		name = news.185.c
+		trigger = {
+			NOT = {
+				tag = RUS
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.186 #Kontinental Europa end dimplomacy with France
+	title = news.186.t
+	desc = news.186.d
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.186.a
+		trigger = {
+			tag = PRU
+		}
+	}
+	
+	option = {
+		name = news.186.b
+		trigger = {
+			tag = FRR
+		}
+	}
+	
+	option = {
+		name = news.186.c
+		trigger = {
+			NOT = {
+				tag = FRR
+				tag = PRU
+			}
+		}
+	}
+	
+}
+
+news_event = {
+	id = news.187 #Fridrich III wedding
+	title = news.187.t
+	desc = news.187.d
+	picture = GFX_news_event_royalty_wedding_germany
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.187.a
+		trigger = {
+			tag = PRU
+		}
+		PRU = {
+			add_opinion_modifier = {
+				target = HAN
+				modifier = faction_traitor
+			}
+		}
+		HAN = {
+			add_opinion_modifier = {
+				target = PRU
+				modifier = faction_traitor
+			}
+		}
+	}
+	
+	option = {
+		name = news.187.b
+		trigger = {
+			NOT ={
+				tag = PRU
+			}
+		}
 	}
 	
 }

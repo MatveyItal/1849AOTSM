@@ -4,8 +4,8 @@ state={
 	name="STATE_732"
 
 	history={
-		add_core_of = KOK
-		owner = KOK
+		add_core_of = BUK
+		owner = BUK
 		victory_points = {
 			12583 1 
 		}
@@ -21,6 +21,6 @@ state={
 	}
 	manpower=141280
 	buildings_max_level_factor=1.000
-	state_category=wasteland
+	state_category=pastoral
 	local_supplies=0.000
 }

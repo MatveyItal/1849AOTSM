@@ -19,7 +19,7 @@ bookmarks = {
 			focuses = {
 				FRA_stimulation_of_economic
 				FRA_extra_goverment_session
-				FRA_explore_the_alg_campain_expirience
+				FRA_triumf_in_algeria
 			}
 		}
 		
@@ -27,14 +27,14 @@ bookmarks = {
 			history = "RUS_1849_DESC"
 			ideology = authoritarian
 			ideas = {
-				rus_the_Russian_intelligentsia
-				rus_unfinished_reforms
-				rus_an_echo_of_serfdom
+				RUS_russian_intelligentsia
+				RUS_dependence_from_import
+				RUS_an_echo_of_serfdom
 			}
 			focuses = {
-				Rus_Last_year
-				Rus_The_second_branch_of_industrialization
-				Rus_Dmitry_Alekseevich_Milyutin
+				RUS_start_forced_industrialisation
+				RUS_retirement_of_pushin
+
 			}
 		}	
 		
@@ -56,13 +56,13 @@ bookmarks = {
 			ideology = democratic
 			ideas = {
 				CBI_financial_collapse_1
-				CBI_scientific_stagnation
-				CBI_old_guard
+				CBI_scientific_stagnation_1
+				CBI_old_guard_1
 			}
 			focuses = {
-				focus_CBI_economic_problem_waiting
-				focus_CBI_stop_war_conservator_vs_liberal
-				focus_CBI_Cromvland_problem_waiting
+				CBI_new_british_economy
+				CBI_genri_templ
+				CBI_open_british_sphere
 			}
 		}
 		
@@ -76,9 +76,9 @@ bookmarks = {
 				byz_stagnat_army
 			}
 			focuses = {
-				BYZ_power_to_senat
-				BYZ_counteraction_of_senat
-				BYZ_imperial_reform
+				BYZ_bulgaria_war
+				BYZ_italia
+				BYZ_colonial_quest
 			}
 		}
 		
@@ -91,8 +91,8 @@ bookmarks = {
 			}
 			focuses = {
 				PRU_german_economic_wonder
-				PRU_aus_win_2
-				PRU_aus_win_3
+				PRU_invati_country_of_greates_city
+				PRU_new_austria
 			}
 		}
 		
@@ -121,7 +121,9 @@ bookmarks = {
 			history = "AUS_1849_DESC"
 			ideology = authoritarian
 			ideas = {
-				
+				creater_of_saint_allience_idea
+				AUS_slovian_revolution
+				AUS_hungarian_revolution
 			}
 			focuses = {
 				

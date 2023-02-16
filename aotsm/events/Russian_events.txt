@@ -1,0 +1,3064 @@
+add_namespace = rusPol #Политические ивенты
+add_namespace = rusRomKN #Константин Николаевич
+add_namespace = rusMil #Милютин
+add_namespace = rusOrl #Орлов
+add_namespace = rusIgn #Игнатьев
+add_namespace = rusRomAN #Александр Павлович
+add_namespace = rusPus #Пушкин
+add_namespace = russian_european_politic #
+add_namespace = political_confrontation #
+add_namespace = finland_quiestion #
+add_namespace = russian_far_east_politic #
+
+
+country_event = {
+	id = rusPol.1
+	title = rusPol.1.t
+	desc = rusPol.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.1.a	
+		ai_chance = {
+			factor = 100
+		}
+
+	}
+}
+
+country_event = {
+	id = rusPol.2
+	title = rusPol.2.t
+	desc = rusPol.2.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.2.a	
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		RUS_add_5_liberal_opinion = yes 
+	}
+	option = {
+		name = rusPol.2.b	
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		RUS_add_5_conservator_opinion = yes
+	}
+	option = {
+		name = rusPol.2.c	
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		RUS_add_5_army_opinion = yes
+	}
+}
+
+country_event = {
+	id = rusPol.3
+	title = rusPol.3.t
+	desc = rusPol.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.3.a	
+		ai_chance = {
+			factor = 100
+		}
+
+	}
+}
+
+country_event = {
+	id = rusPol.4
+	title = rusPol.4.t
+	desc = rusPol.4.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.4.a	
+		ai_chance = {
+			factor = 100
+		}
+		retire_country_leader = yes
+		set_politics = { ruling_party = authoritarian }
+		add_country_leader_role = {
+			character = RUS_national_council
+			promote_leader = yes
+			
+			country_leader = {
+				expire = "1900.1.1"
+				ideology = elitarism
+				traits = {  }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rusPol.5
+	title = rusPol.5.t
+	desc = rusPol.5.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.5.a	
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		custom_effect_tooltip = RUS_choose_milyutin_da_tt
+		hidden_effect = {
+			retire_country_leader = yes
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.30
+			}
+			set_politics = { ruling_party = democratic }
+			add_country_leader_role = {
+				character = RUS_Dmitry_Alekseevich_Milyutin
+				promote_leader = yes
+				
+				country_leader = {
+					expire = "1900.1.1"
+					ideology = liberalism
+					traits = {  }
+				}
+			}
+			complete_national_focus = RUS_milutin_da
+			news_event = { id = news.50 days = 3 }
+		}
+	}
+	option = {
+		name = rusPol.5.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		custom_effect_tooltip = RUS_choose_romanov_kn_tt
+		hidden_effect = {
+			retire_country_leader = yes
+			add_popularity = {
+				ideology = authoritarian
+				popularity = 0.30
+			}
+			set_politics = { ruling_party = authoritarian }
+			set_party_name = { 
+				ideology = authoritarian
+				long_name = RUS_romanov_kn_authoritarian_party_name_long
+				name = RUS_romanov_kn_authoritarian_party_name
+			}
+			add_country_leader_role = {
+				character = RUS_Konstantin_Nikolaevich
+				promote_leader = yes
+				
+				country_leader = {
+					expire = "1900.1.1"
+					ideology = centrism
+					traits = {  }
+				}
+			}
+			complete_national_focus = RUS_romanov_kn
+			news_event = { id = news.51 days = 3 }
+		}
+	}
+	option = {
+		name = rusPol.5.c	
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		custom_effect_tooltip = RUS_choose_orlov_mf_tt
+		hidden_effect = {
+			retire_country_leader = yes
+			add_popularity = {
+				ideology = reactionist
+				popularity = 0.30
+			}
+			set_politics = { ruling_party = reactionist }
+			add_country_leader_role = {
+				character = RUS_Mihail_Fedorovich_Orlov
+				promote_leader = yes
+				
+				country_leader = {
+					expire = "1900.1.1"
+					ideology = paternalism
+					traits = {  }
+				}
+			}
+			complete_national_focus = RUS_orlov_mf
+			news_event = { id = news.52 days = 3 }
+		}
+	}
+}
+
+country_event = { #Московская всероссийская конференция
+	id = rusPol.6
+	title = rusPol.6.t
+	desc = rusPol.6.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.6.a	
+		hidden_effect = {
+			news_event = { id = news.54 days = 3 }
+			complete_national_focus = RUS_moscow_allrussian_conference
+		}
+	}
+}
+
+country_event = { #
+	id = rusPol.7
+	title = rusPol.7.t
+	desc = rusPol.7.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.7.a	
+
+	}
+}
+ 
+country_event = { #
+	id = rusPol.8
+	title = rusPol.8.t
+	desc = rusPol.8.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.8.a	
+
+	}
+}
+
+country_event = { #
+	id = rusPol.9
+	title = rusPol.9.t
+	desc = rusPol.9.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.9.a	
+
+	}
+}
+
+country_event = { # конец ВМК
+	id = rusPol.10
+	title = rusPol.10.t
+	desc = rusPol.10.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.10.a	
+		hidden_effect = {
+			complete_national_focus = RUS_the_giant_has_awakened
+		}
+	}
+}
+
+country_event = { # Гигант пробудился
+	id = rusPol.11
+	title = rusPol.11.t
+	desc = rusPol.11.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.11.a	
+
+	}
+}
+
+country_event = { # центральноазиатский вопрос
+	id = rusPol.12
+	title = rusPol.12.t
+	desc = rusPol.12.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.12.a	
+		ai_chance = {
+			factor = 20
+		}
+		KAZ = { country_event = { id = rusPol.23 days = 2 } }
+		HIV = { country_event = { id = rusPol.23 days = 2 } }
+		BUK = { country_event = { id = rusPol.23 days = 2 } }
+	}
+	
+	option = {
+		name = rusPol.12.b
+		ai_chance = {
+			factor = 0
+		}
+
+	}
+}
+
+country_event = { # вторжение в центральную азию
+	id = rusPol.13
+	title = rusPol.13.t
+	desc = rusPol.13.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.13.a
+			ai_chance = {
+				factor = 20
+			}
+			declare_war_on = {
+                target = KAZ
+                type = annex_everything
+            }
+			declare_war_on = {
+                target = HIV
+                type = annex_everything
+            }
+			declare_war_on = {
+                target = BUK
+                type = annex_everything
+            }
+			hidden_effect = {
+				set_country_flag = RUS_invasion_in_kaz_flag
+				set_country_flag = RUS_invasion_in_hiv_flag
+				set_country_flag = RUS_invasion_in_buk_flag
+			}
+			
+	}
+	
+	option = {
+		name = rusPol.13.b	
+			ai_chance = {
+				factor = 5
+			}
+			KAZ = { country_event = { id = rusPol.14 days = 2 } }
+			HIV = { country_event = { id = rusPol.17 days = 3 } }
+			BUK = { country_event = { id = rusPol.20 days = 4 } }
+	}
+}
+
+country_event = { # ультиматум казахстану
+	id = rusPol.14
+	title = rusPol.14.t
+	desc = rusPol.14.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.14.a	
+		RUS = { country_event = { id = rusPol.15 days = 2 } }
+	}
+	
+	option = {
+		name = rusPol.14.b
+		RUS = { country_event = { id = rusPol.16 days = 2 } }
+	}
+}
+
+country_event = { # согласие казахстана
+	id = rusPol.15
+	title = rusPol.15.t
+	desc = rusPol.15.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.15.a	
+		RUS = {
+			annex_country = {
+				target = KAZ
+				transfer_troops = yes
+			}		
+		}
+	}
+	
+}
+
+country_event = { # отказ казахстана
+	id = rusPol.16
+	title = rusPol.16.t
+	desc = rusPol.16.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.16.a	
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_on = {
+            target = KAZ
+            type = annex_everything
+        }
+	}
+	
+	option = {
+		name = rusPol.16.b
+		ai_chance = {
+			factor = 0
+		}
+		create_wargoal = { type = annex_everything target = KAZ }
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+}
+
+country_event = { # ультиматум Хиве
+	id = rusPol.17
+	title = rusPol.17.t
+	desc = rusPol.17.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.17.a	
+		RUS = { country_event = { id = rusPol.18 days = 2 } }
+	}
+	
+	option = {
+		name = rusPol.17.b
+		RUS = { country_event = { id = rusPol.19 days = 2 } }
+	}
+}
+
+country_event = { # согласие хивы
+	id = rusPol.18
+	title = rusPol.18.t
+	desc = rusPol.18.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.18.a	
+		RUS = {
+			annex_country = {
+				target = HIV
+				transfer_troops = yes
+			}		
+		}
+	}
+	
+}
+
+country_event = { # отказ хивы
+	id = rusPol.19
+	title = rusPol.19.t
+	desc = rusPol.19.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.19.a	
+		declare_war_on = {
+            target = HIV
+            type = annex_everything
+        }
+	}
+	
+	option = {
+		name = rusPol.19.b
+		create_wargoal = { type = annex_everything target = HIV }
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+}
+
+country_event = { # ультиматум бухаре
+	id = rusPol.20
+	title = rusPol.20.t
+	desc = rusPol.20.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.20.a	
+		RUS = { country_event = { id = rusPol.21 days = 2 } }
+	}
+	
+	option = {
+		name = rusPol.20.b
+		RUS = { country_event = { id = rusPol.22 days = 2 } }
+	}
+}
+
+country_event = { # согласие бухары
+	id = rusPol.21
+	title = rusPol.21.t
+	desc = rusPol.21.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.21.a	
+		RUS = {
+			annex_country = {
+				target = BUK
+				transfer_troops = yes
+			}		
+		}
+	}
+	
+}
+
+country_event = { # отказ бухары
+	id = rusPol.22
+	title = rusPol.22.t
+	desc = rusPol.22.d
+	picture = GFX_report_event_gre_venizelos_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.22.a	
+		declare_war_on = {
+            target = BUK
+            type = annex_everything
+        }
+	}
+	
+	option = {
+		name = rusPol.22.b
+		create_wargoal = { type = annex_everything target = BUK }
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+}
+
+country_event = { # Русская дипломатическая миссия
+	id = rusPol.23
+	title = rusPol.23.t
+	desc = rusPol.23.d
+	picture = GFX_report_event_aotsm_generic_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusPol.23.a	
+		RUS = { give_guarantee = ROOT }
+	}
+	
+	option = {
+		name = rusPol.23.b
+		
+	}
+}
+
+#######################MILUTIN_SECTION##########################
+
+country_event = {
+	id = rusMil.1
+	title = rusMil.1.t
+	desc = rusMil.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusMil.1.a	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_3_conservator_opinion = yes
+		RUS_remove_3_liberal_opinion = yes
+	}
+	option = {
+		name = rusMil.1.b	
+		ai_chance = {
+			factor = 10
+		}
+		RUS_remove_3_conservator_opinion = yes
+		RUS_add_3_liberal_opinion = yes
+	}
+}
+
+country_event = {
+	id = rusMil.2
+	title = rusMil.2.t
+	desc = rusMil.2.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusMil.2.a	
+		ai_chance = {
+			factor = 100
+		}
+		RUS_add_5_army_opinion = yes
+		RUS_add_5_army_influence = yes
+	}
+}
+
+country_event = {
+	id = rusMil.3
+	title = rusMil.3.t
+	desc = rusMil.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusMil.3.a	
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = RUS_start_trade_war_witch_ger
+		hidden_effect = {
+			RUS = {
+				add_timed_idea = {
+				idea = RUS_trade_war_witch_ger
+				days = 365				
+				}
+			}
+			if = {
+				limit = {
+					country_exists = PRU
+				}
+				PRU = {
+					add_timed_idea = {
+					idea = RUS_ger_trade_war_witch_rus
+					days = 365
+					}
+				}
+			}
+			news_event = { id = news.53 days = 3 }
+		}
+	}
+}
+
+#######################ROMANOV_KN_SECTION##########################
+
+country_event = {
+	id = rusRomKN.1
+	title = rusRomKN.1.t
+	desc = rusRomKN.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusRomKN.1.a	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_5_army_influence = yes
+		RUS_add_1_army_opinion = yes
+	}
+	option = {
+		name = rusRomKN.1.b	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_1_army_influence = yes
+		RUS_add_3_army_opinion = yes
+	}
+}
+
+country_event = {
+	id = rusRomKN.2
+	title = rusRomKN.2.t
+	desc = rusRomKN.2.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusRomKN.2.a	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_5_churchman_influence = yes 
+		RUS_remove_3_liberal_opinion = yes
+	}
+	
+	option = {
+		name = rusRomKN.2.b
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_1_churchman_opinion = yes
+		RUS_remove_1_liberal_opinion = yes 
+	}
+	
+	option = {
+		name = rusRomKN.2.c
+		ai_chance = {
+			factor = 20
+		}
+		RUS_remove_5_churchman_opinion = yes
+		RUS_remove_10_churchman_influence = yes
+		RUS_add_5_liberal_opinion = yes
+	}
+}
+
+country_event = {
+	id = rusRomKN.3
+	title = rusRomKN.3.t
+	desc = rusRomKN.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusRomKN.3.a	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_3_conservator_influence = yes
+		RUS_remove_3_liberal_opinion = yes
+	}
+	
+	option = {
+		name = rusRomKN.3.b
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_3_liberal_influence = yes
+		RUS_remove_3_conservator_opinion = yes
+	}
+}
+
+#######################ORLOV_SECTION##########################
+
+country_event = {
+	id = rusOrl.1
+	title = rusOrl.1.t
+	desc = rusOrl.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusOrl.1.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+	}
+	option = {
+		name = rusOrl.1.b	
+		ai_chance = {
+			factor = 20
+		}
+		
+	}
+}
+
+country_event = {
+	id = rusOrl.2
+	title = rusOrl.2.t
+	desc = rusOrl.2.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusOrl.2.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+	}
+	option = {
+		name = rusOrl.2.b	
+		ai_chance = {
+			factor = 20
+		}
+		
+	}
+}
+
+country_event = {
+	id = rusOrl.3
+	title = rusOrl.3.t
+	desc = rusOrl.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = rusOrl.3.a	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_10_army_influence = yes
+		RUS_remove_5_liberal_opinion = yes
+		RUS_remove_5_monarhist_opinion = yes
+		hidden_effect = {
+			remove_ideas = oligarhy
+			add_ideas = dictature_fg
+		}
+	}
+}
+
+########################EURIPEAN_POLITICK_EVENTS##############################
+
+country_event = {
+	id = russian_european_politic.1 #предложение совместных исследований для британии
+	title = russian_european_politic.1.t
+	desc = russian_european_politic.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.1.a	
+		ai_chance = {
+			factor = 20
+			modifier = { 
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		hidden_effect = {
+			RUS = {
+				country_event = russian_european_politic.2 
+			}
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.1.b
+		ai_chance = {
+			factor = 5
+		}
+
+		hidden_effect = {
+			RUS = {
+				country_event = russian_european_politic.2 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.2 #согласие на сотрудничество британии
+	title = russian_european_politic.2.t
+	desc = russian_european_politic.2.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.2.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = {
+				add_ideas = RUS_coop_russo_british_researches
+			}
+			CBI = {
+				add_ideas = RUS_coop_russo_british_researches
+			}
+			RUS = {
+				country_event = { id = russian_european_politic.4 days = 62 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.3 #отказ сотрудничать
+	title = russian_european_politic.3.t
+	desc = russian_european_politic.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.3.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.4 #Продолжение технического сотрудничества
+	title = russian_european_politic.4.t
+	desc = russian_european_politic.4.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #промышленность
+		name = russian_european_politic.4.a	
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 40
+				is_historical_focus_on = yes
+			}
+		}
+
+		hidden_effect = {
+			CBI = { country_event = { id = russian_european_politic.5 days = 2 } }
+		}
+	}
+	option = { #пехотное оснащение
+		name = russian_european_politic.4.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		hidden_effect = {
+			CBI = { country_event = { id = russian_european_politic.7 days = 2 } }
+		}
+	}
+	option = { #техника
+		name = russian_european_politic.4.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+
+		hidden_effect = {
+			CBI = { country_event = { id = russian_european_politic.9 days = 2 } }
+		}
+	}
+	option = { #не нужно
+		name = russian_european_politic.4.e
+		ai_chance = {
+			factor = 0
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.5 #пром сотрудничество - ивент для британии
+	title = russian_european_politic.5.t
+	desc = russian_european_politic.5.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.5.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 1 
+			category = industry
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.6 days = 2 } }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.5.a	
+		ai_chance = {
+			factor = 0
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.11 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.6 #пром сотрудничество - ответ для россии
+	title = russian_european_politic.6.t
+	desc = russian_european_politic.6.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.6.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 1 
+			category = industry
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.7 #пехотное оснащение - ивент для британии
+	title = russian_european_politic.7.t
+	desc = russian_european_politic.7.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.7.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = support_tech
+		}	
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.8 days = 2 } }
+		}
+	}
+	option = {
+		name = russian_european_politic.7.b	
+		ai_chance = {
+			factor = 0
+		}
+	
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.11 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.8 #пехотное оснащение - ответ для россии
+	title = russian_european_politic.8.t
+	desc = russian_european_politic.8.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.8.a	
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = support_tech
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+country_event = {
+	id = russian_european_politic.9 #техника - ивент для британии
+	title = russian_european_politic.9.t
+	desc = russian_european_politic.9.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.9.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			name = infantry_artillery_bonus
+			bonus = 0.5
+			uses = 1
+			category = artillery
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = motorized_equipment
+			category = cat_mechanized_equipment
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.10 days = 2 } }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.9.b	
+		ai_chance = {
+			factor = 0
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.11 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.10 #техника - ответ для россии
+	title = russian_european_politic.10.t
+	desc = russian_european_politic.10.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.10.a	
+		add_tech_bonus = {
+			name = infantry_artillery_bonus
+			bonus = 0.5
+			uses = 1
+			category = artillery
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = motorized_equipment
+			category = cat_mechanized_equipment
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.11 #отказ - ивент для россии
+	title = russian_european_politic.11.t
+	desc = russian_european_politic.11.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.11.a	
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.12 #Вступление в лондонский пакт
+	title = russian_european_politic.12.t
+	desc = russian_european_politic.12.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.12.a	
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+
+		hidden_effect = {
+			RUS = {
+				add_to_faction = yes
+				country_event = russian_european_politic.13
+			}
+			news_event = { id = news.178 days = 2}
+		}
+	}
+	option = {
+		name = russian_european_politic.12.a	
+		ai_chance = {
+			factor = 0
+		}
+
+		hidden_effect = {
+			RUS = { country_event = russian_european_politic.14 }			
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.13 # Британия согласна
+	title = russian_european_politic.13.t
+	desc = russian_european_politic.13.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.13.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.14 #Отказ
+	title = russian_european_politic.14.t
+	desc = russian_european_politic.14.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.14.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.15 #Совместные исследования с францией
+	title = russian_european_politic.15.t
+	desc = russian_european_politic.15.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #согласие
+		name = russian_european_politic.15.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = {
+				country_event = { id = russian_european_politic.16 days = 2 }
+			}
+		}
+	}
+	
+	option = { #отказ
+		name = russian_european_politic.15.b	
+		ai_chance = {
+			factor = 0
+		}
+
+		hidden_effect = {
+			RUS = {
+				country_event = { id = russian_european_politic.17 days = 2 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.16 #Согласие
+	title = russian_european_politic.16.t
+	desc = russian_european_politic.16.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.16.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = {
+				add_ideas = RUS_coop_russo_french_researches
+			}
+			CBI = {
+				add_ideas = RUS_coop_russo_french_researches
+			}
+			RUS = {
+				country_event = { id = russian_european_politic.18 days = 62 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.17 #Отказ
+	title = russian_european_politic.17.t
+	desc = russian_european_politic.17.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.17.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.18 #Расширение сотрудничества
+	title = russian_european_politic.18.t
+	desc = russian_european_politic.18.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #промышленность
+		name = russian_european_politic.18.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.19 days = 2 } }
+		}
+	}
+	option = { #техника
+		name = russian_european_politic.18.b	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.21 days = 2 } }
+		}
+	}
+	option = { #тактика
+		name = russian_european_politic.18.c	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.23 days = 2 } }
+		}
+	}
+	option = { #не требуется
+		name = russian_european_politic.18.e	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.19 #пром сотрудничество - ивент для франции
+	title = russian_european_politic.19.t
+	desc = russian_european_politic.19.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.19.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 1 
+			category = industry
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.20 days = 2 } }
+		}
+	}
+	option = {
+		name = russian_european_politic.19.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.25 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.20 #пром сотрудничество - ивент для россии
+	title = russian_european_politic.20.t
+	desc = russian_european_politic.20.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.20.a	
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2 
+			category = industry
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.21 #тех сотрудничество - ивент для франции
+	title = russian_european_politic.21.t
+	desc = russian_european_politic.21.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.21.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			name = infantry_artillery_bonus
+			bonus = 0.5
+			uses = 1
+			category = artillery
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = motorized_equipment
+			category = cat_mechanized_equipment
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.22 days = 2 } }
+		}
+	}
+	option = {
+		name = russian_european_politic.21.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.25 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.22 #тех сотрудничество - ивент для россии
+	title = russian_european_politic.22.t
+	desc = russian_european_politic.22.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.22.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_tech_bonus = {
+			name = infantry_artillery_bonus
+			bonus = 0.5
+			uses = 1
+			category = artillery
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = motorized_equipment
+			category = cat_mechanized_equipment
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.23 #тактическое сотрудничество - ивент для франции
+	title = russian_european_politic.23.t
+	desc = russian_european_politic.23.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.23.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_doctrine_cost_reduction = {
+			name = land_doc_bonus
+			cost_reduction = 1.0
+			uses = 1
+			category = land_doctrine
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.24 days = 2 } }
+		}
+	}
+	option = {
+		name = russian_european_politic.23.a	
+		ai_chance = {
+			factor = 20
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.25 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.24 #тактическое сотрудничество - ивент для россии
+	title = russian_european_politic.24.t
+	desc = russian_european_politic.24.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.24.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_doctrine_cost_reduction = {
+			name = land_doc_bonus
+			cost_reduction = 1.0
+			uses = 1
+			category = land_doctrine
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.25 #отказ франции
+	title = russian_european_politic.25.t
+	desc = russian_european_politic.25.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.25.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.26 #Создание антанты - ивент для франции
+	title = russian_european_politic.26.t
+	desc = russian_european_politic.26.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.26.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.27 days = 2} }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.26.a	
+		ai_chance = {
+			factor = 0
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.27 #Согласие
+	title = russian_european_politic.27.t
+	desc = russian_european_politic.27.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.27.a	
+
+		hidden_effect = {
+			RUS = {
+				create_faction = RUS_entente
+				add_to_faction = FRR
+			}
+			news_event = { id = news.179 days = 2 }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.28 #Отказ
+	title = russian_european_politic.28.t
+	desc = russian_european_politic.28.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.28.a	
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.29 #Предложение экономической помощи для австрии
+	title = russian_european_politic.29.t
+	desc = russian_european_politic.29.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.29.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.30 days = 2} }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.29.b
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.31 days = 2} }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.30 #Австрия принимает предложение
+	title = russian_european_politic.30.t
+	desc = russian_european_politic.30.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.30.a	
+
+		hidden_effect = {
+			RUS = {
+				set_country_flag = RUS_russian_help_for_aus_accepted
+				add_timed_idea = {
+					idea = RUS_russia_help_aus_economic
+					days = 120
+				}
+			}
+			AUS = {
+				add_timed_idea = {
+					idea = RUS_russian_help_for_aus_economic
+					days = 120
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.31 #Австрия отказывается
+	title = russian_european_politic.31.t
+	desc = russian_european_politic.31.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.31.a	
+
+		hidden_effect = {
+			RUS = { set_country_flag = RUS_russian_help_for_aus_denied }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.32 #Союзные отноения с австрией
+	title = russian_european_politic.32.t
+	desc = russian_european_politic.32.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {# согласие
+		name = russian_european_politic.32.a	
+		ai_chance = {
+			factor = 20
+			modifier = {
+				RUS = { has_country_flag = RUS_russian_help_for_aus_accepted }
+				factor = 40
+			}
+			modifier = {
+				RUS = { has_country_flag = RUS_russian_help_for_aus_denied }
+				factor = 5
+			}
+		}
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.33 days = 2} }
+		}
+	}
+	option = {# отказ
+		name = russian_european_politic.32.b	
+		ai_chance = {
+			factor = 20
+			modifier = {
+				RUS = { has_country_flag = RUS_russian_help_for_aus_accepted }
+				factor = 5
+			}
+			modifier = {
+				RUS = { has_country_flag = RUS_russian_help_for_aus_denied }
+				factor = 40
+			}
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_european_politic.34 days = 2} }
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.33 #Австрия согласна - ответ для РИ
+	title = russian_european_politic.33.t
+	desc = russian_european_politic.33.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.33.a	
+
+		hidden_effect = {
+			RUS = {
+				create_faction = RUS_kharkov_agreement
+				add_to_faction = AUS
+			}
+		}
+	}
+}
+
+country_event = {
+	id = russian_european_politic.34 #Австрия отказала в союзе
+	title = russian_european_politic.34.t
+	desc = russian_european_politic.34.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.34.a	
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+#############################FAR_EAST_POLITIC_EVENTS#################################
+
+country_event = {
+	id = russian_far_east_politic.1 #Претензии на приморский край
+	title = russian_european_politic.1.t
+	desc = russian_european_politic.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { 
+		name = russian_european_politic.1.a	# Граница по Амуру - минимальный вариант - покупка земель - вероятнее всего дружба
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		hidden_effect = {
+			QIN = { country_event = { id = russian_far_east_politic.2 days = 2} }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.1.b	# Ханьшенвей наш - приморский край + Ханьшеньвей - дружеские отношения 50x50
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		
+		hidden_effect = {
+			country_event = { id = russian_far_east_politic.3 days = 2 }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.1.c	# Интервенция в маньчжурию - максимальный вариант  - контроль над Ханьшеньвенем и северной маньчжурией - дружба с Китаем невозможна
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		hidden_effect = {
+			country_event = { id = russian_far_east_politic.8 days = 2 }
+		}
+	}
+	
+}
+
+country_event = {
+	id = russian_far_east_politic.2 #Покупка северной маньчжурии - ивент для Китая - минимальный вариант
+	title = russian_european_politic.2.t
+	desc = russian_european_politic.2.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.2.a	#Согласие
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.12 days = 2 } }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.2.b	#Отказ
+		ai_chance = {
+			factor = 12
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.13 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.3 #Купить или отобрать земли у Китая
+	title = russian_european_politic.3.t
+	desc = russian_european_politic.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.3.a	#Покупка земель - если Китай стагнирует, то прокатит
+		ai_chance = {
+			factor = 20
+		}
+		hidden_effect = {
+			QIN = { country_event = { id = russian_far_east_politic.4 days = 2} }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.3.b #Вариант для любителей ультиматумов - никакой дружбы с Китаем
+		ai_chance = {
+			factor = 20
+		}
+		hidden_effect = {
+			QIN = { country_event = { id = russian_far_east_politic.9 days = 2} }
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.4 #Покупка северной Маньжжурии и Ханьшенвея - Ивент для Китая
+	title = russian_european_politic.4.t
+	desc = russian_european_politic.4.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.4.a	#согласие
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 50
+				is_historical_focus_on = yes
+			}
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.5 days = 2} }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.4.b #отказ
+		ai_chance = {
+			factor = 20
+		}
+		
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.6 days = 2} } 
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.5 #Покупка северной Маньжжурии и Ханьшенвея - Согласие - Ивент для России
+	title = russian_european_politic.5.t
+	desc = russian_european_politic.5.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.5.a	
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.6 #Покупка северной Маньжжурии и Ханьшенвея - Отказ - Ивент для России
+	title = russian_european_politic.6.t
+	desc = russian_european_politic.6.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.6.a	#Что поделать
+		ai_chance = {
+			factor = 20
+		}
+		add_war_support = -0.05
+		hidden_effect = {
+	
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.6.b #Взять силой
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_on = {
+			target = QIN
+			type = annex_everything
+		}
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.7 #Ультиматум Китаю - передать приморье и Ханьшенвей
+	title = russian_european_politic.7.t
+	desc = russian_european_politic.7.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.7.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.7.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.8 #Требование передать Приамурье, Ханьшенвей и С.Маньжурию - Ивент для России
+	title = russian_european_politic.8.t
+	desc = russian_european_politic.8.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.8.a	#Ультиматум
+		ai_chance = {
+			factor = 20
+		}
+		hidden_effect = {
+			QIN = { country_event = { id = russian_far_east_politic.9 days = 2 } }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.8.a	#Вторжение в Китай
+		ai_chance = {
+			factor = 20
+		}
+		
+		declare_war_on = {
+			target = QIN
+			type = annex_everything
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.9 #Требование передать Приамурье, Ханьшенвей и С.Маньжурию - Ивент для Китая
+	title = russian_european_politic.9.t
+	desc = russian_european_politic.9.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.9.a	#согласиться
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.9 days = 2 } }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.9.b	#Отказаться
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.10 days = 2 } }
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.10 #Согласие
+	title = russian_european_politic.10.t
+	desc = russian_european_politic.10.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.10.a	
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.11 #Отказ
+	title = russian_european_politic.11.t
+	desc = russian_european_politic.11.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.11.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_war_support = -0.1
+		hidden_effect = {
+	
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.11.b	
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_on = {
+			target = QIN
+			type = annex_everything
+		}
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = russian_far_east_politic.12 #Поккупка состоялась - ответ для россии - ивент 2 в цепочке 
+	title = russian_european_politic.12.t
+	desc = russian_european_politic.12.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.12.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+		hidden_effect = {
+	
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.13 #Китай отказал - ответ для россии - ивент 2 в цепочке 
+	title = russian_european_politic.13.t
+	desc = russian_european_politic.13.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.13.a	
+		ai_chance = {
+			factor = 20
+		}
+		add_stability = -0.5
+		hidden_effect = {
+	
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.13.b #Мы возьмем их силой
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_on = {
+			target = QIN
+			type = annex_everything
+		}
+		hidden_effect = {
+	
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.14 #Интеграция новых земель на дальнем востоке
+	title = russian_european_politic.14.t
+	desc = russian_european_politic.14.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.14.a #Постепенная интеграция
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		hidden_effect = {
+			#сделать блок решений на интеграцию
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.14.b#Принудительная интеграция
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -50
+		hidden_effect = {
+			country_event = { id = russian_far_east_politic.15 days = 2 }
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.15 #Интеграция новых земель на дальнем востоке - принудительная - 1 этап
+	title = russian_european_politic.15.t
+	desc = russian_european_politic.15.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.15.a #
+		add_political_power = -50
+		560 = {
+			add_manpower = -936
+		}
+		328 = {
+			add_manpower = 936
+		}
+		657 = {
+			add_manpower = -1031
+		}
+		328 = {
+			add_manpower = 1031
+		}
+		408 = {
+			add_manpower = -712
+		}
+		328 = {
+			add_manpower = 712
+		}
+		409 = {
+			add_manpower = -1511
+		}
+		328 = {
+			add_manpower = 1511
+		}
+		hidden_effect = {
+			country_event = { id = russian_far_east_politic.16 days = 25 }
+			
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.16 #Интеграция новых земель на дальнем востоке - принудительная - 2 этап
+	title = russian_european_politic.16.t
+	desc = russian_european_politic.16.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.16.a #
+		add_political_power = -50
+		560 = {
+			add_manpower = -2196
+		}
+		657 = {
+			add_manpower = -1997
+		}
+		hidden_effect = {
+			country_event = { id = russian_far_east_politic.17 days = 25 }
+			RUS = {
+				add_state_core = 560
+				add_state_core = 657
+			}
+			QIN = {
+				remove_state_core = 560
+				remove_state_core = 657
+			}
+			MAN = {
+				remove_state_core = 560
+				remove_state_core = 657
+			}
+			
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.17 #Интеграция новых земель на дальнем востоке - принудительная - 3 этап
+	title = russian_european_politic.17.t
+	desc = russian_european_politic.17.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.17.a #
+		add_political_power = -50
+		408 = {
+			add_manpower = -1109
+		}
+		409 = {
+			add_manpower = -2011
+		}
+		hidden_effect = {
+			RUS = {
+				add_state_core = 408
+				add_state_core = 409
+			}
+			QIN = {
+				remove_state_core = 408
+				remove_state_core = 409
+			}
+			MAN = {
+				remove_state_core = 408
+				remove_state_core = 409
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.18 #Претензии на туву
+	title = russian_european_politic.18.t
+	desc = russian_european_politic.18.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.18.a #Потребовать
+
+		hidden_effect = {
+			QIN = { country_event = { id = russian_far_east_politic.19  days = 2} }
+		}
+	}
+	
+	option = {
+		name = russian_european_politic.18.a #Интервенция
+		declare_war_on = {
+			target = QIN
+			type = annex_everything
+		}
+		hidden_effect = {
+			
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.19 #Претензии на туву - ивент для Китая
+	title = russian_european_politic.19.t
+	desc = russian_european_politic.19.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.19.a #Согласиться
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.20 days = 2 } }
+		}
+	}
+	option = {
+		name = russian_european_politic.19.b #Отказать
+
+		hidden_effect = {
+			RUS = { country_event = { id = russian_far_east_politic.21 days = 2 } }
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.20 #Претензии на туву - согласие - ответ для России
+	title = russian_european_politic.20.t
+	desc = russian_european_politic.20.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.20.a #
+
+		hidden_effect = {
+			RUS = {
+				transfer_state = 329
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = russian_far_east_politic.21 #Претензии на туву - отказ - ответ для России
+	title = russian_european_politic.21.t
+	desc = russian_european_politic.21.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = russian_european_politic.21.a #
+		declare_war_on = {
+			target = QIN
+			type = annex_everything
+		}
+		hidden_effect = {
+			
+		}
+	}
+
+}
+
+#############################POLITICAL_CONFRONTATION_EVENTS#################################
+
+country_event = {
+	id = political_confrontation.1 #
+	title = political_confrontation.1.t
+	desc = political_confrontation.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #Киреевский Иван Васильевич - славянофил, церковник - ставка на церковь, пропаганду и национализм - пропаганда, закручивание гаек
+		name = political_confrontation.1.a	
+		ai_chance = {
+			factor = 20
+		}
+		RUS_add_5_churchman_opinion = yes
+		RUS_add_5_autocrat_opinion = yes
+		hidden_effect = {
+			country_event = { id = political_confrontation.2 days = 2}
+		}
+	}
+	option = { #Лавров Петр Лаврович - народник - ставка на интеллигенцию и просвещение народа - умеренный путь - гос дотации на постройку фабрик и заводов
+		name = political_confrontation.1.b	
+		RUS_add_5_churchman_opinion = yes
+		hidden_effect = {
+			country_event = { id = political_confrontation.3 days = 2}
+		}
+	}
+	option = { #Петрашевский Михаил Васильевич - социалист утопист, сторонник демократических преобразований - постепенное просвещение, субсидии промышленности
+		name = political_confrontation.1.c	
+
+		hidden_effect = {
+			country_event = { id = political_confrontation.4 days = 2}
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.2 # План Киреевскогл
+	title = political_confrontation.2.t
+	desc = political_confrontation.2.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.2.a	
+		add_timed_idea = {
+			days = 1095
+			idea = RUS_plan_of_kireevsky
+		}
+		hidden_effect = {
+			set_country_flag = RUS_plan_kireevskogo_choosen
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.3 #План Лаврова
+	title = political_confrontation.3.t
+	desc = political_confrontation.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.3.a	
+		add_timed_idea = {
+			days = 1095
+			idea = RUS_plan_of_lavrov
+		}
+		custom_effect_tooltip = RUS_unlock_lavrov_advisor
+		hidden_effect = {
+			set_country_flag = RUS_plan_lavrova_choosen
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.4 #План Петрашевского
+	title = political_confrontation.4.t
+	desc = political_confrontation.4.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.4.a	
+		add_timed_idea = {
+			days = 1095
+			idea = RUS_plan_of_petrashevsky
+		}
+		custom_effect_tooltip = RUS_unlock_petrashevskiy_advisor
+		hidden_effect = {
+			set_country_flag = RUS_plan_petrashevskogo_choosen
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.5 #Устранение германского влияния
+	title = political_confrontation.5.t
+	desc = political_confrontation.5.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.5.a	
+
+		hidden_effect = {
+			add_timed_idea = {
+				days = 365
+				idea = RUS_degermanisation
+			}
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.6 # Уничтожить империю зла
+	title = political_confrontation.6.t
+	desc = political_confrontation.6.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.6.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+		hidden_effect = {
+	
+		}
+	}
+	
+	option = {
+		name = political_confrontation.6.a	
+		ai_chance = {
+			factor = 20
+		}
+		
+		hidden_effect = {
+			PRU = {
+				country_event = { id = political_confrontation.7 days = 2}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.7 #Русский ультиматум
+	title = political_confrontation.7.t
+	desc = political_confrontation.7.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.7.a	
+		ai_chance = {
+			factor = 0
+		}
+		
+		hidden_effect = {
+			RUS = {
+				country_event = { id = political_confrontation.8 days = 2}
+			}
+		}
+	}
+	
+	option = {
+		name = political_confrontation.7.a	
+		ai_chance = {
+			factor = 20
+		}
+
+		hidden_effect = {
+			RUS = {
+				country_event = { id = political_confrontation.9 days = 2}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.8 #Согласие
+	title = political_confrontation.8.t
+	desc = political_confrontation.8.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.8.a	
+
+		hidden_effect = {
+	
+		}
+	}
+}
+
+country_event = {
+	id = political_confrontation.9 #Отказ
+	title = political_confrontation.9.t
+	desc = political_confrontation.9.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = political_confrontation.9.a	
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_on = {
+			target = PRU
+			type = annex_everything
+		}
+		hidden_effect = {
+			
+		}
+	}
+	
+	option = {
+		name = political_confrontation.9.b	
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = -0.05
+		hidden_effect = {
+			create_wargoal = { 
+				type = annex_everything 
+				target = PRU 
+			}
+		}
+	}
+}
+
+##############################FINLAND_QUIESTION_EVENTS###################################
+
+country_event = {
+	id = finland_quiestion.1 # Финский вопрос
+	title = finland_quiestion.1.t
+	desc = finland_quiestion.1.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = finland_quiestion.1.a	
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 50
+			}
+		}
+		hidden_effect = {
+			set_country_flag = RUS_fin_supress_way
+		}
+	}
+	
+	option = {
+		name = finland_quiestion.1.b	
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		hidden_effect = {
+			set_country_flag = RUS_fin_compromis_way
+		}
+	}
+}
+
+country_event = {
+	id = finland_quiestion.2 #
+	title = finland_quiestion.2.t
+	desc = finland_quiestion.2.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = finland_quiestion.2.a	
+		
+		add_timed_idea = {
+			idea = RUS_fight_witch_fins_separatism
+			days = 100
+		}
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = finland_quiestion.3 # 
+	title = finland_quiestion.3.t
+	desc = finland_quiestion.3.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = finland_quiestion.4.a	
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = finland_quiestion.4 # 
+	title = finland_quiestion.4.t
+	desc = finland_quiestion.4.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = finland_quiestion.4.a	
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = finland_quiestion.5 # 
+	title = finland_quiestion.5.t
+	desc = finland_quiestion.5.d
+	picture = GFX_report_event_aotsm_generic_signing_the_contract
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = finland_quiestion.5.a	
+		
+		hidden_effect = {
+			
+		}
+	}
+}

@@ -1,0 +1,81 @@
+RUS_finland_separatism_cat = {
+
+	icon = spr_the_seeds_of_revolution
+
+	allowed = { 
+		tag = RUS	
+	}
+
+	priority = 100
+
+	
+	visible_when_empty = yes
+}
+
+RUS_missions_cat = {
+
+	icon = pol_violence
+
+	allowed = { 
+		tag = RUS	
+	}
+
+	priority = 100
+
+	
+	visible_when_empty = yes
+}
+
+rus_war_time_decisions_cat = {
+
+	icon = pol_violence
+
+	allowed = { 
+		tag = RUS	
+	}
+
+	priority = 100
+
+	
+	visible_when_empty = no
+}
+
+rus_political_decisions_cat = {
+
+	icon = generic_civil_support
+
+	allowed = { 
+		original_tag = RUS
+	}
+
+	priority = 100
+
+	visible_when_empty = yes
+}
+
+rus_factions_decisions_category = {
+
+	icon = usa_congress
+
+	allowed = { 
+		original_tag = RUS
+	}
+
+	priority = 1000
+
+	scripted_gui = rus_fractions
+	visible_when_empty = yes
+}
+
+rus_modernise_railway_network_cat = {
+
+	icon = generic_civil_support
+
+	allowed = { 
+		original_tag = RUS
+	}
+
+	priority = 100
+
+	visible_when_empty = yes
+}

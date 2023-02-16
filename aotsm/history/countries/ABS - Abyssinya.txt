@@ -1,16 +1,15 @@
 capital = 271
 set_technology = {
 	infantry_weapons = 1
-	tech_mountaineers = 1
+	infantry_weapons1 = 1
+	support_weapons = 1
+	uniform_equipment = 1
+#	tech_mountaineers = 1
 	tech_support = 1		
-	tech_engineers = 1
+#	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	early_fighter = 1
-	early_bomber = 1
-	fuel_silos = 1
-	synth_oil_experiments = 1
+	basic_train = 1
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -28,6 +27,7 @@ if = {
 	set_technology = {
 		basic_naval_mines = 1
 		submarine_mine_laying = 1
+		basic_depth_charges = 1
 		early_ship_hull_light = 1
 		basic_ship_hull_light = 1
 		early_ship_hull_submarine = 1
@@ -35,7 +35,7 @@ if = {
 		early_ship_hull_cruiser = 1
 		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_secondary_battery = 1
+		
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
 		coastal_defense_ships = 1
@@ -43,6 +43,30 @@ if = {
 		mtg_transport = 1
 	}
 }
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "ITA_1849_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			aircraft_construction = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			basic_small_airframe = 1
+			basic_medium_airframe = 1
+		}
+	else = {
+		#set_air_oob = "ABS_1849_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+			naval_bomber1 = 1
+			CAS1 = 1
+		}
+	}
+}
+
 set_convoys = 150
 add_political_power = 0
 set_research_slots = 3
@@ -62,9 +86,9 @@ set_popularities = {
 	authoritarian = 85
 }
 add_ideas = {
-	constitutional_monarchy
-	potential_world_power
-	catolicysm
+	constitutional_monarchy_fg
+	medium_country
+	copt_christian
 	regional_corruption
 	medium_developed_industry
 	low_investment_level

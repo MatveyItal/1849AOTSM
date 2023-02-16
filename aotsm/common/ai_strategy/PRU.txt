@@ -1,10 +1,220 @@
+PRU_help_to_live_prussian_large_country = {
+
+	allowed = {
+
+	}
+	
+	enable = {
+		has_idea = large_country
+		PRU = {
+			num_divisions > 39
+		}
+		tag = PRU
+	}
+	
+	abort = {
+		OR = {
+			NOT = {
+				has_idea = large_country
+			}
+			PRU = {
+				num_divisions < 40
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineers
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = marines
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = motorized
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mechanized
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = -1000
+	}
+
+}
+
+PRU_help_to_live_prussian_potential_world_power = {
+
+	allowed = {
+
+	}
+	
+	enable = {
+		has_idea = potential_world_power
+		PRU = {
+			num_divisions > 89
+		}
+		tag = PRU
+	}
+	
+	abort = {
+		OR = {
+			NOT = {
+				has_idea = potential_world_power
+			}
+			PRU = {
+				num_divisions < 90
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineers
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = marines
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = motorized
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mechanized
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = -1000
+	}
+
+}
+
+PRU_help_to_live_prussian_world_power = {
+
+	allowed = {
+
+	}
+	
+	enable = {
+		has_idea = world_power
+		PRU = {
+			num_divisions > 139
+		}
+		tag = PRU
+	}
+	
+	abort = {
+		OR = {
+			NOT = {
+				has_idea = world_power
+			}
+			PRU = {
+				num_divisions < 140
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineers
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = marines
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = motorized
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mechanized
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = -1000
+	}
+
+}
+
 PRU_unit_production = {
+
 	allowed = {
 		original_tag = PRU
 	}
+	
 	enable = {
 		always = yes
 	}
+	
 	abort = {
 		always = no
 	}
@@ -13,12 +223,6 @@ PRU_unit_production = {
 		type = role_ratio
 		id = garrison
 		value = 4
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = paratroopers
-		value = 0
 	}
 
 	ai_strategy = {
@@ -42,25 +246,25 @@ PRU_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = motorized
-		value = 20 
+		value = 35 
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = mechanized
-		value = 30
+		value = 40
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 40 
+		value = 45 
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 80
+		value = 50
 	}
 
 	ai_strategy = {
@@ -198,7 +402,7 @@ PRU_unit_production = {
 	}
 	ai_strategy = {
 		type = equipment_variant_production_factor
-		id = strat_bomber_equipment
+		id = medium_plane_airframe
 		value = -100
 	}
 	ai_strategy = {
@@ -210,6 +414,65 @@ PRU_unit_production = {
 	ai_strategy = {
 		type = railway_gun_divisions_ratio
 		value = 1
+	}
+}
+
+prussian_war_prepere = {
+
+	allowed = {
+		original_tag = PRU
+	}
+	
+	enable = {
+		OR = {
+			PRU = {
+				focus_progress = {
+					focus = PRU_aus_war
+					progress > 0.01
+				}
+			}
+			PRU = {
+				focus_progress = {
+					focus = PRU_aus_ultimatum
+					progress > 0.01
+				}
+			}
+		}
+		OR = {
+			NOT = {
+				has_completed_focus = PRU_aus_war
+			}
+			NOT = {
+				has_completed_focus = PRU_aus_ultimatum
+			}
+		}
+		country_exists = AUS
+	}
+
+	abort = {
+		OR = {
+			NOT = { country_exists = AUS }
+			AND = {
+				has_completed_focus = PRU_aus_war
+				PRU = { has_war_with = AUS }
+			}
+			AND = {
+				has_completed_focus = PRU_aus_ultimatum
+				PRU = { has_war_with = AUS }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "AUS"
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = "SAK"
+		value = 100
 	}
 }
 
@@ -385,7 +648,6 @@ PRU_super_boost_light_for_modern_armor = {
 	enable = {
 		OR = {
 			has_tech = main_battle_tank
-			has_tech = main_battle_tank_chassis
 		}
 		NOT = { has_template_ai_majority_unit = modern_armor }
 	}
@@ -460,11 +722,11 @@ PRU_template_design = {
 		value = -50
 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -50
-	}
+#	ai_strategy = {
+#		type = role_ratio
+#		id = paratroopers
+#		value = -50
+#	}
 }
 
 pru_attack_fra = {
@@ -616,7 +878,7 @@ pru_care_less_about_making_friends = {
 
 pru_xp_upgrade_spending_land = {
 	allowed = {
-		original_tag = BYZ
+		original_tag = PRU
 	}
 
 	enable = {
@@ -630,4 +892,32 @@ pru_xp_upgrade_spending_land = {
 		id = upgrade_xp_cutoff
 		value = 100
 	}
+}
+
+pru_never_help_bri = {
+
+	allowed = {
+		tag = PRU
+	}
+	
+	enable = {
+		date > 1849.1.1
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = CBI
+		target = send_lend_lease_desire
+		value = -1000
+	}	
+	
+	ai_strategy = {
+		type = diplo_action_desire
+		id = CBI
+		target = send_volunteers_desire
+		value = -1000
+	}	
+
 }

@@ -15,11 +15,67 @@ opinion_modifiers = {
 	}
 	
 	history_friend = {
-		value = 100
+		value = 200
+	}
+	
+	help_from_confederacy = {
+		value = 50
 	}
 	
 	history_enemy = {
+		value = -200
+	}
+	
+	use_gas_attack_opinion = {
+		value = -75
+		years = 2
+		decay = 1
+	}
+	
+	byzantium_balkan_strateg = {
+		value = -125
+	}
+	
+	saint_pact = {
+		value = 55
+	}
+	
+	attack_border = {
+		value = -50
+	}
+	
+	cbi_byz_deal = {
+		value = 100
+		trade = yes
+	}
+	
+	pru_choose_frind_with_us = {
+		value = 50
+	}
+	
+	pru_choose_our_politic = {
+		value = -10
+	}
+	
+	pru_choose_king_to_us = {
+		value = -25
+	}
+	
+	pru_choose_destoed_us = {
 		value = -100
+	}
+	
+	end_dimpomacy = {
+		value = -500
+	}
+	
+	end_trade = {
+		value = -500
+		trade = yes
+	}
+	
+	royalty_wedding = {
+		value = 50
 	}
 	
 }

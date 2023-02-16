@@ -21,9 +21,6 @@ set_technology = {
 	mobile_warfare = 1
 	trade_interdiction = 1
 	formation_flying = 1
-	synth_oil_experiments = 1
-	fuel_silos = 1
-	fuel_refining = 1
 }
 
 if = {
@@ -76,6 +73,9 @@ if = {
 	set_technology = {
 		basic_naval_mines = 1
 		submarine_mine_laying = 1
+		coastal_defense_ships = 1
+		 
+		 
 		early_ship_hull_light = 1
 		basic_ship_hull_light = 1
 		early_ship_hull_cruiser = 1
@@ -93,8 +93,8 @@ if = {
 		basic_light_battery = 1
 		basic_medium_battery = 1
 		basic_heavy_battery = 1
-		basic_secondary_battery = 1
-		improved_secondary_battery = 1
+		
+		
 		basic_depth_charges = 1
 		sonar = 1
 		basic_cruiser_armor_scheme = 1

@@ -12,7 +12,7 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_idea_pru_arm_comand"
-		textureFile = "gfx/interface/ideas/idea_hun_secret_rearmament.dds"
+		textureFile = "gfx/interface/ideas/PRU/idea_PRU_genshtab.dds"
 	}
 	
 	spriteType = {
@@ -120,7 +120,68 @@ spriteTypes = {
 		textureFile = "gfx/interface/ideas/FRA_matignon_agreements.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_idea_gas_attack_idea"
+		textureFile = "gfx/interface/ideas/idea_generic_army_problems.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_great_summer_invasion_idea"
+		textureFile = "gfx/interface/ideas/generic_volunteer_expedition_bonus.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_pru_never_surrender"
+		textureFile = "gfx/interface/ideas/FRA_army_of_aggression_focus.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_pru_mass_war_production_idea"
+		textureFile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_pru_mass_war_production_idea_with_sawdust_soup"
+		textureFile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_pru_faction_trading_idea"
+		textureFile = "gfx/interface/ideas/idea_can_wartime_prices_and_trade_board.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_mittleafrika_idea"
+		textureFile = "gfx/interface/ideas/idea_ger_revive_the_kaiserreich.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_berlin_armor_production"
+		textureFile = "gfx/interface/ideas/idea_man_five_year_plan_tank.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_koninsberg_armor_production"
+		textureFile = "gfx/interface/ideas/idea_man_five_year_plan_tank.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_pru_fraternization_on_front"
+		textureFile = "gfx/interface/ideas/idea_prc_low_popular_support3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_mass_attack_by_wrangel"
+		textureFile = "gfx/interface/ideas/german_advisors.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_bismark_logistic_idea"
+		textureFile = "gfx/interface/ideas/idea_generic_supply_lines.dds"
+	}
+	
 	#Politic
+	
 	spriteType = {
 		name = "GFX_idea_pru_light_panzer"
 		textureFile = "gfx/interface/ideas/idea_generic_tank_manufacturer_1.dds"
